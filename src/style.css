@@ -9,3 +9,13 @@ a{
 .nav-item{
     margin-right: 1rem;
 }
+
+ul{
+    list-style-type: none;
+}
+
+.fa-play{
+    transform: rotate(-90deg);
+    color: #5FFFA3;
+    margin-right: .7rem;
+}

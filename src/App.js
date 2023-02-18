@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "axios";
+import { Triangle } from "react-feather";
 
 function App() {
   const [data, setData] = useState([]);
@@ -19,9 +20,9 @@ function App() {
 
   return (
     <>
-      <div className="container mb-5 mt-2">
+      <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
         <nav
-          className="navbar navbar-expand-lg navbar-dark"
+          className="navbar navbar-expand-lg navbar-dark fixed-top"
           style={{ backgroundColor: "#343a40" }}
         >
           <div className="container py-2">
@@ -82,6 +83,18 @@ function App() {
         </nav>
       </div>
       <div className="container">
+        <div className="row">
+          <div className="col">
+            <ul className="d-flex justify-content-between text-white py-2 gap-3" style={{backgroundColor:"#464C52"}}>
+              <li><i class="fa-solid fa-play"></i><span className="fw-bolder">Bist</span> 5.026,83 %0,36</li>
+              <li><i class="fa-solid fa-play"></i><span className="fw-bolder">Dolar</span> 18,8621 %0,08</li>
+              <li><i class="fa-solid fa-play"></i><span className="fw-bolder">Altın</span> 1.117,0600 %0,36</li>
+              <li className="me-3"><i class="fa-solid fa-play"></i><span className="fw-bolder">Bitcoin</span> 18,8621 %0,08</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="container " >
         <div className="row">
           <div className="col">
             <table

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,9 +10,9 @@ const Navbar = () => {
           style={{ backgroundColor: "#343a40" }}
         >
           <div className="container py-2">
-            <a className="navbar-brand text fs-3" href="#">
+            <NavLink className="navbar-brand text fs-3" to="/">
               Hisse Dünyası
-            </a>
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -34,14 +35,14 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <NavLink to="/gold" className="nav-link active">
                     Altın
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <NavLink to="/currency" className="nav-link active">
                     Döviz
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="#">

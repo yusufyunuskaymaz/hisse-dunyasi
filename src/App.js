@@ -4,10 +4,9 @@ import axios from "axios";
 
 // Import Swiper styles
 
-
-
 // import required modules
-import SwiperComp from "./Swiper";
+
+import SwiperSlider from "./SwiperSlider";
 
 function App() {
   const [data, setData] = useState([]);
@@ -88,7 +87,7 @@ function App() {
           </div>
         </nav>
       </div>
-      <div className="container">
+      <div className="container mb-3">
         <div className="row">
           <div className="col">
             <ul
@@ -117,6 +116,12 @@ function App() {
       </div>
       <div className="container ">
         <div className="row">
+          <div className=" d-flex justify-content-between">
+            <h3 className="mb-4">Günün Seans İstatiği</h3>
+            <a href="deneme.com">Tümü  > </a>
+          </div>
+        </div>
+        <div className="row">
           <div className="col">
             <table
               className="table table-responsive table-striped table-hover table-sm"
@@ -417,7 +422,16 @@ function App() {
           </div>
         </div>
       </div>
-      
+      <SwiperSlider />
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col">
+            <footer className="bg-dark text-white text-center fs-6">
+              <p className="py-3">Tüm hakları saklıdır. Made by Happy Coders</p>
+            </footer>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

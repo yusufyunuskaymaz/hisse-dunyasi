@@ -55,8 +55,10 @@ const Stock = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">Konya</th>
+                    {data.map((item)=>{
+                      return (
+                        <tr>
+                      <th scope="row">{item.kod}</th>
                       <td>3.984</td>
                       <td>3.984</td>
                       <td>10.00</td>
@@ -69,6 +71,8 @@ const Stock = () => {
                       <td>10.00</td>
                       <td>18.10</td>
                     </tr>
+                      )
+                    })}
                     
                   </tbody>
                 </table>

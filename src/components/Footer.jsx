@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="row">
           <div className="col">
             <footer className="bg-dark text-white text-center fs-6">
-              <p className="py-3">Tüm hakları saklıdır. Made by Happy Coders</p>
+              <p className="py-3">Tüm hakları saklıdır. Made by Happy Coders <span>❤</span></p>
             </footer>
           </div>
         </div>

@@ -114,315 +114,355 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="container ">
+      <div className="container deneme2" >
         <div className="row">
-          <div className=" d-flex justify-content-between">
-            <h3 className="mb-4">Günün Seans İstatiği</h3>
-            <a href="deneme.com">Tümü  > </a>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <table
-              className="table table-responsive table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Artan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col"> </th>
-                  <th scope="col">İsim</th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item) => {
-                  return (
-                    <tr>
-                      <th>
-                        <img
-                          style={{ width: "1.5rem" }}
-                          src={item.image}
-                          alt={item.name}
-                        />
+          <div className="col-lg-8" style={{height:"3000px"}}>
+          <div className="container ">
+            <div className="row">
+              <div className=" d-flex justify-content-between">
+                <h3 className="mb-4">Günün Seans İstatiği</h3>
+                {/* <a href="deneme.com" style={{position:"relative"}}>Tümü > </a>
+                p */}
+                <p>tümü</p>
+              
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <table
+                  className="table table-responsive table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Artan{" "}
                       </th>
-                      <th scope="row">{item.name}</th>
-                      <td>${item.current_price}</td>
-                      <td>10.00</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <div className="col">
-            <table
-              className="table table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Azalan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col">Hisse </th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark%</th>
-                  <th scope="col">Saat</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Konya</th>
-                  <td>3.984</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">MHRSL</th>
-                  <td>54.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">DYOBY</th>
-                  <td>45.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="col">
-            <table
-              className="table table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Azalan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col">Hisse </th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark%</th>
-                  <th scope="col">Saat</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Konya</th>
-                  <td>3.984</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">MHRSL</th>
-                  <td>54.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">DYOBY</th>
-                  <td>45.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <table
-              className="table table-responsive table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Artan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col"> </th>
-                  <th scope="col">İsim</th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item) => {
-                  return (
-                    <tr>
-                      <th>
-                        <img
-                          style={{ width: "1.5rem" }}
-                          src={item.image}
-                          alt={item.name}
-                        />
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
                       </th>
-                      <th scope="row">{item.name}</th>
-                      <td>${item.current_price}</td>
-                      <td>10.00</td>
                     </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col"> </th>
+                      <th scope="col">İsim</th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((item) => {
+                      return (
+                        <tr>
+                          <th>
+                            <img
+                              style={{ width: "1.5rem" }}
+                              src={item.image}
+                              alt={item.name}
+                            />
+                          </th>
+                          <th scope="row">{item.name}</th>
+                          <td>${item.current_price}</td>
+                          <td>10.00</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div className="col">
+                <table
+                  className="table table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Azalan{" "}
+                      </th>
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col">Hisse </th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark%</th>
+                      <th scope="col">Saat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Konya</th>
+                      <td>3.984</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MHRSL</th>
+                      <td>54.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DYOBY</th>
+                      <td>45.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="col">
+                <table
+                  className="table table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Azalan{" "}
+                      </th>
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col">Hisse </th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark%</th>
+                      <th scope="col">Saat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Konya</th>
+                      <td>3.984</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MHRSL</th>
+                      <td>54.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DYOBY</th>
+                      <td>45.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <table
+                  className="table table-responsive table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Artan{" "}
+                      </th>
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col"> </th>
+                      <th scope="col">İsim</th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((item) => {
+                      return (
+                        <tr>
+                          <th>
+                            <img
+                              style={{ width: "1.5rem" }}
+                              src={item.image}
+                              alt={item.name}
+                            />
+                          </th>
+                          <th scope="row">{item.name}</th>
+                          <td>${item.current_price}</td>
+                          <td>10.00</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div className="col">
+                <table
+                  className="table table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Azalan{" "}
+                      </th>
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col">Hisse </th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark%</th>
+                      <th scope="col">Saat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Konya</th>
+                      <td>3.984</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MHRSL</th>
+                      <td>54.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DYOBY</th>
+                      <td>45.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="col">
+                <table
+                  className="table table-striped table-hover table-sm"
+                  style={{ width: "15rem" }}
+                >
+                  <thead>
+                    <tr
+                      className="text-white"
+                      style={{ background: "#464c52" }}
+                    >
+                      <th scope="col" colSpan="3">
+                        Azalan{" "}
+                      </th>
+                      <th
+                        scope="col"
+                        style={{ fontWeight: "500", fontSize: "13px" }}
+                      >
+                        <a href="deneme.com" className="text-white fs-6">
+                          Tümü
+                        </a>{" "}
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr>
+                      <th scope="col">Hisse </th>
+                      <th scope="col">Fiyat</th>
+                      <th scope="col">Fark%</th>
+                      <th scope="col">Saat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Konya</th>
+                      <td>3.984</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MHRSL</th>
+                      <td>54.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DYOBY</th>
+                      <td>45.454</td>
+                      <td>10.00</td>
+                      <td>18.10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div className="col">
-            <table
-              className="table table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Azalan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col">Hisse </th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark%</th>
-                  <th scope="col">Saat</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Konya</th>
-                  <td>3.984</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">MHRSL</th>
-                  <td>54.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">DYOBY</th>
-                  <td>45.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="container">
+            <div className="row">
+              <div className="col ">
+                <SwiperSlider />
+              </div>
+            </div>
           </div>
-          <div className="col">
-            <table
-              className="table table-striped table-hover table-sm"
-              style={{ width: "15rem" }}
-            >
-              <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="3">
-                    Azalan{" "}
-                  </th>
-                  <th
-                    scope="col"
-                    style={{ fontWeight: "500", fontSize: "13px" }}
-                  >
-                    <a href="deneme.com" className="text-white fs-6">
-                      Tümü
-                    </a>{" "}
-                  </th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th scope="col">Hisse </th>
-                  <th scope="col">Fiyat</th>
-                  <th scope="col">Fark%</th>
-                  <th scope="col">Saat</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Konya</th>
-                  <td>3.984</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">MHRSL</th>
-                  <td>54.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-                <tr>
-                  <th scope="row">DYOBY</th>
-                  <td>45.454</td>
-                  <td>10.00</td>
-                  <td>18.10</td>
-                </tr>
-              </tbody>
-            </table>
+          </div>
+          <div className="col-lg-3 stickyDiv">
+            <div className="">
+                    <p style={{display:"none"}}>merhaba</p>
+            </div>
+            
+            
           </div>
         </div>
       </div>
-      <SwiperSlider />
       <div className="container mt-5">
         <div className="row">
           <div className="col">

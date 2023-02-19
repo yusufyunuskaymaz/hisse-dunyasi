@@ -21,7 +21,7 @@ export default function App() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper ms-0"
         style={{maxHeight:"40rem", maxWidth:"40rem"}}
       >
         <SwiperSlide><img src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg" alt="" /></SwiperSlide>

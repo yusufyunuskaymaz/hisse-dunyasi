@@ -24,3 +24,17 @@ ul{
     color: #5FFFA3;
     margin-right: .7rem;
 }
+
+.stickyDiv{
+    height: 15rem;
+    width: 15rem;
+    background-image: url("https://img7.mynet.com/finans/anlikborsa/finans-2023-banner-min-1.png");
+    background-position: center;
+    background-size: cover;
+    position: sticky;
+    top: 100px;
+  }
+
+.deneme2{
+    position: relative;
+}

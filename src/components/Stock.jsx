@@ -4,14 +4,19 @@ import axios from 'axios'
 const Stock = () => {
     const [data, setData] = useState([])
     const getData = async ()=>{
-        const URL = "https://bigpara.hurriyet.com.tr/api/v1/hisse/list"
-        const data = await axios.get(URL)
-        setData(data)
+        const URL = "https://sore-ruby-chiton-belt.cyclic.app/https://bigpara.hurriyet.com.tr/api/v1/hisse/list"
+        const data = await axios.get(URL, 
+          {headers:{
+            "Access-Control-Allow-Origin": "https://bigpara.hurriyet.com.tr"}})
+        setData(data.data.data)
+
     }
     useEffect(() => {
       getData()
     }, [])
     console.log(data)
+    // axios.get(url,{headers:{
+    //   Access-Control-Allow-Origin: https://bigpara.hurriyet.com.tr}})
 
   return (
     <div className="container">

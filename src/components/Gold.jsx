@@ -8,17 +8,19 @@ function Gold() {
     "Cumhuriyet Altını",
     "Yarım Altın",
     "Çeyrek Altın",
+    "Reşat Altını",
+    "Kulplu Reşat Altını",
+    "22 Ayar Altın TL/Gr",
+    "18 Ayar Altın TL/Gr",
+    "14 Ayar Altın TL/Gr",
+    "Kapalicarsi Ziynet 2.5",
+    "Kapalı Çarşı Beşli Altın",
+    "Gremse Altın",
+    "Ata Altın",
+    "Tam Altın",
+    "Külçe Altın ($)",
   ];
-  const values = [
-    "value1",
-    "value2",
-    "value3",
-    "value4",
-    "value5",
-    "value6",
-    "value7",
-    "value8",
-  ];
+
   return (
     <div className="container">
       <div className="row">
@@ -44,12 +46,10 @@ function Gold() {
                       <td>0.17%</td>
                       <td>12:01</td>
                     </tr>
-                    
                   </>
                 );
               })}
             </tbody>
-            
           </table>
         </div>
       </div>

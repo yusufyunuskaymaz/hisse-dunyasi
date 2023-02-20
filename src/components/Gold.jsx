@@ -29,6 +29,7 @@ function Gold() {
             <thead>
               <tr className="text-white" style={{ background: "#464c52" }}>
                 <th scope="col">Altın Cinsi </th>
+                <th scope="col"> Yön </th>
                 <th scope="col">Alış </th>
                 <th scope="col">Satış </th>
                 <th scope="col">Değişim % </th>
@@ -41,6 +42,9 @@ function Gold() {
                   <>
                     <tr>
                       <th>{item}</th>
+                      <th>
+                        <i className="fa-solid fa-play"></i>
+                      </th>
                       <td>10 </td>
                       <td>15 </td>
                       <td>0.17%</td>

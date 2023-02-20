@@ -8,6 +8,8 @@ import Stock from "../components/Stock";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Gold from "../components/Gold";
 import Currency from "../components/Currency";
+import CurrencyDetail from "../components/CurrencyDetail";
+import GoldDetail from "../components/GoldDetail";
 
 const AppRouter = () => {
   return (
@@ -18,7 +20,9 @@ const AppRouter = () => {
         <Route path="" element={<Home />} />
         <Route path="stock" element={<Stock />} />
         <Route path="gold" element={<Gold />} />
+        <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />
+        <Route path="currency/:item" element={<CurrencyDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

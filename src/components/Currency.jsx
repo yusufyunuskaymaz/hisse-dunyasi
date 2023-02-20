@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Currency() {
+  const navigate = useNavigate();
   const manuelDoviz = [
     "Amerikan Doları",
     "Euro",
@@ -22,6 +25,9 @@ function Currency() {
     "Suudi Riyali",
     "Güney Afrika Randı",
   ];
+  // const currencyDetail=(e)=>{
+  //   console.log(e.target);
+  // }
   return (
     <div>
       <div className="container">
@@ -39,11 +45,16 @@ function Currency() {
                 </tr>
               </thead>
               <tbody>
-                {manuelDoviz.map((item) => {
+                {manuelDoviz.map((item,index) => {
                   return (
-                    <>
-                      <tr>
-                        <th>{item}</th>
+                 
+                      <tr key={index}>
+                        <th
+                          style={{ cursor: "pointer" }}
+                          onClick={() => navigate(`${item}`)}
+                        >
+                          {item}
+                        </th>
                         <th>
                           <i className="fa-solid fa-play"></i>
                         </th>
@@ -52,7 +63,7 @@ function Currency() {
                         <td>0.17%</td>
                         <td>12:01</td>
                       </tr>
-                    </>
+                    
                   );
                 })}
               </tbody>

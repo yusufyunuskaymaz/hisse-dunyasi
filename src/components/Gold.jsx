@@ -41,8 +41,8 @@ function Gold() {
                   <>
                     <tr>
                       <th>{item}</th>
-                      <td>10 tl</td>
-                      <td>15 tl</td>
+                      <td>10 </td>
+                      <td>15 </td>
                       <td>0.17%</td>
                       <td>12:01</td>
                     </tr>

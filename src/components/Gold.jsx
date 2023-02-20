@@ -1,3 +1,5 @@
+import StickyDiv from "./StickyDiv";
+
 function Gold() {
   const list = [
     "ALTIN (TL/GR)",
@@ -22,39 +24,43 @@ function Gold() {
   ];
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <table className="table table-responsive table-striped table-hover table-sm">
-            <thead>
-              <tr className="text-white" style={{ background: "#464c52" }}>
-                <th scope="col">Altın Cinsi </th>
-                <th scope="col"> Yön </th>
-                <th scope="col">Alış </th>
-                <th scope="col">Satış </th>
-                <th scope="col">Değişim % </th>
-                <th scope="col">Saat </th>
-              </tr>
-            </thead>
-            <tbody>
-              {list.map((item) => {
-                return (
-                  <>
-                    <tr>
-                      <th>{item}</th>
-                      <th>
-                        <i className="fa-solid fa-play"></i>
-                      </th>
-                      <td>10 </td>
-                      <td>15 </td>
-                      <td>0.17%</td>
-                      <td>12:01</td>
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-8">
+            <table className="table table-responsive table-striped table-hover table-sm">
+              <thead>
+                <tr className="text-white" style={{ background: "#464c52" }}>
+                  <th scope="col">Altın Cinsi </th>
+                  <th scope="col"> Yön </th>
+                  <th scope="col">Alış </th>
+                  <th scope="col">Satış </th>
+                  <th scope="col">Değişim % </th>
+                  <th scope="col">Saat </th>
+                </tr>
+              </thead>
+              <tbody>
+                {list.map((item) => {
+                  return (
+                    <>
+                      <tr>
+                        <th>{item}</th>
+                        <th>
+                          <i className="fa-solid fa-play"></i>
+                        </th>
+                        <td>10 </td>
+                        <td>15 </td>
+                        <td>0.17%</td>
+                        <td>12:01</td>
+                      </tr>
+                    </>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="col-4 stickyDiv"></div>
         </div>
       </div>
     </div>

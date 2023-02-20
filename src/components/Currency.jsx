@@ -1,6 +1,6 @@
 function Currency() {
   return (
-    <div>
+    <div className="container">
       <h1>Döviz</h1>
     </div>
   );

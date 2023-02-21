@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Crypto() {
+  const navigate = useNavigate();
   const list = [
     "Bitcoin Türk Lirası",
     "Bitcoin Amerikan Doları",
@@ -36,25 +39,30 @@ function Crypto() {
               </tr>
             </thead>
             <tbody>
-              {list.map((item) => {
+              {list.map((item, index) => {
                 return (
-                  <>
-                    <tr>
-                      <th>{item}</th>
-                      <th>
-                        <i className="fa-solid fa-play"></i>
-                      </th>
-                      <td>10 </td>
-                      <td>15 </td>
-                      <td>0.17%</td>
-                      <td>12:01</td>
-                    </tr>
-                  </>
+                  <tr key={index}>
+                    <th
+                      style={{ cursor: "pointer" }}
+                      onClick={() => navigate(`${item}`)}
+                    >
+                      {item}
+                    </th>
+                    <th>
+                      <i className="fa-solid fa-play"></i>
+                    </th>
+
+                    <td>15 </td>
+                    <td>0.17%</td>
+                    <td>12:01</td>
+                  </tr>
                 );
               })}
             </tbody>
           </table>
         </div>
+
+        <div className="col-4 stickyDiv"></div>
       </div>
     </div>
   );

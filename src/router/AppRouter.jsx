@@ -10,6 +10,8 @@ import Gold from "../components/Gold";
 import Currency from "../components/Currency";
 import CurrencyDetail from "../components/CurrencyDetail";
 import GoldDetail from "../components/GoldDetail";
+import Crypto from "../components/Crypto";
+import CryptoDetail from "../components/CryptoDetail";
 
 const AppRouter = () => {
   return (
@@ -23,6 +25,8 @@ const AppRouter = () => {
         <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />
         <Route path="currency/:item" element={<CurrencyDetail />} />
+        <Route path="crypto" element={<Crypto />} />
+        <Route path="crypto/:item" element={<CryptoDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

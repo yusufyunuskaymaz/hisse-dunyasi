@@ -60,4 +60,4 @@ function Crypto() {
   );
 }
 
-export default Gold;
+export default Crypto;

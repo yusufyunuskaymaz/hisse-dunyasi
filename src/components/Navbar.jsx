@@ -45,9 +45,9 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <NavLink to="/crypto" className="nav-link active">
                     Kripto
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
               <ul className="navbar-nav">

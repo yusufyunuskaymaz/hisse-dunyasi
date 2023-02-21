@@ -35,15 +35,16 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/gold" className="nav-link active">
-                    Altın
-                  </NavLink>
-                </li>
-                <li className="nav-item">
                   <NavLink to="/currency" className="nav-link active">
                     Döviz
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/gold" className="nav-link active">
+                    Altın
+                  </NavLink>
+                </li>
+                
                 <li className="nav-item">
                   <NavLink to="/crypto" className="nav-link active">
                     Kripto

@@ -1,33 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Currency() {
   const navigate = useNavigate();
-  const manuelDoviz = [
-    "Amerikan Doları",
-    "Euro",
-    "İngiliz Sterlini",
-    "Avustralya Doları",
-    "Kanada Doları",
-    "İsviçre Frankı",
-    "Çin Yuanı Offshore",
-    "Çin Yuanı",
-    "Rus Rublesi",
-    "İsveç Kronu",
-    "Bulgar Levası",
-    "Danimarka Kronu",
-    "İran Riyali",
-    "Japon Yeni",
-    "Kuveyt Dinarı",
-    "Norveç Kronu",
-    "Pakistan Rupisi",
-    "Katar Riyali",
-    "Romanya Leyi",
-    "Suudi Riyali",
-    "Güney Afrika Randı",
-  ];
-  // const currencyDetail=(e)=>{
-  //   console.log(e.target);
-  // }
+  const [currencyData, setCurrencyData] = useState([]);
+  const URL = "http://hasanadiguzel.com.tr/api/kurgetir";
+
+  const getCurrency = async () => {
+    const data = await axios.get(URL);
+    setCurrencyData(data.data.TCMB_AnlikKurBilgileri);
+  };
+
+  useEffect(() => {
+    getCurrency();
+  }, []);
+  // console.log(currencyData);
+
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+
   return (
     <div>
       <div className="container">
@@ -45,25 +38,27 @@ function Currency() {
                 </tr>
               </thead>
               <tbody>
-                {manuelDoviz.map((item,index) => {
+                {currencyData.map((item, index) => {
                   return (
-                 
-                      <tr key={index}>
-                        <th
-                          style={{ cursor: "pointer" }}
-                          onClick={() => navigate(`${item}`)}
-                        >
-                          {item}
-                        </th>
-                        <th>
-                          <i className="fa-solid fa-play"></i>
-                        </th>
-                        <td>10 </td>
-                        <td>15 </td>
-                        <td>0.17%</td>
-                        <td>12:01</td>
-                      </tr>
-                    
+                    <tr key={index}>
+                      <th
+                        style={{ cursor: "pointer" }}
+                        onClick={() => navigate(`${item.Isim}`)}
+                      >
+                        {item.Isim}
+                      </th>
+                      <th>
+                        <i className="fa-solid fa-play"></i>
+                      </th>
+                      <td>{item.ForexBuying} </td>
+                      <td>{item.ForexSelling} </td>
+                      <td>
+                        {(item.ForexSelling - item.ForexBuying).toFixed(2)}
+                      </td>
+                      <td>
+                        {hours}:{minutes}
+                      </td>
+                    </tr>
                   );
                 })}
               </tbody>

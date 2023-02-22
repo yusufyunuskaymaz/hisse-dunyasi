@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import io from "socket.io-client";
+import { useNavigate } from "react-router-dom";
+import { style } from "@mui/system";
 const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
@@ -20,10 +22,13 @@ const Stock = () => {
     });
     sendMessage();
   }, [socket]);
+  const navigate = useNavigate();
 
   return (
     <div className="container">
-      <button className="btn btn-warning" onClick={sendMessage}>Yenile</button>
+      <button className="btn btn-warning" onClick={sendMessage}>
+        Yenile
+      </button>
 
       <div className="row">
         <div className="col-lg-8">
@@ -57,7 +62,17 @@ const Stock = () => {
             <tbody>
               {data.map((item, index) => {
                 return (
-                  <tr key={index}>
+                  <tr
+                    key={index}
+                    onClick={() =>
+                      navigate(`${item.title}`, {
+                        state: {
+                          item,
+                        },
+                      })
+                    }
+                    role="button"
+                  >
                     <th scope="row">{item.title}</th>
                     <td>{item.son}</td>
                     <td>{item.alis}</td>

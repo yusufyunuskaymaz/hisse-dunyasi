@@ -44,7 +44,7 @@ const Navbar = () => {
                     Altın
                   </NavLink>
                 </li>
-                
+
                 <li className="nav-item">
                   <NavLink to="/crypto" className="nav-link active">
                     Kripto
@@ -53,14 +53,22 @@ const Navbar = () => {
               </ul>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <NavLink
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/login"
+                  >
                     Giriş Yap
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <NavLink
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/register"
+                  >
                     Kayıt Ol
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>

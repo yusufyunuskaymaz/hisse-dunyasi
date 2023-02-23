@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Analiz from "./Analiz";
+import CompanyInfo from "./CompanyInfo";
 import StockChart from "./StockChart";
 import TradingViewWidget from "./TradingView";
 
@@ -11,7 +13,8 @@ const StockDetail = () => {
 
   return (
     <div className="container">
-        <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} />
+        {/* <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} /> */}
+        <TradingViewWidget /> 
       <button className="btn btn-success" onClick={() => navigate("/")}>
         Ana Sayfa
       </button>
@@ -43,8 +46,15 @@ const StockDetail = () => {
             </tbody>
           </table>
         </div>
+        <div className="col">
+        <CompanyInfo />
+
+        </div>
+        <div className="col">
+          <Analiz />
+        </div>
       </div>
-     <TradingViewWidget />
+     {/* <TradingViewWidget /> */}
     </div>
   );
 };

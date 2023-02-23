@@ -15,11 +15,13 @@ import CryptoDetail from "../components/CryptoDetail";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import StockDetail from "../components/stock/StockDetail";
+import HareketliNavbar from "../components/HareketliNavbar";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <HareketliNavbar />
       <BottomNavbar />
       <Routes>
         <Route path="" element={<Home />} />

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import BottomNavbar from "../components/BottomNavbar";
 import Home from "../components/Home";
 import Footer from "../components/Footer";
-import Stock from "../components/Stock";
+import Stock from "../components/stock/Stock";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Gold from "../components/Gold";
 import Currency from "../components/Currency";
@@ -14,6 +14,7 @@ import Crypto from "../components/Crypto";
 import CryptoDetail from "../components/CryptoDetail";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import StockDetail from "../components/stock/StockDetail";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="stock" element={<Stock />} />
+        <Route path="stock/:item" element={<StockDetail />} />
         <Route path="gold" element={<Gold />} />
         <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />

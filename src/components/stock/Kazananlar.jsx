@@ -1,24 +1,36 @@
 import React, { useEffect, useRef } from "react";
 
-const CompanyInfo = ({itemTitle}) => {
+const Kazananlar = () => {
   const contariner = useRef();
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-financials.js";
+      "https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js";
     script.type = "text/javascript";
     script.async = true;
     script.innerHTML = `
-      {
+    {
         "colorTheme": "light",
-        "isTransparent": false,
+        "dateRange": "12M",
+        "exchange": "BIST",
+        "showChart": true,
+        "locale": "tr",
         "largeChartUrl": "",
-        "displayMode": "regular",
-        "width": 480,
-        "height": 830,
-        "symbol": "BIST:${itemTitle}",
-        "locale": "tr"
+        "isTransparent": false,
+        "showSymbolLogo": true,
+        "showFloatingTooltip": false,
+        "width": "300",
+        "height": "600",
+        "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+        "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+        "gridLineColor": "rgba(240, 243, 250, 0)",
+        "scaleFontColor": "rgba(106, 109, 120, 1)",
+        "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+        "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+        "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+        "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+        "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
       }`;
     contariner.current.appendChild(script);
   }, []);
@@ -45,4 +57,4 @@ const CompanyInfo = ({itemTitle}) => {
   );
 };
 
-export default CompanyInfo;
+export default Kazananlar;

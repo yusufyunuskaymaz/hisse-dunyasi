@@ -42,3 +42,13 @@ body {
 .tradingview-widget-copyright{
   display: none;
 }
+
+.stockDetail{
+  background-image: url("https://img7.mynet.com/finans/anlikborsa/finans-2023-banner-min-1.png");
+  height: 15rem;
+  width: 19.5rem;
+  background-position: center;
+  background-size: cover;
+  /* position: sticky; */
+  top: 100px;
+}

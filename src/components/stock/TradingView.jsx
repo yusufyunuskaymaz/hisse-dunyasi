@@ -1,7 +1,7 @@
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo } from "react";
 
-function TradingViewWidget() {
+function TradingViewWidget({itemTitle}) {
   const contariner = useRef();
 
   useEffect(() => {
@@ -16,12 +16,12 @@ function TradingViewWidget() {
             
             [
               "THY",
-              "BIST:THYAO|1D"
+              "BIST:${itemTitle}|1D"
             ]
           ],
           "chartOnly": false,
-          "width": 1000,
-          "height": 500,
+          "width": 600,
+          "height": 300,
           "locale": "tr",
           "colorTheme": "light",
           "autosize": false,
@@ -42,10 +42,10 @@ function TradingViewWidget() {
   }, []);
 
   return (
-    <div className="contariner">
+    <div className="contariner" >
       <div className="row">
         <div className="col">
-          <div className="tradingview-widget-container" ref={contariner} style={{margin:"0 auto"}}>
+          <div className="tradingview-widget-container" ref={contariner}>
             <div className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright">
               TradingView'den{" "}

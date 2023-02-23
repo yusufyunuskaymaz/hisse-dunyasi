@@ -10,7 +10,7 @@ import Gold from "../components/gold/Gold";
 import Currency from "../components/currency/Currency";
 import CurrencyDetail from "../components/currency/CurrencyDetail";
 import GoldDetail from "../components/gold/GoldDetail";
-import Crypto from "../components/Crypto";
+import Crypto from "../components/Crypto.jsx";
 import CryptoDetail from "../components/CryptoDetail";
 import Login from "../components/Login";
 import Register from "../components/Register";

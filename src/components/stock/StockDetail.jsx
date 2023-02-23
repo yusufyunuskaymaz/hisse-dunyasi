@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import AboutCompany from "./AboutCompany";
 import Analiz from "./Analiz";
 import CompanyInfo from "./CompanyInfo";
 import StockChart from "./StockChart";
@@ -15,14 +16,14 @@ const StockDetail = () => {
     <div className="container">
         {/* <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} /> */}
         <TradingViewWidget /> 
-      <button className="btn btn-success" onClick={() => navigate("/")}>
+      {/* <button className="btn btn-success" onClick={() => navigate("/")}>
         Ana Sayfa
       </button>
       <button className="btn btn-warning ms-3" onClick={() => navigate(-1)}>
         Geri
-      </button>
+      </button> */}
       <div className="row justify-content-center">
-        <div className="col col-lg-4">
+        {/* <div className="col col-lg-4">
           <h3 className="display-4">{item.title}</h3>
           <table
             className="table table-striped table-hover table-sm"
@@ -45,13 +46,17 @@ const StockDetail = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
         <div className="col">
         <CompanyInfo />
 
         </div>
         <div className="col">
           <Analiz />
+          <AboutCompany />
+        </div>
+        <div className="col">
+          
         </div>
       </div>
      {/* <TradingViewWidget /> */}

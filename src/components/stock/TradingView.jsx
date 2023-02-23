@@ -1,30 +1,22 @@
 // TradingViewWidget.jsx
-import React, { useEffect, useRef, memo } from 'react';
+import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget() {
   const contariner = useRef();
 
-  useEffect(
-    () => {
-      const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.innerHTML = `
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.innerHTML = `
         {
           "symbols": [
             
             [
               "THY",
               "BIST:THYAO|1D"
-            ],
-            [
-              "şişe",
-              "BIST:SISE|ALL"
-            ],
-            [
-              "BJKAS",
-              "BIST:BJKAS|1D"
             ]
           ],
           "chartOnly": false,
@@ -46,15 +38,28 @@ function TradingViewWidget() {
           "changeMode": "price-and-percent",
           "chartType": "line"
         }`;
-      contariner.current.appendChild(script);
-    },
-    []
-  );
+    contariner.current.appendChild(script);
+  }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={contariner}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright">TradingView'den <a href="https://tr.tradingview.com/symbols/MSFT/" rel="noopener" target="_blank"><span className="blue-text">Microsoft</span></a></div>
+    <div className="contariner">
+      <div className="row">
+        <div className="col">
+          <div className="tradingview-widget-container" ref={contariner} style={{margin:"0 auto"}}>
+            <div className="tradingview-widget-container__widget"></div>
+            <div className="tradingview-widget-copyright">
+              TradingView'den{" "}
+              <a
+                href="https://tr.tradingview.com/symbols/MSFT/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span className="blue-text">Microsoft</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

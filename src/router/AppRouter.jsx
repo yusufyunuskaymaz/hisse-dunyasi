@@ -22,7 +22,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Navbar />
       <HareketliNavbar />
-      <BottomNavbar />
+      {/* <BottomNavbar /> */}
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="stock" element={<Stock />} />

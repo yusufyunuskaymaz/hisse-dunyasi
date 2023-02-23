@@ -23,19 +23,24 @@ const Analiz = () => {
     contariner.current.appendChild(script);
   }, []);
   return (
-    <div class="tradingview-widget-container" ref={contariner}>
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a
-          href="https://tr.tradingview.com/symbols/NASDAQ-AAPL/technicals/"
-          rel="noopener"
-          target="_blank"
-        >
-          <span class="blue-text">AAPL hisse analizi</span>
-        </a>{" "}
-        TradingView tarafından
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div class="tradingview-widget-container" ref={contariner}>
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright">
+              <a
+                href="https://tr.tradingview.com/symbols/NASDAQ-AAPL/technicals/"
+                rel="noopener"
+                target="_blank"
+              >
+                <span class="blue-text">AAPL hisse analizi</span>
+              </a>{" "}
+              TradingView tarafından
+            </div>
+          </div>
+        </div>
       </div>
-      <script type="text/javascript" src="" async></script>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo } from "react";
 
-function TradingViewWidget() {
+function TradingViewWidget({itemTitle}) {
   const contariner = useRef();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function TradingViewWidget() {
         "height": 650,
         "colorTheme": "light",
         "isTransparent": false,
-        "symbol": "BIST:THYAO",
+        "symbol": "BIST:${itemTitle}",
         "locale": "en"
       }`;
     contariner.current.appendChild(script);

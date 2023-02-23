@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -31,9 +31,9 @@ const Navbar = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
                   {/* <a className="nav-link active" aria-current="page" href="#"> */}
-                  <NavLink to="/stock" className="nav-link active">
+                  <Link to="/stock" className="nav-link active">
                     Borsa
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/currency" className="nav-link active">

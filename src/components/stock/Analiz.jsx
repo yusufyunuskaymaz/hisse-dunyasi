@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const Analiz = () => {
+const Analiz = ({itemTitle}) => {
   const contariner = useRef();
 
   useEffect(() => {
@@ -12,10 +12,10 @@ const Analiz = () => {
     script.innerHTML = `
       {
         "interval": "1m",
-        "width": 425,
+        "width": 480,
         "isTransparent": false,
         "height": 450,
-        "symbol": "BIST:THYAO",
+        "symbol": "BIST:${itemTitle}",
         "showIntervalTabs": true,
         "locale": "tr",
         "colorTheme": "light"

@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import AboutCompany from "./AboutCompany";
 import Analiz from "./Analiz";
 import CompanyInfo from "./CompanyInfo";
+import Kazananlar from "./Kazananlar";
 import StockChart from "./StockChart";
 import TradingViewWidget from "./TradingView";
-
 
 const StockDetail = () => {
   const { state } = useLocation();
@@ -13,17 +13,12 @@ const StockDetail = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-        {/* <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} /> */}
-        <TradingViewWidget /> 
-      {/* <button className="btn btn-success" onClick={() => navigate("/")}>
-        Ana Sayfa
-      </button>
-      <button className="btn btn-warning ms-3" onClick={() => navigate(-1)}>
-        Geri
-      </button> */}
-      <div className="row justify-content-center">
-        {/* <div className="col col-lg-4">
+    <div className="container w-75 d-flex justify-content-evenly">
+      <div className="row justify-content-center flex-column">
+        <div className="col">
+          <TradingViewWidget itemTitle={item.title} />
+        </div>
+        <div className="col">
           <h3 className="display-4">{item.title}</h3>
           <table
             className="table table-striped table-hover table-sm"
@@ -46,20 +41,28 @@ const StockDetail = () => {
               </tr>
             </tbody>
           </table>
-        </div> */}
-        <div className="col">
-        <CompanyInfo />
-
         </div>
-        <div className="col">
-          <Analiz />
-          <AboutCompany />
+        <div className="col ps-0">
+          <CompanyInfo itemTitle={item.title} />
         </div>
-        <div className="col">
-          
+        <div className="col ps-0">
+          <AboutCompany itemTitle={item.title} />
+        </div>
+        <div className="col ps-0">
+          <Analiz itemTitle={item.title} />
         </div>
       </div>
-     {/* <TradingViewWidget /> */}
+     <div className="row">
+      <div className="col">
+        <div className="">
+          <div className="stockDetail mb-5">
+
+          </div>
+        <Kazananlar />
+        </div>
+        
+      </div>
+     </div>
     </div>
   );
 };

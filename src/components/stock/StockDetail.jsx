@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import StockChart from "./StockChart";
+import TradingViewWidget from "./TradingView";
 
 
 const StockDetail = () => {
@@ -8,10 +9,9 @@ const StockDetail = () => {
   const { item } = state;
   const navigate = useNavigate();
 
-
   return (
     <div className="container">
-        <StockChart />
+        <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} />
       <button className="btn btn-success" onClick={() => navigate("/")}>
         Ana Sayfa
       </button>
@@ -44,6 +44,7 @@ const StockDetail = () => {
           </table>
         </div>
       </div>
+     <TradingViewWidget />
     </div>
   );
 };

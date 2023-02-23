@@ -4,22 +4,26 @@ import { useNavigate } from "react-router-dom";
 
 function Currency() {
   const navigate = useNavigate();
-  const [currencyData, setCurrencyData] = useState([]);
-  const URL = "http://hasanadiguzel.com.tr/api/kurgetir";
 
-  const getCurrency = async () => {
-    const data = await axios.get(URL);
-    setCurrencyData(data.data.TCMB_AnlikKurBilgileri);
+  const [newCurrencyData, setNewCurrencyData] = useState([]);
+
+  const URL = "https://api.collectapi.com/economy/allCurrency";
+
+  const getNewCurrency = async () => {
+    const data = await axios.get(URL, {
+      headers: {
+        Authorization: `apikey 2mIw6dYO7rrvEhJnchneMs:1k0jNh9oWEHMR7QHhS8Mle`,
+      },
+    });
+    // console.log(data.data.result);
+    setNewCurrencyData(data.data.result);
   };
 
   useEffect(() => {
-    getCurrency();
+    getNewCurrency();
   }, []);
   // console.log(currencyData);
-
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
+  // console.log(newCurrencyData);
 
   return (
     <div>
@@ -38,27 +42,32 @@ function Currency() {
                 </tr>
               </thead>
               <tbody>
-                {currencyData.map((item, index) => {
+                {newCurrencyData.map((item, index) => {
                   return (
                     <tr key={index}>
                       <th
                         style={{ cursor: "pointer" }}
-                        onClick={() => navigate(`${item.Isim}`)}
+                        onClick={() => navigate(`${item?.code}`)}
                       >
-                        {item.Isim}
+                        {item?.code}
                       </th>
                       <th>
-                        <i className="fa-solid fa-play"></i>
+                        {item.rate < 0 ? (
+                          <i
+                            class="fa-solid fa-caret-down"
+                            style={{ color: "red", fontSize: "1.5rem" }}
+                          ></i>
+                        ) : (
+                          <i
+                            class="fa-solid fa-caret-up"
+                            style={{ color: "green", fontSize: "1.5rem" }}
+                          ></i>
+                        )}
                       </th>
-                      <td>{item.ForexBuying} </td>
-                      <td>{item.ForexSelling} </td>
-                      <td>
-                        {(item.ForexSelling - item.ForexBuying).toFixed(2)}
-                      </td>
-                      <td>
-                        {hours < 10 ? "0" + hours : hours}:
-                        {minutes < 10 ? "0" + minutes : minutes}
-                      </td>
+                      <td>{item.buying} </td>
+                      <td>{item.selling} </td>
+                      <td>{item.rate}</td>
+                      <td>{item.time}</td>
                     </tr>
                   );
                 })}

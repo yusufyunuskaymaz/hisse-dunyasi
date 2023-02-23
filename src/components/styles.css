@@ -39,3 +39,6 @@ body {
   object-fit: cover;
 }
 
+.tradingview-widget-copyright{
+  display: none;
+}

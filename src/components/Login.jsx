@@ -8,13 +8,10 @@ const Login = () => {
         <div className="screen__content">
           <form className="login">
             <div className="login__field">
-              <i className="login__icon fas fa-user" />
-              <input
-                type="text"
-                className="login__input"
-                placeholder="User name / Email"
-              />
+              <i className="login__icon fas fa-envelope" />
+              <input type="text" className="login__input" placeholder="Email" />
             </div>
+
             <div className="login__field">
               <i className="login__icon fas fa-lock" />
               <input
@@ -24,7 +21,7 @@ const Login = () => {
               />
             </div>
             <button className="button login__submit">
-              <span className="button__text">Log In Şİmdi</span>
+              <span className="button__text">Log In</span>
               <i className="button__icon fas fa-chevron-right" />
             </button>
           </form>

@@ -28,16 +28,18 @@ const StockDetail = () => {
               <tr>
                 <th scope="col">Hisse </th>
                 <th scope="col">Son</th>
-                <th scope="col">Alış</th>
-                <th scope="col">Satış</th>
+                <th scope="col">Min</th>
+                <th scope="col">Max</th>
+                <th scope="col">Hacim</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">{item.title}</th>
-                <td>{item.son}</td>
-                <td>{item.alis}</td>
-                <td>{item.satis}</td>
+                <th scope="row">{item.code}</th>
+                <td>{item.lastprice}</td>
+                <td>{item.min}</td>
+                <td>{item.max}</td>
+                <td>{item.hacimstr}</td>
               </tr>
             </tbody>
           </table>

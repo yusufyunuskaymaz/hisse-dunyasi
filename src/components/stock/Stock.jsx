@@ -43,13 +43,13 @@ const Stock = () => {
 
   return (
     <div className="container">
-      <button className="btn btn-warning">Yenile</button>
 
       <div className="row">
         <div className="col-lg-8">
           <h1>Stock</h1>
+          <div className="table-responsive">
           <table
-            className="table table-striped  table-sm"
+            className="table table-striped  table-sm "
             //   style={{ width: "15rem" }}
           >
             <thead>
@@ -109,6 +109,7 @@ const Stock = () => {
               })}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>

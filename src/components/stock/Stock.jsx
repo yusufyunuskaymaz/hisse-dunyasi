@@ -65,8 +65,8 @@ const Stock = () => {
                 <th scope="col">Son</th>
                 <th scope="col">Min</th>
                 <th scope="col">Max</th>
-                <th scope="col">%</th>
                 <th scope="col">Hacim(Tl)</th>
+                <th scope="col">%</th>
                 <th scope="col">Son İş.</th>
               </tr>
             </thead>

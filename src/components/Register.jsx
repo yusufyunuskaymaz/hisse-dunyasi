@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 
 const Register = () => {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="container2">
       <div className="screen2">
@@ -13,11 +17,17 @@ const Register = () => {
                 type="text"
                 className="login__input"
                 placeholder="User Name"
+                onChange={(e) => setUserName(e.target.value)}
               />
             </div>
             <div className="login__field">
               <i className="login__icon fas fa-envelope" />
-              <input type="text" className="login__input" placeholder="Email" />
+              <input
+                type="text"
+                className="login__input"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
 
             <div className="login__field">
@@ -26,6 +36,7 @@ const Register = () => {
                 type="password"
                 className="login__input"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <button className="button login__submit">

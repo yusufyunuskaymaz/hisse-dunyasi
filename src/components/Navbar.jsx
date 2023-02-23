@@ -30,7 +30,6 @@ const Navbar = () => {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
-                  {/* <a className="nav-link active" aria-current="page" href="#"> */}
                   <Link to="/stock" className="nav-link">
                     Borsa
                   </Link>

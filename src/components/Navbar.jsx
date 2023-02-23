@@ -31,23 +31,23 @@ const Navbar = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
                   {/* <a className="nav-link active" aria-current="page" href="#"> */}
-                  <Link to="/stock" className="nav-link active">
+                  <Link to="/stock" className="nav-link">
                     Borsa
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/currency" className="nav-link active">
+                  <NavLink to="/currency" className="nav-link ">
                     Döviz
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/gold" className="nav-link active">
+                  <NavLink to="/gold" className="nav-link ">
                     Altın
                   </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink to="/crypto" className="nav-link active">
+                  <NavLink to="/crypto" className="nav-link ">
                     Kripto
                   </NavLink>
                 </li>
@@ -55,7 +55,7 @@ const Navbar = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link active"
+                    className="nav-link "
                     aria-current="page"
                     to="/login"
                   >
@@ -64,7 +64,7 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link active"
+                    className="nav-link "
                     aria-current="page"
                     to="/register"
                   >

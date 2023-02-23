@@ -16,10 +16,10 @@ const StockDetail = () => {
     <div className="container w-75 d-flex justify-content-evenly">
       <div className="row justify-content-center flex-column">
         <div className="col">
-          <TradingViewWidget itemTitle={item.title} />
+          <TradingViewWidget itemTitle={item.code} />
         </div>
         <div className="col">
-          <h3 className="display-4">{item.title}</h3>
+          <h3 className="display-4">{item.code}</h3>
           <table
             className="table table-striped table-hover table-sm"
             style={{ width: "15rem" }}
@@ -43,13 +43,13 @@ const StockDetail = () => {
           </table>
         </div>
         <div className="col ps-0">
-          <CompanyInfo itemTitle={item.title} />
+          <CompanyInfo itemTitle={item.code} />
         </div>
         <div className="col ps-0">
-          <AboutCompany itemTitle={item.title} />
+          <AboutCompany itemTitle={item.code} />
         </div>
         <div className="col ps-0">
-          <Analiz itemTitle={item.title} />
+          <Analiz itemTitle={item.code} />
         </div>
       </div>
      <div className="row">

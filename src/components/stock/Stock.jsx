@@ -3,32 +3,47 @@ import axios from "axios";
 import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
-const socket = io.connect("http://localhost:3001");
+// const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
   const [data, setData] = useState([]);
   const [currentMessage, setCurrentMessage] = useState([]);
-  const sendMessage = () => {
-    console.log("first");
-    const messageData = "deneme";
+  // const sendMessage = () => {
+  //   console.log("first");
+  //   const messageData = "deneme";
 
-    socket.emit("send_message", messageData);
+  //   socket.emit("send_message", messageData);
+  // };
+
+  const getDataFromApi = () => {
+    console.log("girdi")
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": "apikey 5AgkLxu3nrlKZ7pKKHEury:6gU7ouXtLMyQ8SrJr1n39X"
+      },
+    };
+    axios.get("https://api.collectapi.com/economy/hisseSenedi", config).then((res)=>{
+      console.log("g")
+      setData(res.data.result)
+    })
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
-      console.log(data);
-      setData(data);
-    });
-    sendMessage();
-  }, [socket]);
+    // socket.on("receive_message", (data) => {
+    //   console.log(data);
+    //   setData(data);
+    // });
+    // sendMessage();
+    getDataFromApi();
+  }, []); //socket
+
   const navigate = useNavigate();
+  console.log(data, "data");
 
   return (
     <div className="container">
-      <button className="btn btn-warning" onClick={sendMessage}>
-        Yenile
-      </button>
+      <button className="btn btn-warning">Yenile</button>
 
       <div className="row">
         <div className="col-lg-8">
@@ -48,24 +63,20 @@ const Stock = () => {
               <tr>
                 <th scope="col">Menkul Adı </th>
                 <th scope="col">Son</th>
-                <th scope="col">Alış</th>
-                <th scope="col">Satış</th>
-                <th scope="col">Yüksek</th>
-                <th scope="col">Düşük</th>
-                <th scope="col">A. ort</th>
+                <th scope="col">Min</th>
+                <th scope="col">Max</th>
                 <th scope="col">%</th>
-                <th scope="col">Hacim(Lot)</th>
                 <th scope="col">Hacim(Tl)</th>
                 <th scope="col">Son İş.</th>
               </tr>
             </thead>
             <tbody>
-              {data.map((item, index) => {
+              {data.slice(0,100).map((item, index) => {
                 return (
                   <tr
                     key={index}
                     onClick={() =>
-                      navigate(`${item.title}`, {
+                      navigate(`${item.code}`, {
                         state: {
                           item,
                         },
@@ -73,8 +84,14 @@ const Stock = () => {
                     }
                     role="button"
                   >
-                    <th scope="row">{item.title}</th>
-                    <td>{item.son}</td>
+                    <th scope="row">{item.text}</th>
+                    <td>{item.lastprice}</td>
+                    <td>{item.min}</td>
+                    <td>{item.max}</td>
+                    <td>{item.hacimstr}</td>
+                    <td>{item.rate}</td>
+                    <td>{item.time}</td>
+                    {/* <td>{item.son}</td>
                     <td>{item.alis}</td>
                     <td>{item.satis}</td>
                     <td>{item.yuksek}</td>
@@ -83,7 +100,7 @@ const Stock = () => {
                     <td>{item.yuzde}</td>
                     <td>{item.hacim_lot}</td>
                     <td>{item.hacim_tl}</td>
-                    <td>{item.son_islem}</td>
+                    <td>{item.son_islem}</td> */}
                     {/* <td>{item.son}</td>
                       <td>{item.son}</td> */}
                     <td></td>

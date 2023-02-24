@@ -7,6 +7,7 @@ import { style } from "@mui/system";
 
 const Stock = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
   const [currentMessage, setCurrentMessage] = useState([]);
   // const sendMessage = () => {
   //   console.log("first");
@@ -24,8 +25,8 @@ const Stock = () => {
       },
     };
     axios.get("https://api.collectapi.com/economy/hisseSenedi", config).then((res)=>{
-      console.log("g")
       setData(res.data.result)
+      setLoading(false)
     })
   };
 
@@ -70,44 +71,46 @@ const Stock = () => {
                 <th scope="col">Son İş.</th>
               </tr>
             </thead>
-            <tbody>
-              {data.slice(0,100).map((item, index) => {
-                return (
-                  <tr
-                    key={index}
-                    onClick={() =>
-                      navigate(`${item.code}`, {
-                        state: {
-                          item,
-                        },
-                      })
-                    }
-                    role="button"
-                  >
-                    <th scope="row">{item.text}</th>
-                    <td>{item.lastprice}</td>
-                    <td>{item.min}</td>
-                    <td>{item.max}</td>
-                    <td>{item.hacimstr}</td>
-                    <td>{item.rate}</td>
-                    <td>{item.time}</td>
-                    {/* <td>{item.son}</td>
-                    <td>{item.alis}</td>
-                    <td>{item.satis}</td>
-                    <td>{item.yuksek}</td>
-                    <td>{item.dusus}</td>
-                    <td>{item.aylik_ort}</td>
-                    <td>{item.yuzde}</td>
-                    <td>{item.hacim_lot}</td>
-                    <td>{item.hacim_tl}</td>
-                    <td>{item.son_islem}</td> */}
-                    {/* <td>{item.son}</td>
-                      <td>{item.son}</td> */}
-                    <td></td>
-                  </tr>
-                );
-              })}
-            </tbody>
+           {loading ? (<p className="display-6 text-center">Yükleniyor...</p>) : (
+             <tbody>
+             {data.slice(0,100).map((item, index) => {
+               return (
+                 <tr
+                   key={index}
+                   onClick={() =>
+                     navigate(`${item.code}`, {
+                       state: {
+                         item,
+                       },
+                     })
+                   }
+                   role="button"
+                 >
+                   <th scope="row">{item.text}</th>
+                   <td>{item.lastprice}</td>
+                   <td>{item.min}</td>
+                   <td>{item.max}</td>
+                   <td>{item.hacimstr}</td>
+                   <td>{item.rate}</td>
+                   <td>{item.time}</td>
+                   {/* <td>{item.son}</td>
+                   <td>{item.alis}</td>
+                   <td>{item.satis}</td>
+                   <td>{item.yuksek}</td>
+                   <td>{item.dusus}</td>
+                   <td>{item.aylik_ort}</td>
+                   <td>{item.yuzde}</td>
+                   <td>{item.hacim_lot}</td>
+                   <td>{item.hacim_tl}</td>
+                   <td>{item.son_islem}</td> */}
+                   {/* <td>{item.son}</td>
+                     <td>{item.son}</td> */}
+                   <td></td>
+                 </tr>
+               );
+             })}
+           </tbody>
+           )}
           </table>
           </div>
         </div>

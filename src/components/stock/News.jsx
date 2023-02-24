@@ -6,7 +6,7 @@ import io from "socket.io-client";
 const News = ({ itemTitle, itemText }) => {
   const [data, setData] = useState([]);
   const [socketData, setSocketData] = useState([]);
-  const socket = io.connect("http://localhost:3001");
+  const socket = io.connect("https://hisse-dunyasi-backend-production.up.railway.app/");
   const itemLink =
     `${itemTitle}-${itemText}-detay/hisse-haberleri/`.toLowerCase("tr");
 

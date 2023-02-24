@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import AboutCompany from "./AboutCompany";
 import Analiz from "./Analiz";
 import CompanyInfo from "./CompanyInfo";
 import Kazananlar from "./Kazananlar";
+import News from "./News";
 import StockChart from "./StockChart";
 import TradingViewWidget from "./TradingView";
+
 
 const StockDetail = () => {
   const { state } = useLocation();
   const { item } = state;
   const navigate = useNavigate();
+
+  
 
   return (
     <div className="container w-75 d-flex justify-content-evenly">
@@ -53,18 +57,18 @@ const StockDetail = () => {
         <div className="col ps-0">
           <Analiz itemTitle={item.code} />
         </div>
-      </div>
-     <div className="row">
-      <div className="col">
-        <div className="">
-          <div className="stockDetail mb-5">
-
-          </div>
-        <Kazananlar />
+        <div className="col ps-0 mb-5">
+          <News itemTitle={item.code} itemText={item.text} />
         </div>
-        
       </div>
-     </div>
+      <div className="row">
+        <div className="col">
+          <div className="">
+            <div className="stockDetail mb-5"></div>
+            <Kazananlar />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

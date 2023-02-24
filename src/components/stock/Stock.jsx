@@ -20,7 +20,7 @@ const Stock = () => {
     const config = {
       headers: {
         "Content-type": "application/json",
-        "Authorization": "apikey 5AgkLxu3nrlKZ7pKKHEury:6gU7ouXtLMyQ8SrJr1n39X"
+        "Authorization": process.env.REACT_APP_TOKEN
       },
     };
     axios.get("https://api.collectapi.com/economy/hisseSenedi", config).then((res)=>{

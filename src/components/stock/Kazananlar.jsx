@@ -20,7 +20,7 @@ const Kazananlar = () => {
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,
-        "width": "300",
+        "width": "400",
         "height": "600",
         "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
         "plotLineColorFalling": "rgba(41, 98, 255, 1)",
@@ -37,7 +37,7 @@ const Kazananlar = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col">
+        <div className="col ps-0">
           <div class="tradingview-widget-container" ref={contariner}>
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright">

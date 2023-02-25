@@ -112,6 +112,7 @@ const Stock = () => {
            </tbody>
            )}
           </table>
+          <button className="btn btn-secondary mb-5" onClick={()=>navigate("/all-stocks")}>Tümünü Gör</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import SwiperSlider from "./SwiperSlider";
 import axios from "axios";
 import StickyDiv from "./StickyDiv";
+import Kazananlar from "./stock/Kazananlar";
+import HomeCryptoWidget from "./HomeCryptoWidget";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -18,11 +20,19 @@ const Home = () => {
 
   console.log(data);
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container ">
+      <div className="row justify-content-between">
         <div className="col-lg-8">
           <SwiperSlider />
+          <div className="col d-flex">
+            <Kazananlar />
+            <HomeCryptoWidget />
+
+          </div>
+          <div className="col">
+          </div>
         </div>
+
         <StickyDiv />
       </div>
     </div>

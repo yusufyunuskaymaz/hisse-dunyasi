@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,104 +11,52 @@ import "./styles.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
+  const navigate = useNavigate()
+
+  const directToNewsDetail = (name, description)=>{
+   navigate("news-detail", {state:{name,description}})
+  }
+
+  const [news, setNews] = useState([]);
+  const getData = async () => {
+    const URL =
+      "https://api.collectapi.com/news/getNews?country=tr&tag=economy";
+    const data = await axios.get(URL, {
+      headers: {
+        Authorization: `apikey 5AgkLxu3nrlKZ7pKKHEury:6gU7ouXtLMyQ8SrJr1n39X`,
+      },
+    });
+    setNews(data.data.result);
+  };
+  console.log(news, "haber");
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <>
+    <div className="mb-5">
       <Swiper
         pagination={{
           type: "progressbar",
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper ms-0"
-        style={{ maxHeight: "40rem", maxWidth: "40rem" }}
+        className="mySwiper"
+        style={{ maxHeight: "40rem", maxWidth: "52rem" }}
       >
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://imgrosetta.mynet.com.tr/file/16613140/16613140-640x360.jpg"
-            alt=""
-          />
-        </SwiperSlide>
+        {news.map((item) => {
+          return (
+            <SwiperSlide onClick={()=>directToNewsDetail(item.name,item.description)} type="button">
+              <h2 class="mytest">{item.name}</h2>
+              <img src={item.image} alt="" />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-    </>
+    </div>
   );
 }

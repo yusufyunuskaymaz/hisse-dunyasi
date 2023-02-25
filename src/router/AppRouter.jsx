@@ -16,6 +16,9 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import StockDetail from "../components/stock/StockDetail";
 import HareketliNavbar from "../components/HareketliNavbar";
+import KapDetail from "../components/stock/KapDetail";
+import SliderNews from "../components/SliderNews";
+import AllStocks from "../components/stock/AllStocks";
 
 const AppRouter = () => {
   return (
@@ -25,8 +28,11 @@ const AppRouter = () => {
       {/* <BottomNavbar /> */}
       <Routes>
         <Route path="" element={<Home />} />
+        <Route path="news-detail" element={<SliderNews />} />
         <Route path="stock" element={<Stock />} />
+        <Route path="all-stocks" element={<AllStocks />} />
         <Route path="stock/:item" element={<StockDetail />} />
+        <Route path="stock/newsDetail" element={<KapDetail />} />
         <Route path="gold" element={<Gold />} />
         <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />

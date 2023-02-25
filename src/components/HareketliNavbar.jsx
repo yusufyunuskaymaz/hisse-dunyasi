@@ -39,7 +39,7 @@ function TradingViewWidget() {
         "colorTheme": "light",
         "isTransparent": false,
         "displayMode": "adaptive",
-        "locale": "en"
+        "locale": "tr"
       }`;
       contariner.current.appendChild(script);
     },

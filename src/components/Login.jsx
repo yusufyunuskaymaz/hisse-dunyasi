@@ -26,7 +26,7 @@ const Login = () => {
             </button>
           </form>
           <div className="social-login">
-            <h3>log in via</h3>
+            <h3>Log In with</h3>
             <div className="social-icons">
               <a href="#" className="social-login__icon fab fa-instagram" />
               <a href="#" className="social-login__icon fab fa-facebook" />

@@ -9,7 +9,9 @@ const News = ({ itemTitle, itemText }) => {
   const [numberOfNews, setNumberOfNews] = useState(7);
   const [newsBody, setNewsBody] = useState(""); // Create a state variable for news body
 
-  const socket = io.connect("https://hisse-dunyasi.onrender.com");
+  const socket = io.connect("https://hisse-dunyasi.onrender.com",{
+    transports: ['websocket'],
+   });
   const itemLink =
     `${itemTitle}-${itemText}-detay/hisse-haberleri/`.toLowerCase("tr");
 

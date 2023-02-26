@@ -1,5 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  getAuth,
+} from "firebase/auth";
 import { async } from "q";
 
 //* Your web app's Firebase configuration
@@ -17,15 +21,25 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-export const createUser = async (email, password) => {
+export const createUser = async (email, password, navigate) => {
   try {
     let userCredental = await createUserWithEmailAndPassword(
       auth,
       email,
       password
     );
+    navigate("/");
     console.log(userCredental);
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
+  }
+};
+
+export const signIn = async (email, password, navigate) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    navigate("/");
+  } catch (error) {
+    alert(error.message);
   }
 };

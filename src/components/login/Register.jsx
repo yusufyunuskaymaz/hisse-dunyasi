@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { createUser } from "../../auth/firebase";
 import "./login.css";
 
@@ -6,10 +7,12 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(email, password);
+    createUser(email, password, navigate);
+
     console.log(userName);
   };
 
@@ -57,9 +60,8 @@ const Register = () => {
           <div className="social-login">
             <h3>Register with</h3>
             <div className="social-icons">
-              <a href="#" className="social-login__icon fab fa-instagram" />
+              <a href="#" className="social-login__icon fab fa-google" />
               <a href="#" className="social-login__icon fab fa-facebook" />
-              <a href="#" className="social-login__icon fab fa-twitter" />
             </div>
           </div>
         </div>

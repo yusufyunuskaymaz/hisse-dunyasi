@@ -1,5 +1,8 @@
 body{
-    /* background-color: #f2f2f2 !important; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh !important;
 }
 
 th{
@@ -42,4 +45,12 @@ ul{
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
    background-color: #deeef4; 
+ }
+
+ .mySwiper{
+    /* margin: 0 auto !important; */
+ }
+
+ .allStocks{
+    margin: 0 auto !important;
  }

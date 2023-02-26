@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AboutCompany from "./AboutCompany";
-import Analiz from "./Analiz";
-import CompanyInfo from "./CompanyInfo";
-import StockChart from "./StockChart";
-import TradingViewWidget from "./TradingView";
+import AboutCompany from "./TvWidgets/AboutCompany";
+import Analiz from "./TvWidgets/Analiz";
+import CompanyInfo from "./TvWidgets/CompanyInfo";
+import Kazananlar from "./TvWidgets/Kazananlar";
+import News from "./Kap/News";
+import TradingViewWidget from "./TvWidgets/TradingView";
+import StickySidebar from "./StickySidebar";
 
 
 const StockDetail = () => {
@@ -12,19 +14,16 @@ const StockDetail = () => {
   const { item } = state;
   const navigate = useNavigate();
 
+  
+
   return (
-    <div className="container">
-        {/* <StockChart itemTitle={item.title} hacimLot={item.hacim_lot} /> */}
-        <TradingViewWidget /> 
-      {/* <button className="btn btn-success" onClick={() => navigate("/")}>
-        Ana Sayfa
-      </button>
-      <button className="btn btn-warning ms-3" onClick={() => navigate(-1)}>
-        Geri
-      </button> */}
-      <div className="row justify-content-center">
-        {/* <div className="col col-lg-4">
-          <h3 className="display-4">{item.title}</h3>
+    <div className="container w-75 d-flex justify-content-evenly">
+      <div className="row justify-content-center flex-column">
+        <div className="col">
+          <TradingViewWidget itemTitle={item.code} />
+        </div>
+        <div className="col">
+          <h3 className="display-4">{item.code}</h3>
           <table
             className="table table-striped table-hover table-sm"
             style={{ width: "15rem" }}
@@ -33,33 +32,36 @@ const StockDetail = () => {
               <tr>
                 <th scope="col">Hisse </th>
                 <th scope="col">Son</th>
-                <th scope="col">Alış</th>
-                <th scope="col">Satış</th>
+                <th scope="col">Min</th>
+                <th scope="col">Max</th>
+                <th scope="col">Hacim</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">{item.title}</th>
-                <td>{item.son}</td>
-                <td>{item.alis}</td>
-                <td>{item.satis}</td>
+                <th scope="row">{item.code}</th>
+                <td>{item.lastprice}</td>
+                <td>{item.min}</td>
+                <td>{item.max}</td>
+                <td>{item.hacimstr}</td>
               </tr>
             </tbody>
           </table>
-        </div> */}
-        <div className="col">
-        <CompanyInfo />
-
         </div>
-        <div className="col">
-          <Analiz />
-          <AboutCompany />
+        <div className="col ps-0">
+          <CompanyInfo itemTitle={item.code} />
         </div>
-        <div className="col">
-          
+        <div className="col ps-0">
+          <AboutCompany itemTitle={item.code} />
+        </div>
+        <div className="col ps-0">
+          <Analiz itemTitle={item.code} />
+        </div>
+        <div className="col ps-0 mb-5">
+          <News itemTitle={item.code} itemText={item.text} />
         </div>
       </div>
-     {/* <TradingViewWidget /> */}
+      <StickySidebar />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import StickySidebar from "../stock/StickySidebar";
+
 
 function Crypto() {
   const navigate = useNavigate();
@@ -62,7 +64,9 @@ function Crypto() {
           </table>
         </div>
 
-        <div className="col-4 stickyDiv"></div>
+        <div className="col-4">
+          <StickySidebar />
+        </div>
       </div>
     </div>
   );

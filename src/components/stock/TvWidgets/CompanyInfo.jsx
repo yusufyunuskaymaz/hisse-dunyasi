@@ -1,24 +1,24 @@
 import React, { useEffect, useRef } from "react";
 
-const Analiz = () => {
+const CompanyInfo = ({itemTitle}) => {
   const contariner = useRef();
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js";
+      "https://s3.tradingview.com/external-embedding/embed-widget-financials.js";
     script.type = "text/javascript";
     script.async = true;
     script.innerHTML = `
       {
-        "interval": "1m",
-        "width": 425,
+        "colorTheme": "light",
         "isTransparent": false,
-        "height": 450,
-        "symbol": "BIST:THYAO",
-        "showIntervalTabs": true,
-        "locale": "tr",
-        "colorTheme": "light"
+        "largeChartUrl": "",
+        "displayMode": "regular",
+        "width": 480,
+        "height": 830,
+        "symbol": "BIST:${itemTitle}",
+        "locale": "tr"
       }`;
     contariner.current.appendChild(script);
   }, []);
@@ -30,11 +30,11 @@ const Analiz = () => {
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright">
               <a
-                href="https://tr.tradingview.com/symbols/NASDAQ-AAPL/technicals/"
+                href="https://tr.tradingview.com/symbols/BIST-THYAO/financials-overview/"
                 rel="noopener"
                 target="_blank"
               >
-                <span class="blue-text">AAPL hisse analizi</span>
+                <span class="blue-text">THYAO temeller</span>
               </a>{" "}
               TradingView tarafından
             </div>
@@ -45,4 +45,4 @@ const Analiz = () => {
   );
 };
 
-export default Analiz;
+export default CompanyInfo;

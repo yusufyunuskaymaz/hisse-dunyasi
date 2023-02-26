@@ -64,7 +64,7 @@ const News = ({ itemTitle, itemText }) => {
         <span></span>
       ) : (
         <button
-          className="btn btn-secondary col-2 mt-2"
+          className="btn btn-secondary col-3 mt-2"
           onClick={() => setNumberOfNews(numberOfNews + 7)}
         >
           Daha fazla...

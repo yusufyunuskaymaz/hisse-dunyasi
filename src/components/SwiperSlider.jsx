@@ -17,8 +17,8 @@ import { useNavigate } from "react-router-dom";
 export default function App() {
   const navigate = useNavigate()
 
-  const directToNewsDetail = (name, description)=>{
-   navigate("news-detail", {state:{name,description}})
+  const directToNewsDetail = (item)=>{
+   navigate("news-detail", {state:item})
   }
 
   const [news, setNews] = useState([]);
@@ -50,7 +50,7 @@ export default function App() {
       >
         {news.map((item) => {
           return (
-            <SwiperSlide onClick={()=>directToNewsDetail(item.name,item.description)} type="button">
+            <SwiperSlide onClick={()=>directToNewsDetail(item)} type="button">
               <h2 class="mytest">{item.name}</h2>
               <img src={item.image} alt="" />
             </SwiperSlide>

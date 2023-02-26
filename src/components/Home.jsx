@@ -24,7 +24,7 @@ const Home = () => {
       <div className="row justify-content-between">
         <div className="col-lg-8">
           <SwiperSlider />
-          <div className="col d-flex">
+          <div className="col d-flex flex-sm-column flex-lg-row flex-md-column">
             <Kazananlar />
             <HomeCryptoWidget />
 

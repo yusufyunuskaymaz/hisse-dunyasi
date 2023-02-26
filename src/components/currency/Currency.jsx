@@ -12,7 +12,7 @@ function Currency() {
   const getNewCurrency = async () => {
     const data = await axios.get(URL, {
       headers: {
-        Authorization: `apikey 2mIw6dYO7rrvEhJnchneMs:1k0jNh9oWEHMR7QHhS8Mle`,
+        Authorization: process.env.REACT_APP_TOKEN,
       },
     });
     // console.log(data.data.result);

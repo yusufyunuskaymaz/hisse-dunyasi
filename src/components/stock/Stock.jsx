@@ -7,7 +7,7 @@ import { style } from "@mui/system";
 
 const Stock = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [currentMessage, setCurrentMessage] = useState([]);
   // const sendMessage = () => {
   //   console.log("first");
@@ -17,17 +17,19 @@ const Stock = () => {
   // };
 
   const getDataFromApi = () => {
-    console.log("girdi")
+    console.log("girdi");
     const config = {
       headers: {
         "Content-type": "application/json",
-        "Authorization": process.env.REACT_APP_TOKEN
+        Authorization: process.env.REACT_APP_TOKEN,
       },
     };
-    axios.get("https://api.collectapi.com/economy/hisseSenedi", config).then((res)=>{
-      setData(res.data.result)
-      setLoading(false)
-    })
+    axios
+      .get("https://api.collectapi.com/economy/hisseSenedi", config)
+      .then((res) => {
+        setData(res.data.result);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -44,56 +46,63 @@ const Stock = () => {
 
   return (
     <div className="container">
-
       <div className="row">
         <div className="col-lg-8">
           <h1>Stock</h1>
           <div className="table-responsive">
-          <table
-            className="table table-striped  table-sm "
-            //   style={{ width: "15rem" }}
-          >
-            <thead>
-              <tr className="text-white" style={{ background: "#464c52" }}>
-                <th scope="col" colSpan="13">
-                  BIST100 Tablo
-                </th>
-              </tr>
-            </thead>
-            <thead>
-              <tr>
-                <th scope="col">Menkul Adı </th>
-                <th scope="col">Son</th>
-                <th scope="col">Min</th>
-                <th scope="col">Max</th>
-                <th scope="col">Hacim(Tl)</th>
-                <th scope="col">%</th>
-                <th scope="col">Son İş.</th>
-              </tr>
-            </thead>
-           {loading ? (<p className="display-6 text-center">Yükleniyor...</p>) : (
-             <tbody>
-             {data.slice(0,100).map((item, index) => {
-               return (
-                 <tr
-                   key={index}
-                   onClick={() =>
-                     navigate(`${item.code}`, {
-                       state: {
-                         item,
-                       },
-                     })
-                   }
-                   role="button"
-                 >
-                   <th scope="row">{item.text}</th>
-                   <td>{item.lastprice}</td>
-                   <td>{item.min}</td>
-                   <td>{item.max}</td>
-                   <td>{item.hacimstr}</td>
-                   <td>{item.rate}</td>
-                   <td>{item.time}</td>
-                   {/* <td>{item.son}</td>
+            <table
+              className="table table-striped  table-sm "
+              //   style={{ width: "15rem" }}
+            >
+              <thead>
+                <tr className="text-white" style={{ background: "#464c52" }}>
+                  <th scope="col" colSpan="13">
+                    BIST100 Tablo
+                  </th>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th scope="col">Menkul Adı </th>
+                  <th scope="col">Son</th>
+                  <th scope="col">Min</th>
+                  <th scope="col">Max</th>
+                  <th scope="col">Hacim(Tl)</th>
+                  <th scope="col">%</th>
+                  <th scope="col">Son İş.</th>
+                </tr>
+              </thead>
+              {loading ? (
+                <div className="w-100 text-center">
+                  <div class="d-flex justify-content-center ">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <tbody>
+                  {data.slice(0, 100).map((item, index) => {
+                    return (
+                      <tr
+                        key={index}
+                        onClick={() =>
+                          navigate(`${item.code}`, {
+                            state: {
+                              item,
+                            },
+                          })
+                        }
+                        role="button"
+                      >
+                        <th scope="row">{item.text}</th>
+                        <td>{item.lastprice}</td>
+                        <td>{item.min}</td>
+                        <td>{item.max}</td>
+                        <td>{item.hacimstr}</td>
+                        <td>{item.rate}</td>
+                        <td>{item.time}</td>
+                        {/* <td>{item.son}</td>
                    <td>{item.alis}</td>
                    <td>{item.satis}</td>
                    <td>{item.yuksek}</td>
@@ -103,16 +112,21 @@ const Stock = () => {
                    <td>{item.hacim_lot}</td>
                    <td>{item.hacim_tl}</td>
                    <td>{item.son_islem}</td> */}
-                   {/* <td>{item.son}</td>
+                        {/* <td>{item.son}</td>
                      <td>{item.son}</td> */}
-                   <td></td>
-                 </tr>
-               );
-             })}
-           </tbody>
-           )}
-          </table>
-          <button className="btn btn-secondary mb-5" onClick={()=>navigate("/all-stocks")}>Tümünü Gör</button>
+                        <td></td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              )}
+            </table>
+            <button
+              className="btn btn-secondary mb-5"
+              onClick={() => navigate("/all-stocks")}
+            >
+              Tümünü Gör
+            </button>
           </div>
         </div>
       </div>

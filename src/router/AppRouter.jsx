@@ -1,23 +1,23 @@
 import React from "react";
 
-import Navbar from "../components/Navbar";
-import BottomNavbar from "../components/BottomNavbar";
-import Home from "../components/Home";
-import Footer from "../components/Footer";
+import Navbar from "../components/router/Navbar";
+import BottomNavbar from "../components/router/BottomNavbar";
+import Home from "../components/home/Home";
+import Footer from "../components/router/Footer";
 import Stock from "../components/stock/Stock";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Gold from "../components/gold/Gold";
 import Currency from "../components/currency/Currency";
 import CurrencyDetail from "../components/currency/CurrencyDetail";
 import GoldDetail from "../components/gold/GoldDetail";
-import Crypto from "../components/Crypto.jsx";
-import CryptoDetail from "../components/CryptoDetail";
-import Login from "../components/Login";
-import Register from "../components/Register";
+import Crypto from "../components/crypto/Crypto.jsx";
+import CryptoDetail from "../components/crypto/CryptoDetail";
+import Login from "../components/login/Login";
+import Register from "../components/login/Register";
 import StockDetail from "../components/stock/StockDetail";
-import HareketliNavbar from "../components/HareketliNavbar";
+import HareketliNavbar from "../components/router/HareketliNavbar";
 import KapDetail from "../components/stock/KapDetail";
-import SliderNews from "../components/SliderNews";
+import SliderNews from "../components/home/SliderNews";
 import AllStocks from "../components/stock/AllStocks";
 
 const AppRouter = () => {

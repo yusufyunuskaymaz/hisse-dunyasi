@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AboutCompany from "./AboutCompany";
-import Analiz from "./Analiz";
-import CompanyInfo from "./CompanyInfo";
-import Kazananlar from "./Kazananlar";
+import AboutCompany from "./TvWidgets/AboutCompany";
+import Analiz from "./TvWidgets/Analiz";
+import CompanyInfo from "./TvWidgets/CompanyInfo";
+import Kazananlar from "./TvWidgets/Kazananlar";
 import News from "./News";
 import StockChart from "./StockChart";
-import TradingViewWidget from "./TradingView";
+import TradingViewWidget from "./TvWidgets/TradingView";
 
 
 const StockDetail = () => {

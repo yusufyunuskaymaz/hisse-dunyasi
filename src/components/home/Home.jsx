@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SwiperSlider from "./SwiperSlider";
 import axios from "axios";
-import StickyDiv from "./StickyDiv";
-import Kazananlar from "./stock/Kazananlar";
+import StickyDiv from "../router/StickyDiv";
+import Kazananlar from "../stock/Kazananlar";
 import HomeCryptoWidget from "./HomeCryptoWidget";
 
 const Home = () => {

@@ -3,6 +3,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { async } from "q";
 
@@ -42,4 +44,18 @@ export const signIn = async (email, password, navigate) => {
   } catch (error) {
     alert(error.message);
   }
+};
+
+export const userObserver = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+    } else {
+      console.log("user sign out");
+    }
+  });
+};
+
+export const logOut = () => {
+  signOut(auth);
 };

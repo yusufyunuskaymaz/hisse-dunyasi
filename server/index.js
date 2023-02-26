@@ -80,3 +80,28 @@ const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log("SERVER RUNNING");
 });
+
+
+
+const deneme = async ()=>{
+  const url2 = `https://bigpara.hurriyet.com.tr/borsa/canli-borsa/`;
+let news = [];
+
+try {
+  const response =  await axios.get(url2);
+  const $ = cheerio.load(response.data);
+  const booksa = $('div[class="tBody ui-unsortable"] > ul');
+  booksa.each(function () {
+    const title = $(this).find('li[class="cell064 tal arrow"]').text().trim();
+
+
+    news.push(title);
+  });
+
+} catch (error) {
+  console.error(error);
+}
+
+console.log(news)
+}
+deneme()

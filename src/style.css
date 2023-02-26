@@ -3,6 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
 
 th{

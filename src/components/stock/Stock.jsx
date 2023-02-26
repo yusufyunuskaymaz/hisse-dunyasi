@@ -4,9 +4,12 @@ import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
+
 // const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
+  
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentMessage, setCurrentMessage] = useState([]);
@@ -164,6 +167,7 @@ const Stock = () => {
               <thead>
                 <tr>
                   <th scope="col">Adı</th>
+                  <th scope="col"></th>
                   <th scope="col">Son</th>
                   <th scope="col">Min</th>
                   <th scope="col">Max</th>
@@ -173,11 +177,9 @@ const Stock = () => {
                 </tr>
               </thead>
               {loading ? (
-                <div className="w-100 text-center">
-                  <div className="d-flex justify-content-center ">
-                    <div className="spinner-border text-primary" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
+                <div className="d-flex justify-content-center mt-3">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
                 </div>
               ) : (
@@ -188,8 +190,6 @@ const Stock = () => {
                     })
                     .sort((a, b) => (a.code < b.code ? -1 : 1))
                     .map((item, index) => {
-                      let dataRate;
-
                       return (
                         <tr
                           key={index}
@@ -207,6 +207,19 @@ const Stock = () => {
                             style={{ color: "#2962ff", fontSize: "14px" }}
                           >
                             {item.code}
+                          </th>
+                          <th>
+                            {item.rate < 0 ? (
+                              <i
+                                class="fa-solid fa-caret-down"
+                                style={{ color: "red", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                class="fa-solid fa-caret-up"
+                                style={{ color: "green", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
                           </th>
                           <td>{item.lastprice}</td>
                           <td>{item.min}</td>

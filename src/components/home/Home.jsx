@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import SwiperSlider from "./SwiperSlider";
+import SwiperSlider from "./SwiperNews/SwiperSlider";
 import axios from "axios";
 import StickyDiv from "../router/StickyDiv";
-import Kazananlar from "../stock/Kazananlar";
+import Kazananlar from "../stock/TvWidgets/Kazananlar";
 import HomeCryptoWidget from "./HomeCryptoWidget";
+import StickySidebar from "../stock/StickySidebar";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -33,7 +34,9 @@ const Home = () => {
           </div>
         </div>
 
-        <StickyDiv />
+        <div className="col-lg-3">
+        <StickySidebar />
+        </div>
       </div>
     </div>
   );

@@ -16,9 +16,9 @@ import Login from "../components/login/Login";
 import Register from "../components/login/Register";
 import StockDetail from "../components/stock/StockDetail";
 import HareketliNavbar from "../components/router/HareketliNavbar";
-import KapDetail from "../components/stock/KapDetail";
-import SliderNews from "../components/home/SliderNews";
-import AllStocks from "../components/stock/AllStocks";
+import KapDetail from "../components/stock/Kap/KapDetail";
+import SliderNews from "../components/home/SwiperNews/SliderNews";
+import AllStocks from "../components/stock/TvWidgets/AllStocks";
 
 const AppRouter = () => {
   return (

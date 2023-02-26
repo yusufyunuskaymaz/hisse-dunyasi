@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import StickySidebar from "../stock/StickySidebar";
 
 function Currency() {
   const navigate = useNavigate();
@@ -75,7 +76,9 @@ function Currency() {
             </table>
           </div>
 
-          <div className="col-4 stickyDiv"></div>
+          <div className="col-4">
+            <StickySidebar />
+          </div>
         </div>
       </div>
     </div>

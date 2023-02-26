@@ -20,7 +20,7 @@ const Kazananlar = () => {
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,
-        "width": "400",
+        "width": "300",
         "height": "600",
         "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
         "plotLineColorFalling": "rgba(41, 98, 255, 1)",

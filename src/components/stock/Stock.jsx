@@ -3,6 +3,7 @@ import axios from "axios";
 import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
+import StickySidebar from "./StickySidebar";
 // const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
@@ -48,7 +49,7 @@ const Stock = () => {
     <div className="container">
       <div className="row">
         <div className="col-lg-8">
-          <h1>Stock</h1>
+          <h1 className="text-center mb-4">BIST100 Tablo</h1>
           <div className="table-responsive">
             <table
               className="table table-striped  table-sm "
@@ -121,13 +122,18 @@ const Stock = () => {
                 </tbody>
               )}
             </table>
+            <div className="text-center">
             <button
-              className="btn btn-secondary mb-5"
+              className="btn btn-primary mb-5 "
               onClick={() => navigate("/all-stocks")}
             >
               Tümünü Gör
             </button>
+            </div>
           </div>
+        </div>
+        <div className="col-lg-4">
+          <StickySidebar />
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "../styles.css";
+import "../../styles.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper";
@@ -46,7 +46,7 @@ export default function App() {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-        style={{ maxHeight: "40rem", maxWidth: "52rem" }}
+        style={{ maxHeight: "40rem", maxWidth: "50rem" }}
       >
         {news.map((item) => {
           return (

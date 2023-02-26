@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createUser } from "../../auth/firebase";
 import "./login.css";
 
 const Register = () => {
@@ -8,6 +9,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    createUser(email, password);
     console.log(userName);
   };
 

@@ -4,11 +4,11 @@ import Kazananlar from './TvWidgets/Kazananlar'
 
 const StickySidebar = () => {
   return (
-    <div className="row">
+    <div className="row stickSidebar">
         <div className="col">
           <div className="">
-            <div className="stockDetail mb-5"></div>
             <Kazananlar />
+            <div className="stockDetail mb-5"></div>
           </div>
         </div>
       </div>

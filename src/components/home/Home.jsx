@@ -34,7 +34,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-lg-3">
+        <div className="col-lg-4">
         <StickySidebar />
         </div>
       </div>

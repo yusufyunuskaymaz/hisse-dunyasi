@@ -40,12 +40,12 @@ const Register = () => {
               />
             </div>
             <button className="button login__submit">
-              <span className="button__text">Log In</span>
+              <span className="button__text">Register</span>
               <i className="button__icon fas fa-chevron-right" />
             </button>
           </form>
           <div className="social-login">
-            <h3>log in via</h3>
+            <h3>Register with</h3>
             <div className="social-icons">
               <a href="#" className="social-login__icon fab fa-instagram" />
               <a href="#" className="social-login__icon fab fa-facebook" />

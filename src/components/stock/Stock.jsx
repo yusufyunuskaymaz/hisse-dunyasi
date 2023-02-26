@@ -49,22 +49,22 @@ const Stock = () => {
     <div className="container">
       <div className="row">
         <div className="col-lg-8">
-          <h1 className="text-center mb-4">BIST100 Tablo</h1>
+          <h1 className="text-center mb-4">BIST 100 Tablo</h1>
           <div className="table-responsive">
             <table
-              className="table table-striped  table-sm "
+              className="table table-hover"
               //   style={{ width: "15rem" }}
             >
-              <thead>
+              {/* <thead>
                 <tr className="text-white" style={{ background: "#464c52" }}>
                   <th scope="col" colSpan="13">
                     BIST100 Tablo
                   </th>
                 </tr>
-              </thead>
+              </thead> */}
               <thead>
                 <tr>
-                  <th scope="col">Menkul Adı </th>
+                  <th scope="col">Adı</th>
                   <th scope="col">Son</th>
                   <th scope="col">Min</th>
                   <th scope="col">Max</th>
@@ -96,12 +96,12 @@ const Stock = () => {
                         }
                         role="button"
                       >
-                        <th scope="row">{item.text}</th>
+                        <th scope="row" style={{color:"#2962ff", fontSize:"14px"}}>{item.code}</th>
                         <td>{item.lastprice}</td>
                         <td>{item.min}</td>
                         <td>{item.max}</td>
                         <td>{item.hacimstr}</td>
-                        <td>{item.rate}</td>
+                       {item.rate > 0 ? (<td style={{color:"green"}}>{item.rate}</td>) : (<td style={{color:"red"}}>{item.rate}</td>)} 
                         <td>{item.time}</td>
                         {/* <td>{item.son}</td>
                    <td>{item.alis}</td>

@@ -4,9 +4,12 @@ import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
+
 // const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
+  
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentMessage, setCurrentMessage] = useState([]);
@@ -45,6 +48,105 @@ const Stock = () => {
   const navigate = useNavigate();
   console.log(data, "data");
 
+  const BIST_100 = [
+    "AEFES",
+    "AFYON",
+    "AKBNK",
+    "AKENR",
+    "AKSA",
+    "AKSEN",
+    "ALARK",
+    "ALGYO",
+    "ANELE",
+    "ARCLK",
+    "ASELS",
+    "AYGAZ",
+    "BAGFS",
+    "BANVT",
+    "BERA",
+    "BIMAS",
+    "BIZIM",
+    "BJKAS",
+    "BRISA",
+    "BRSAN",
+    "CCOLA",
+    "CEMTS",
+    "CRFSA",
+    "DEVA",
+    "DOAS",
+    "DOHOL",
+    "ECILC",
+    "EGEEN",
+    "EKGYO",
+    "ENKAI",
+    "ERBOS",
+    "EREGL",
+    "FENER",
+    "FROTO",
+    "GARAN",
+    "GLYHO",
+    "GOLTS",
+    "GOODY",
+    "GOZDE",
+    "GSDHO",
+    "GSRAY",
+    "GUBRF",
+    "HALKB",
+    "HLGYO",
+    "HURGZ",
+    "ICBCT",
+    "IEYHO",
+    "IHLAS",
+    "IHLGM",
+    "IPEKE",
+    "ISCTR",
+    "ISGYO",
+    "KARSN",
+    "KARTN",
+    "KCHOL",
+    "KLGYO",
+    "KORDS",
+    "KOZAA",
+    "KOZAL",
+    "KRDMD",
+    "MAVI",
+    "METRO",
+    "MGROS",
+    "NETAS",
+    "NTHOL",
+    "ODAS",
+    "OTKAR",
+    "PETKM",
+    "PGSUS",
+    "PRKME",
+    "SAHOL",
+    "SASA",
+    "SISE",
+    "SKBNK",
+    "SNGYO",
+    "TATGD",
+    "TAVHL",
+    "TCELL",
+    "THYAO",
+    "TKFEN",
+    "TKNSA",
+    "TLMAN",
+    "TMSN",
+    "TOASO",
+    "TRCAS",
+    "TSKB",
+    "TTKOM",
+    "TTRAK",
+    "TUPRS",
+    "ULKER",
+    "VAKBN",
+    "VESTL",
+    "VKGYO",
+    "YATAS",
+    "YKBNK",
+    "ZOREN",
+  ];
+
   return (
     <div className="container">
       <div className="row">
@@ -65,6 +167,7 @@ const Stock = () => {
               <thead>
                 <tr>
                   <th scope="col">Adı</th>
+                  <th scope="col"></th>
                   <th scope="col">Son</th>
                   <th scope="col">Min</th>
                   <th scope="col">Max</th>
@@ -74,61 +177,73 @@ const Stock = () => {
                 </tr>
               </thead>
               {loading ? (
-                <div className="w-100 text-center">
-                  <div class="d-flex justify-content-center ">
-                    <div class="spinner-border text-primary" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
+                <div className="d-flex justify-content-center mt-3">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
                 </div>
               ) : (
                 <tbody>
-                  {data.slice(0, 100).map((item, index) => {
-                    return (
-                      <tr
-                        key={index}
-                        onClick={() =>
-                          navigate(`${item.code}`, {
-                            state: {
-                              item,
-                            },
-                          })
-                        }
-                        role="button"
-                      >
-                        <th scope="row" style={{color:"#2962ff", fontSize:"14px"}}>{item.code}</th>
-                        <td>{item.lastprice}</td>
-                        <td>{item.min}</td>
-                        <td>{item.max}</td>
-                        <td>{item.hacimstr}</td>
-                       {item.rate > 0 ? (<td style={{color:"green"}}>{item.rate}</td>) : (<td style={{color:"red"}}>{item.rate}</td>)} 
-                        <td>{item.time}</td>
-                        {/* <td>{item.son}</td>
-                   <td>{item.alis}</td>
-                   <td>{item.satis}</td>
-                   <td>{item.yuksek}</td>
-                   <td>{item.dusus}</td>
-                   <td>{item.aylik_ort}</td>
-                   <td>{item.yuzde}</td>
-                   <td>{item.hacim_lot}</td>
-                   <td>{item.hacim_tl}</td>
-                   <td>{item.son_islem}</td> */}
-                        {/* <td>{item.son}</td>
-                     <td>{item.son}</td> */}
-                        <td></td>
-                      </tr>
-                    );
-                  })}
+                  {data
+                    .filter((item) => {
+                      return BIST_100.includes(item.code);
+                    })
+                    .sort((a, b) => (a.code < b.code ? -1 : 1))
+                    .map((item, index) => {
+                      return (
+                        <tr
+                          key={index}
+                          onClick={() =>
+                            navigate(`${item.code}`, {
+                              state: {
+                                item,
+                              },
+                            })
+                          }
+                          role="button"
+                        >
+                          <th
+                            scope="row"
+                            style={{ color: "#2962ff", fontSize: "14px" }}
+                          >
+                            {item.code}
+                          </th>
+                          <th>
+                            {item.rate < 0 ? (
+                              <i
+                                class="fa-solid fa-caret-down"
+                                style={{ color: "red", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                class="fa-solid fa-caret-up"
+                                style={{ color: "green", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
+                          </th>
+                          <td>{item.lastprice}</td>
+                          <td>{item.min}</td>
+                          <td>{item.max}</td>
+                          <td>{item.hacimstr}</td>
+                          {item.rate > 0 ? (
+                            <td className="text-success">{item.rate}</td>
+                          ) : (
+                            <td className="text-danger">{item.rate}</td>
+                          )}
+                          <td>{item.time}</td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
               )}
             </table>
             <div className="text-center">
-            <button
-              className="btn btn-primary mb-5 "
-              onClick={() => navigate("/all-stocks")}
-            >
-              Tümünü Gör
-            </button>
+              <button
+                className="btn btn-primary mb-5 "
+                onClick={() => navigate("/all-stocks")}
+              >
+                Tümünü Gör
+              </button>
             </div>
           </div>
         </div>

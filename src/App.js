@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { userObserver } from "./auth/firebase";
+import AuthcontextProvider from "./context/AuthcontextProvider";
 import AppRouter from "./router/AppRouter";
 import "./style.css";
 
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <>
-      <AppRouter />
+      <AuthcontextProvider>
+        <AppRouter />
+      </AuthcontextProvider>
     </>
   );
 }

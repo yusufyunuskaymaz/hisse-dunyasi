@@ -27,12 +27,8 @@ const AppRouter = () => {
       <HareketliNavbar />
       {/* <BottomNavbar /> */}
       <Routes>
-<<<<<<< HEAD
         <Route path="/" element={<Home />} />
-=======
-        <Route path="" element={<Home />} />
         <Route path="news-detail" element={<SliderNews />} />
->>>>>>> 1f5f68e147e4b38d492edd95d591632882cc56a4
         <Route path="stock" element={<Stock />} />
         <Route path="all-stocks" element={<AllStocks />} />
         <Route path="stock/:item" element={<StockDetail />} />
@@ -45,7 +41,9 @@ const AppRouter = () => {
         <Route path="crypto/:item" element={<CryptoDetail />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="*" element={<Navigate to="" />}/>
+        <Route path="*" element={<Navigate to="" />} />
+
+        
       </Routes>
       <Footer />
     </BrowserRouter>

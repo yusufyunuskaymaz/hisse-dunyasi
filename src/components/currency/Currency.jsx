@@ -16,7 +16,7 @@ function Currency() {
     axios
       .get(URL, {
         headers: {
-          Authorization: "apikey 3So1tm7udXlSpp15K1vCWz:2ZOGakZ9U5V2uZE7BErZVh",
+          Authorization: process.env.REACT_APP_TOKEN
         },
       })
       .then((res) => setNewCurrencyData(res.data.result))

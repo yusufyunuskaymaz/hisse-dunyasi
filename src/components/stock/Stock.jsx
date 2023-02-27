@@ -3,11 +3,15 @@ import axios from "axios";
 import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
+import StickySidebar from "./StickySidebar";
+
 // const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
+  
+
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [currentMessage, setCurrentMessage] = useState([]);
   // const sendMessage = () => {
   //   console.log("first");
@@ -17,17 +21,19 @@ const Stock = () => {
   // };
 
   const getDataFromApi = () => {
-    console.log("girdi")
+    console.log("girdi");
     const config = {
       headers: {
         "Content-type": "application/json",
-        "Authorization": process.env.REACT_APP_TOKEN
+        Authorization: process.env.REACT_APP_TOKEN,
       },
     };
-    axios.get("https://api.collectapi.com/economy/hisseSenedi", config).then((res)=>{
-      setData(res.data.result)
-      setLoading(false)
-    })
+    axios
+      .get("https://api.collectapi.com/economy/hisseSenedi", config)
+      .then((res) => {
+        setData(res.data.result);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -42,77 +48,207 @@ const Stock = () => {
   const navigate = useNavigate();
   console.log(data, "data");
 
+  const BIST_100 = [
+    "AEFES",
+    "AFYON",
+    "AKBNK",
+    "AKENR",
+    "AKSA",
+    "AKSEN",
+    "ALARK",
+    "ALGYO",
+    "ANELE",
+    "ARCLK",
+    "ASELS",
+    "AYGAZ",
+    "BAGFS",
+    "BANVT",
+    "BERA",
+    "BIMAS",
+    "BIZIM",
+    "BJKAS",
+    "BRISA",
+    "BRSAN",
+    "CCOLA",
+    "CEMTS",
+    "CRFSA",
+    "DEVA",
+    "DOAS",
+    "DOHOL",
+    "ECILC",
+    "EGEEN",
+    "EKGYO",
+    "ENKAI",
+    "ERBOS",
+    "EREGL",
+    "FENER",
+    "FROTO",
+    "GARAN",
+    "GLYHO",
+    "GOLTS",
+    "GOODY",
+    "GOZDE",
+    "GSDHO",
+    "GSRAY",
+    "GUBRF",
+    "HALKB",
+    "HLGYO",
+    "HURGZ",
+    "ICBCT",
+    "IEYHO",
+    "IHLAS",
+    "IHLGM",
+    "IPEKE",
+    "ISCTR",
+    "ISGYO",
+    "KARSN",
+    "KARTN",
+    "KCHOL",
+    "KLGYO",
+    "KORDS",
+    "KOZAA",
+    "KOZAL",
+    "KRDMD",
+    "MAVI",
+    "METRO",
+    "MGROS",
+    "NETAS",
+    "NTHOL",
+    "ODAS",
+    "OTKAR",
+    "PETKM",
+    "PGSUS",
+    "PRKME",
+    "SAHOL",
+    "SASA",
+    "SISE",
+    "SKBNK",
+    "SNGYO",
+    "TATGD",
+    "TAVHL",
+    "TCELL",
+    "THYAO",
+    "TKFEN",
+    "TKNSA",
+    "TLMAN",
+    "TMSN",
+    "TOASO",
+    "TRCAS",
+    "TSKB",
+    "TTKOM",
+    "TTRAK",
+    "TUPRS",
+    "ULKER",
+    "VAKBN",
+    "VESTL",
+    "VKGYO",
+    "YATAS",
+    "YKBNK",
+    "ZOREN",
+  ];
+
   return (
     <div className="container">
-
       <div className="row">
         <div className="col-lg-8">
-          <h1>Stock</h1>
+          <h1 className="text-center mb-4">BIST 100 Tablo</h1>
           <div className="table-responsive">
-          <table
-            className="table table-striped  table-sm "
-            //   style={{ width: "15rem" }}
-          >
-            <thead>
-              <tr className="text-white" style={{ background: "#464c52" }}>
-                <th scope="col" colSpan="13">
-                  BIST100 Tablo
-                </th>
-              </tr>
-            </thead>
-            <thead>
-              <tr>
-                <th scope="col">Menkul Adı </th>
-                <th scope="col">Son</th>
-                <th scope="col">Min</th>
-                <th scope="col">Max</th>
-                <th scope="col">Hacim(Tl)</th>
-                <th scope="col">%</th>
-                <th scope="col">Son İş.</th>
-              </tr>
-            </thead>
-           {loading ? (<p className="display-6 text-center">Yükleniyor...</p>) : (
-             <tbody>
-             {data.slice(0,100).map((item, index) => {
-               return (
-                 <tr
-                   key={index}
-                   onClick={() =>
-                     navigate(`${item.code}`, {
-                       state: {
-                         item,
-                       },
-                     })
-                   }
-                   role="button"
-                 >
-                   <th scope="row">{item.text}</th>
-                   <td>{item.lastprice}</td>
-                   <td>{item.min}</td>
-                   <td>{item.max}</td>
-                   <td>{item.hacimstr}</td>
-                   <td>{item.rate}</td>
-                   <td>{item.time}</td>
-                   {/* <td>{item.son}</td>
-                   <td>{item.alis}</td>
-                   <td>{item.satis}</td>
-                   <td>{item.yuksek}</td>
-                   <td>{item.dusus}</td>
-                   <td>{item.aylik_ort}</td>
-                   <td>{item.yuzde}</td>
-                   <td>{item.hacim_lot}</td>
-                   <td>{item.hacim_tl}</td>
-                   <td>{item.son_islem}</td> */}
-                   {/* <td>{item.son}</td>
-                     <td>{item.son}</td> */}
-                   <td></td>
-                 </tr>
-               );
-             })}
-           </tbody>
-           )}
-          </table>
+            <table
+              className="table table-hover"
+              //   style={{ width: "15rem" }}
+            >
+              {/* <thead>
+                <tr className="text-white" style={{ background: "#464c52" }}>
+                  <th scope="col" colSpan="13">
+                    BIST100 Tablo
+                  </th>
+                </tr>
+              </thead> */}
+              <thead>
+                <tr>
+                  <th scope="col">Adı</th>
+                  <th scope="col"></th>
+                  <th scope="col">Son</th>
+                  <th scope="col">Min</th>
+                  <th scope="col">Max</th>
+                  <th scope="col">Hacim(Tl)</th>
+                  <th scope="col">%</th>
+                  <th scope="col">Son İş.</th>
+                </tr>
+              </thead>
+              {loading ? (
+                <div className="d-flex justify-content-center mt-3">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              ) : (
+                <tbody>
+                  {data
+                    .filter((item) => {
+                      return BIST_100.includes(item.code);
+                    })
+                    .sort((a, b) => (a.code < b.code ? -1 : 1))
+                    .map((item, index) => {
+                      return (
+                        <tr
+                          key={index}
+                          onClick={() =>
+                            navigate(`${item.code}`, {
+                              state: {
+                                item,
+                              },
+                            })
+                          }
+                          role="button"
+                        >
+                          <th
+                            scope="row"
+                            style={{ color: "#2962ff", fontSize: "14px" }}
+                          >
+                            {item.code}
+                          </th>
+                          <th>
+                            {item.rate < 0 ? (
+                              <i
+                                class="fa-solid fa-caret-down"
+                                style={{ color: "red", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                class="fa-solid fa-caret-up"
+                                style={{ color: "green", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
+                          </th>
+                          <td>{item.lastprice}</td>
+                          <td>{item.min}</td>
+                          <td>{item.max}</td>
+                          <td>{item.hacimstr}</td>
+                          {item.rate > 0 ? (
+                            <td className="text-success">{item.rate}</td>
+                          ) : (
+                            <td className="text-danger">{item.rate}</td>
+                          )}
+                          <td>{item.time}</td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              )}
+            </table>
+            <div className="text-center">
+              <button
+                className="btn btn-primary mb-5 "
+                onClick={() => navigate("/all-stocks")}
+              >
+                Tümünü Gör
+              </button>
+            </div>
           </div>
+        </div>
+        <div className="col-lg-4">
+          <StickySidebar />
         </div>
       </div>
     </div>

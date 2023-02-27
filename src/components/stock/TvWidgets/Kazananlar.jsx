@@ -37,7 +37,7 @@ const Kazananlar = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col">
+        <div className="col ps-0">
           <div class="tradingview-widget-container" ref={contariner}>
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright">

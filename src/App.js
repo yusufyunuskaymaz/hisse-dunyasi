@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import AuthcontextProvider from "./context/AuthContextProvider";
 import AppRouter from "./router/AppRouter";
 import "./style.css";
 
@@ -6,14 +7,12 @@ import "./style.css";
 
 // import required modules
 
-
 function App() {
-  
-
-
   return (
     <>
-     <AppRouter />
+      <AuthcontextProvider>
+        <AppRouter />
+      </AuthcontextProvider>
     </>
   );
 }

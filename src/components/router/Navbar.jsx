@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { logOut } from "../../auth/firebase";
+import { AuthContext } from "../../context/AuthContextProvider";
 
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
@@ -69,6 +72,16 @@ const Navbar = () => {
                   >
                     Kayıt Ol
                   </NavLink>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link "
+                    aria-current="page"
+                    to="/login"
+                    onClick={() => logOut()}
+                  >
+                    Log out
+                  </Link>
                 </li>
               </ul>
             </div>

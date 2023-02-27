@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AboutCompany from "./AboutCompany";
-import Analiz from "./Analiz";
-import CompanyInfo from "./CompanyInfo";
-import Kazananlar from "./Kazananlar";
-import News from "./News";
-import StockChart from "./StockChart";
-import TradingViewWidget from "./TradingView";
+import AboutCompany from "./TvWidgets/AboutCompany";
+import Analiz from "./TvWidgets/Analiz";
+import CompanyInfo from "./TvWidgets/CompanyInfo";
+import Kazananlar from "./TvWidgets/Kazananlar";
+import News from "./Kap/News";
+import TradingViewWidget from "./TvWidgets/TradingView";
+import StickySidebar from "./StickySidebar";
 
 
 const StockDetail = () => {
@@ -61,14 +61,7 @@ const StockDetail = () => {
           <News itemTitle={item.code} itemText={item.text} />
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <div className="">
-            <div className="stockDetail mb-5"></div>
-            <Kazananlar />
-          </div>
-        </div>
-      </div>
+      <StickySidebar />
     </div>
   );
 };

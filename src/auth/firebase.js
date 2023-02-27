@@ -46,9 +46,11 @@ export const signIn = async (email, password, navigate) => {
   }
 };
 
-export const userObserver = () => {
+export const userObserver = (setCurrentUser) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      const { email, displayName, photoURL } = user;
+      setCurrentUser({ email, displayName, photoURL });
       console.log(user);
     } else {
       console.log("user sign out");

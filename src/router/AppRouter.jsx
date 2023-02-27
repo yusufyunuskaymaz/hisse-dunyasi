@@ -5,7 +5,7 @@ import BottomNavbar from "../components/BottomNavbar";
 import Home from "../components/Home";
 import Footer from "../components/Footer";
 import Stock from "../components/stock/Stock";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Gold from "../components/gold/Gold";
 import Currency from "../components/currency/Currency";
 import CurrencyDetail from "../components/currency/CurrencyDetail";
@@ -24,7 +24,7 @@ const AppRouter = () => {
       <HareketliNavbar />
       {/* <BottomNavbar /> */}
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="stock" element={<Stock />} />
         <Route path="stock/:item" element={<StockDetail />} />
         <Route path="gold" element={<Gold />} />
@@ -35,6 +35,7 @@ const AppRouter = () => {
         <Route path="crypto/:item" element={<CryptoDetail />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="*" element={<Navigate to="" />}/>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,27 +1,50 @@
 import { useLocation, useParams } from "react-router-dom";
 
+
 function CurrencyDetail() {
   const { state: item } = useLocation();
 
-  console.log(item?.code);
+  console.log(item);
   return (
     <div>
-      <div className="container border mb-2">
+      <div className="container ">
         <div className="row">
-          <div className="col-8 border border-4" >
-            <div className="" style={{color:"orange",fontSize:"2rem"}}>{item?.code}</div>
-            <div className="row">
-              <div className=" col-4 border border-4">
-                {item.selling}
-                <div>
-                  Son:{item.date} {item.time}
-                </div>
+          <div className="col-8 ">
+            <div
+              className=""
+              style={{
+                color: "orange",
+                fontSize: "2rem",
+                background: "#464c52",
+                textAlign: "start",
+                padding: "1rem",
+              }}
+            >
+              {item?.code}
+            </div>
+            <div
+              className="row  "
+              style={{
+                fontSize: "2rem",
+                padding: "1rem",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div className=" col-4 ">
+                <div>Alış</div>
+                {item.buying}
               </div>
-             
-              <div className="col-2 border border-4">{item.rate} Günlük Değişim</div>
-              <div className="col-2 border border-4">{item.rate} En Yüksek</div>
-              <div className="col-2 border border-4">{item.rate} En Düşük</div>
-              <div className="col-2 border border-4">Yorumlar</div>
+              <div className="col-4">
+                <div>Satış</div>
+                {item.selling}
+              </div>
+              <div className="col-4 ">
+                <button style={{ padding: "1rem", borderRadius: "1rem" }}>
+                  
+                  Yorumlar
+                </button>
+              </div>
             </div>
           </div>
 

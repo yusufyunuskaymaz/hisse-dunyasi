@@ -6,12 +6,12 @@ import Home from "../components/home/Home";
 import Footer from "../components/router/Footer";
 import Stock from "../components/stock/Stock";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Gold from "../components/gold/Gold";
-import Currency from "../components/currency/Currency";
-import CurrencyDetail from "../components/currency/CurrencyDetail";
-import GoldDetail from "../components/gold/GoldDetail";
-import Crypto from "../components/crypto/Crypto.jsx";
-import CryptoDetail from "../components/crypto/CryptoDetail";
+import Gold from "../pages/gold/Gold"
+import Currency from "../pages/currency/Currency";
+import CurrencyDetail from "../pages/currency/CurrencyDetail";
+import GoldDetail from "../pages/gold/GoldDetail";
+import Crypto from "../pages/crypto/Crypto";
+import CryptoDetail from "../pages/crypto/CryptoDetail";
 import Login from "../components/login/Login";
 import Register from "../components/login/Register";
 import StockDetail from "../components/stock/StockDetail";

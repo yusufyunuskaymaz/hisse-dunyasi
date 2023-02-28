@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import StickySidebar from "../stock/StickySidebar";
+import StickySidebar from "../../components/stock/StickySidebar";
 
 
 function Crypto() {

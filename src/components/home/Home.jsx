@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SwiperSlider from "./SwiperNews/SwiperSlider";
 import axios from "axios";
-import StickyDiv from "../router/StickyDiv";
+import StickyDiv from  "../component/StickyDiv";
 import Kazananlar from "../stock/TvWidgets/Kazananlar";
 import HomeCryptoWidget from "./HomeCryptoWidget";
 import StickySidebar from "../stock/StickySidebar";

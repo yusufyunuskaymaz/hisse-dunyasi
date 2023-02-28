@@ -66,11 +66,11 @@ const Register = () => {
           <div className="social-login">
             <h3>Register with</h3>
             <div className="social-icons">
-              <Link
+              <button
                 onClick={handleGoogleProvider}
+                type="button"
                 className="social-login__icon fab fa-google"
               />
-              <a href="#" className="social-login__icon fab fa-facebook" />
             </div>
           </div>
         </div>

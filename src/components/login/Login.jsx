@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { signIn } from "../../auth/firebase";
+import { Link } from "react-router-dom";
+import { signIn, signUpWithGoogle } from "../../auth/firebase";
 import "./login.css";
 
 const Login = () => {
@@ -13,6 +14,10 @@ const Login = () => {
     signIn(email, password, navigate);
 
     console.log(email, password);
+  };
+
+  const handleGoogleProvider = () => {
+    signUpWithGoogle(navigate);
   };
 
   return (
@@ -48,8 +53,11 @@ const Login = () => {
           <div className="social-login">
             <h3>Log In with</h3>
             <div className="social-icons">
-              <a href="#" className="social-login__icon fab fa-google" />
-              <a href="#" className="social-login__icon fab fa-facebook" />
+              <button
+                onClick={handleGoogleProvider}
+                type="button"
+                className="social-login__icon fab fa-google"
+              />
             </div>
           </div>
         </div>

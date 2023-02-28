@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { logOut } from "../../auth/firebase";
 import { AuthContext } from "../../context/AuthContextProvider";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -54,36 +55,16 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link "
-                    aria-current="page"
-                    to="/login"
-                  >
-                    Giriş Yap
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link "
-                    aria-current="page"
-                    to="/register"
-                  >
-                    Kayıt Ol
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link "
-                    aria-current="page"
-                    to="/login"
-                    onClick={() => logOut()}
-                  >
-                    Log out
-                  </Link>
-                </li>
-              </ul>
+              {currentUser && (
+                <h5 className="mr-4 capitalize">{currentUser?.displayName}</h5>
+              )}
+              <NavDropdown title="GİRİŞ" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/login" onClick={() => logOut()}>
+                  Log Out
+                </NavDropdown.Item>
+              </NavDropdown>
             </div>
           </div>
         </nav>

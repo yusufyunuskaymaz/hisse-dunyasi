@@ -26,6 +26,8 @@
     "recharts": "^2.4.3",
     "socket.io-client": "^4.6.1",
     "swiper": "^9.0.5",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^3.2.7",
     "translate-google-api": "^1.0.4"
   },
   "scripts": {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { createUser } from "../../auth/firebase";
+import { Link } from "react-router-dom";
+import { createUser, signUpWithGoogle } from "../../auth/firebase";
 import "./login.css";
 
 const Register = () => {
@@ -11,9 +12,14 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(email, password, navigate);
+    const displayName = `${userName}`;
+    createUser(email, password, navigate, displayName);
 
     console.log(userName);
+  };
+
+  const handleGoogleProvider = () => {
+    signUpWithGoogle(navigate);
   };
 
   return (
@@ -60,7 +66,10 @@ const Register = () => {
           <div className="social-login">
             <h3>Register with</h3>
             <div className="social-icons">
-              <a href="#" className="social-login__icon fab fa-google" />
+              <Link
+                onClick={handleGoogleProvider}
+                className="social-login__icon fab fa-google"
+              />
               <a href="#" className="social-login__icon fab fa-facebook" />
             </div>
           </div>

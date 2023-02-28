@@ -4,9 +4,13 @@ import {
   signInWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  updateProfile,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { async } from "q";
+import { ChevronLeft } from "react-feather";
 
 //* Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,13 +27,16 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-export const createUser = async (email, password, navigate) => {
+export const createUser = async (email, password, navigate, displayName) => {
   try {
     let userCredental = await createUserWithEmailAndPassword(
       auth,
       email,
       password
     );
+    await updateProfile(auth.currentUser, {
+      displayName: displayName,
+    });
     navigate("/");
     console.log(userCredental);
   } catch (error) {
@@ -60,4 +67,19 @@ export const userObserver = (setCurrentUser) => {
 
 export const logOut = () => {
   signOut(auth);
+};
+
+export const signUpWithGoogle = (navigate) => {
+  const provider = new GoogleAuthProvider();
+
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+      navigate("/");
+
+      // ...
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };

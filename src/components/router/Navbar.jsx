@@ -84,7 +84,6 @@ const Navbar = () => {
                     <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   </>
                 )}
->>>>>>> 18988e2812b1cf0450fa0d1cfaf829d432c80776
               </NavDropdown>
             </div>
           </div>

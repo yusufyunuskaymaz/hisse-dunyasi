@@ -1,8 +1,8 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
-import CurrencyCommentCard from "../../components/comment/CurrencyComment";
+
 
 function CurrencyDetail() {
   const { state: item } = useLocation();

@@ -55,8 +55,9 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
-              {currentUser && (
+              {/* {currentUser && (
                 <h5 className="mr-4 capitalize">{currentUser?.displayName}</h5>
+<<<<<<< HEAD
               )}
               <NavDropdown title={currentUser ? currentUser.displayName: "GİRİŞ"} id="basic-nav-dropdown">
                 <NavDropdown.Item href="/register">Register</NavDropdown.Item>
@@ -64,6 +65,26 @@ const Navbar = () => {
                 <NavDropdown.Item href="/login" onClick={() => logOut()}>
                   Log Out
                 </NavDropdown.Item>
+=======
+              )} */}
+              <NavDropdown
+                style={{ color: "white" }}
+                title={currentUser ? currentUser.displayName : "GİRİŞ"}
+                id="basic-nav-dropdown"
+              >
+                {currentUser ? (
+                  <NavDropdown.Item href="/login" onClick={() => logOut()}>
+                    Log Out
+                  </NavDropdown.Item>
+                ) : (
+                  <>
+                    <NavDropdown.Item href="/register">
+                      Register
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                  </>
+                )}
+>>>>>>> 18988e2812b1cf0450fa0d1cfaf829d432c80776
               </NavDropdown>
             </div>
           </div>

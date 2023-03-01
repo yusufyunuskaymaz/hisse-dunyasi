@@ -6,7 +6,7 @@ import Home from "../components/home/Home";
 import Footer from "../components/router/Footer";
 import Stock from "../components/stock/Stock";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Gold from "../pages/gold/Gold"
+import Gold from "../pages/gold/Gold";
 import Currency from "../pages/currency/Currency";
 import CurrencyDetail from "../pages/currency/CurrencyDetail";
 import GoldDetail from "../pages/gold/GoldDetail";
@@ -19,6 +19,7 @@ import HareketliNavbar from "../components/router/HareketliNavbar";
 import KapDetail from "../components/stock/Kap/KapDetail";
 import SliderNews from "../components/home/SwiperNews/SliderNews";
 import AllStocks from "../components/stock/TvWidgets/AllStocks";
+
 
 const AppRouter = () => {
   return (
@@ -36,14 +37,14 @@ const AppRouter = () => {
         <Route path="gold" element={<Gold />} />
         <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />
+
         <Route path="currency/:item" element={<CurrencyDetail />} />
+
         <Route path="crypto" element={<Crypto />} />
         <Route path="crypto/:item" element={<CryptoDetail />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="*" element={<Navigate to="" />} />
-
-        
       </Routes>
       <Footer />
     </BrowserRouter>

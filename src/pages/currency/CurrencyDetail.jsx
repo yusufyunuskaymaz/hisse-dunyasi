@@ -1,6 +1,8 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { FaRegCommentDots } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
+import CurrencyComment from "../../components/comment/CurrencyComment";
+import CurrencyCommentCard from "../../components/comment/CurrencyComment";
 
 function CurrencyDetail() {
   const { state: item } = useLocation();
@@ -27,7 +29,7 @@ function CurrencyDetail() {
           </div>
           <div className="row  p-4 mb-5">
             <div className="col-1">
-              {item.rate < 0 ? (
+              {item?.rate < 0 ? (
                 <i
                   className="fa-solid fa-caret-down"
                   style={{ color: "red", fontSize: "4rem" }}
@@ -67,14 +69,16 @@ function CurrencyDetail() {
                 size="lg"
                 
               >
-                <FaRegCommentDots /> Yorumlar
+                <FaPencilAlt /> Yorum Yap
               </Button>
             </div>
           </div>
+      
         </div>
 
         <div className=" col-sm-12 col-md-4  stickyDiv"></div>
       </div>
+      <CurrencyComment item={item}/>
     </div>
   );
 }

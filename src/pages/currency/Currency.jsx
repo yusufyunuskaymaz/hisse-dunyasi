@@ -51,7 +51,7 @@ function Currency() {
             <div className="col-sm-12 col-md-12 col-lg-8 g-3">
               <table className="table table-responsive  table-hover ">
                 <thead>
-                  <tr className="text-white" style={{ background: "#464c52" }}>
+                  <tr className="text-white" >
                     <th>Döviz Cinsi</th>
                     <th scope="col"> Yön </th>
                     <th scope="col">Alış </th>
@@ -94,7 +94,9 @@ function Currency() {
               </table>
             </div>
 
-            <div className="col-sm-12 col-md-12 col-lg-4 g-3 stickyDiv"></div>
+            <div className="col-lg-4">
+            <StickySidebar />
+          </div>
           </div>
         </div>
       </div>

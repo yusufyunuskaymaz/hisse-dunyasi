@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import StickyDiv from "../../components/component/StickyDiv" ;
+import StickySidebar from "../../components/stock/StickySidebar";
 
 
 function Gold() {
@@ -31,9 +32,9 @@ function Gold() {
       <div className="container">
         <div className="row">
           <div className="col-8">
-            <table className="table table-responsive table-striped table-hover table-sm">
+            <table className="table table-responsive table-hover">
               <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
+                <tr className="text-white">
                   <th scope="col">Altın Cinsi </th>
                   <th scope="col"> Yön </th>
                   <th scope="col">Alış </th>
@@ -66,8 +67,8 @@ function Gold() {
             </table>
           </div>
 
-          <div className="col-4">
-           <StickyDiv/>
+          <div className="col-lg-4">
+            <StickySidebar />
           </div>
         </div>
       </div>

@@ -1,18 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-
-
+import { FaRegCommentDots } from "react-icons/fa";
 
 function CurrencyDetail() {
   const { state: item } = useLocation();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   console.log(item);
-  
+
   return (
-    <div className="container ">
+    <div className="container  g-4">
       <div className="row">
-        <div className="col-8 ">
+        <div className=" col-sm-12 col-md-8">
           <div
             className=""
             style={{
@@ -20,40 +19,61 @@ function CurrencyDetail() {
               fontSize: "2rem",
               background: "#464c52",
               textAlign: "start",
-              padding: "1rem",
+              padding: "2rem",
             }}
           >
-            <i class="fa-regular fa-star" style={{marginRight:"1rem"}}></i>{item?.code}
+            <i class="fa-regular fa-star" style={{ marginRight: "1rem" }}></i>
+            {item?.code}
           </div>
-          <div
-            className="row  "
-            style={{
-              fontSize: "2rem",
-              padding: "1rem",
-              justifyContent: "center",
-              alignItems: "center",color:"green"
-            }}
-          >
-            <div className=" col-4 border border-3"style={{padding:"0.7rem"}}>
-              <div>Alış</div>
-              {item.buying}
+          <div className="row  p-4 mb-5">
+            <div className="col-1">
+              {item.rate < 0 ? (
+                <i
+                  className="fa-solid fa-caret-down"
+                  style={{ color: "red", fontSize: "4rem" }}
+                ></i>
+              ) : (
+                <i
+                  className="fa-solid fa-caret-up"
+                  style={{ color: "green", fontSize: "4rem" }}
+                ></i>
+              )}
             </div>
-            <div className="col-4 border border-3"style={{padding:"0.7rem"}}>
-              <div>Satış</div>
-              {item.selling}
+            <div className="col-5 ">
+              <span style={{ fontSize: "2rem" }}>{item.selling}</span>
+              <div>
+                Son:{item.date} {item.time}
+              </div>
             </div>
-            <div className="col-4 ">
-              <Button onClick={()=>{navigate("/")}}
-                style={{ fontSize: "2rem", padding: "0.7rem" }}
+
+            <div className="col-3">
+              {item.rate < 0 ? (
+                <i
+                  className="fa-solid fa-caret-down"
+                  style={{ color: "red", fontSize: "2rem" }}
+                ></i>
+              ) : (
+                <i
+                  className="fa-solid fa-caret-up"
+                  style={{ color: "green", fontSize: "2rem" }}
+                ></i>
+              )}
+              <span style={{ fontSize: "2rem" }}> {item.rate} </span>
+              <div>Günlük Değişim</div>
+            </div>
+            <div className="col-3">
+              <Button onClick={()=>navigate("/")}
                 variant="outline-dark"
+                size="lg"
+                
               >
-                <i class="fa-regular fa-comment-dots"></i> Yorumlar
+                <FaRegCommentDots /> Yorumlar
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="col-4 stickyDiv"></div>
+        <div className=" col-sm-12 col-md-4  stickyDiv"></div>
       </div>
     </div>
   );

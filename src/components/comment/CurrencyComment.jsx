@@ -1,4 +1,7 @@
-function CurrencyComment({ item }) {
+import CommentForm from "./CommentForm";
+
+
+function CurrencyComment({ item }) { 
   const list = [
     "zaro ağa",
     "kahin",
@@ -9,6 +12,7 @@ function CurrencyComment({ item }) {
 
   return (
     <div>
+      
       <h1>{item.code} Yorumları</h1>
       <h4>
         Yasal Uyarı: https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum
@@ -18,10 +22,12 @@ function CurrencyComment({ item }) {
         doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına göre yatırım
         kararı almamanız konusunda kesinlikle uyarıyoruz.
       </h4>
+      <CommentForm/>
       <div className="row">
         {list.map((item) => {
           return (
             <div className="col-12">
+             
               <div
                 className="card border border-3"
                 style={{ marginBottom:"1rem",  padding: "1rem" }}

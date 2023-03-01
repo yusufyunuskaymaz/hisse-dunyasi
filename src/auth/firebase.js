@@ -26,6 +26,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+export default app;
+
 
 export const createUser = async (email, password, navigate, displayName) => {
   try {
@@ -58,7 +60,7 @@ export const userObserver = (setCurrentUser) => {
     if (user) {
       const { email, displayName, photoURL } = user;
       setCurrentUser({ email, displayName, photoURL });
-      console.log(user);
+      // console.log(user);
     } else {
       setCurrentUser(false);
       console.log("user sign out");

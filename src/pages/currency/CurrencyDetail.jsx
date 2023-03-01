@@ -8,7 +8,7 @@ function CurrencyDetail() {
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
-  console.log(item);
+  // console.log(item);
 
   return (
     <div className="container  g-4">
@@ -24,7 +24,7 @@ function CurrencyDetail() {
               padding: "2rem",
             }}
           >
-            <i class="fa-regular fa-star" style={{ marginRight: "1rem" }}></i>
+            <i className="fa-regular fa-star" style={{ marginRight: "1rem" }}></i>
             {item?.code}
           </div>
           <div className="row  p-4 mb-5">

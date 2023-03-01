@@ -32,25 +32,25 @@ const Navbar = () => {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                <li className="nav-item">
-                  <Link to="/stock" className="nav-link">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5 ">
+                <li className="nav-item ">
+                  <Link to="/stock" className="nav-link text-white">
                     Borsa
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/currency" className="nav-link ">
+                  <NavLink to="/currency" className="nav-link text-white ">
                     Döviz
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/gold" className="nav-link ">
+                  <NavLink to="/gold" className="nav-link text-white ">
                     Altın
                   </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink to="/crypto" className="nav-link ">
+                  <NavLink to="/crypto" className="nav-link text-white ">
                     Kripto
                   </NavLink>
                 </li>
@@ -58,7 +58,7 @@ const Navbar = () => {
               {currentUser && (
                 <h5 className="mr-4 capitalize">{currentUser?.displayName}</h5>
               )}
-              <NavDropdown title="GİRİŞ" id="basic-nav-dropdown">
+              <NavDropdown title="GİRİŞ" id="basic-nav-dropdown" className="text-white">
                 <NavDropdown.Item href="/register">Register</NavDropdown.Item>
                 <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                 <NavDropdown.Item href="/login" onClick={() => logOut()}>

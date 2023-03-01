@@ -31,9 +31,9 @@ function Gold() {
       <div className="container">
         <div className="row">
           <div className="col-8">
-            <table className="table table-responsive table-striped table-hover table-sm">
+            <table className="table table-responsive table-hover">
               <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
+                <tr className="text-white">
                   <th scope="col">Altın Cinsi </th>
                   <th scope="col"> Yön </th>
                   <th scope="col">Alış </th>

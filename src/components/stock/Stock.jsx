@@ -8,8 +8,6 @@ import StickySidebar from "./StickySidebar";
 // const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
-  
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentMessage, setCurrentMessage] = useState([]);
@@ -147,42 +145,49 @@ const Stock = () => {
     "ZOREN",
   ];
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8">
-          <h1 className="text-center mb-4">BIST 100 Tablo</h1>
-          <div className="table-responsive">
-            <table
-              className="table table-hover"
-              //   style={{ width: "15rem" }}
-            >
-              {/* <thead>
+  if (loading) {
+    return (
+      <div className="container text-center">
+        <div className="loading">
+          <i
+            className="fa fa-spinner fa-spin "
+            style={{ fontSize: "1.5rem" }}
+          ></i>
+          <h3>Loading...</h3>{" "}
+        </div>{" "}
+      </div>
+    );
+  } else {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8">
+            <h1 className="text-center mb-4">BIST 100 Tablo</h1>
+            <div className="table-responsive">
+              <table
+                className="table table-hover"
+                //   style={{ width: "15rem" }}
+              >
+                {/* <thead>
                 <tr className="text-white" style={{ background: "#464c52" }}>
                   <th scope="col" colSpan="13">
                     BIST100 Tablo
                   </th>
                 </tr>
               </thead> */}
-              <thead>
-                <tr>
-                  <th scope="col">Adı</th>
-                  <th scope="col"></th>
-                  <th scope="col">Son</th>
-                  <th scope="col">Min</th>
-                  <th scope="col">Max</th>
-                  <th scope="col">Hacim(Tl)</th>
-                  <th scope="col">%</th>
-                  <th scope="col">Son İş.</th>
-                </tr>
-              </thead>
-              {loading ? (
-                <div className="d-flex justify-content-center mt-3">
-                  <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                  </div>
-                </div>
-              ) : (
+                <thead>
+                  <tr>
+                    <th scope="col">Adı</th>
+                    <th scope="col"></th>
+                    <th scope="col">Son</th>
+                    <th scope="col">Min</th>
+                    <th scope="col">Max</th>
+                    <th scope="col">Hacim(Tl)</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Son İş.</th>
+                  </tr>
+                </thead>
+
                 <tbody>
                   {data
                     .filter((item) => {
@@ -235,24 +240,24 @@ const Stock = () => {
                       );
                     })}
                 </tbody>
-              )}
-            </table>
-            <div className="text-center">
-              <button
-                className="btn btn-primary mb-5 "
-                onClick={() => navigate("/all-stocks")}
-              >
-                Tümünü Gör
-              </button>
+              </table>
+              <div className="text-center">
+                <button
+                  className="btn btn-primary mb-5 "
+                  onClick={() => navigate("/all-stocks")}
+                >
+                  Tümünü Gör
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-lg-4">
-          <StickySidebar />
+          <div className="col-lg-4">
+            <StickySidebar />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Stock;

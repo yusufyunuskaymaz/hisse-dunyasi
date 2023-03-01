@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import StickyDiv from "../../components/component/StickyDiv" ;
+import StickySidebar from "../../components/stock/StickySidebar";
 
 
 function Gold() {
@@ -66,8 +67,8 @@ function Gold() {
             </table>
           </div>
 
-          <div className="col-4">
-           <StickyDiv/>
+          <div className="col-lg-4">
+            <StickySidebar />
           </div>
         </div>
       </div>

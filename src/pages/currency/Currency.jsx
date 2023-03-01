@@ -94,7 +94,9 @@ function Currency() {
               </table>
             </div>
 
-            <div className="col-sm-12 col-md-12 col-lg-4 g-3 stickyDiv"></div>
+            <div className="col-lg-4">
+            <StickySidebar />
+          </div>
           </div>
         </div>
       </div>

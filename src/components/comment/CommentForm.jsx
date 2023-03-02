@@ -2,36 +2,36 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContextProvider";
+
 import { AddComment } from "../../utils/function";
+import { AuthContext } from "../../context/AuthContextProvider";
 
 export default function CommentForm() {
-   const {currentUser}=useContext(AuthContext); 
   const [comment, setComment] = useState({
-    username: "",
-    photURL: "",
-    time: "",
     content: "",
+    username: "",
+    photoURL: "",
   });
+  const { currentUser } = useContext(AuthContext);
+  const { content } = comment;
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(e.target);
     // console.log(comment);
-    setComment("");
+    AddComment(comment);
+    setComment({ content: "" });
   };
 
   const handleForm = (e) => {
     e.preventDefault();
     setComment({
-      username: currentUser.email || "admin",
-      photURL:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png",
-      time: new Date(),
-      content: e.target.value,
+      ...comment,
+      username: currentUser.displayName,
+      photoURL:currentUser.photoURL,
+      [e.target.name]: e.target.value,
     });
-    AddComment(comment)
   };
-//    console.log(comment)
+  // console.log(comment.content);
   return (
     <Form onSubmit={handleSubmit}>
       <FloatingLabel controlId="floatingTextarea2" label="Yorumunuzu yazın">
@@ -39,8 +39,9 @@ export default function CommentForm() {
           as="textarea"
           placeholder="Leave a comment here"
           style={{ height: "100px" }}
+          name="content"
           maxLength={5000}
-          value={comment?.content || ""}
+          value={content}
           onChange={handleForm}
         />
         <div className="text-end m-3">

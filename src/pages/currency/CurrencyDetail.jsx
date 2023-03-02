@@ -9,7 +9,7 @@ function CurrencyDetail() {
   const navigate = useNavigate();
 
   // console.log(item);
-
+console.log(new Date())
   return (
     <div className="container  g-4">
       <div className="row">
@@ -78,7 +78,7 @@ function CurrencyDetail() {
 
         <div className=" col-sm-12 col-md-4  stickyDiv"></div>
       </div>
-      <CurrencyComment item={item}/>
+   
     </div>
   );
 }

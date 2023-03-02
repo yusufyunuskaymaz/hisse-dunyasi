@@ -1,11 +1,18 @@
-import { padding } from "@mui/system";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
+import { useFetch } from "../../utils/function";
+
 
 function Currency() {
   const navigate = useNavigate();
+ const {isLoading,commentList}=useFetch();
+ console.log(commentList);
+  
+
 
   const [newCurrencyData, setNewCurrencyData] = useState([]);
   const [loading, setIsLoading] = useState(false);
@@ -30,7 +37,7 @@ function Currency() {
   }, []);
   // console.log(currencyData);
 
-  console.log(newCurrencyData);
+  // console.log(newCurrencyData);
   if (loading) {
     return (
       <div className="container text-center">
@@ -98,6 +105,7 @@ function Currency() {
             <StickySidebar />
           </div>
           </div>
+          <CurrencyComment commentList={commentList}/>
         </div>
       </div>
     );

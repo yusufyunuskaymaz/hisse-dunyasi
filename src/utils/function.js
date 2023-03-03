@@ -21,7 +21,7 @@ export const AddComment = (comment) => {
     username: comment.username || "admin",
     photoURL:comment.photoURL ||
       " https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png",
-    time: `${new Date()}`,
+    time: comment.time,
     content: comment.content,
   });
 };
@@ -42,7 +42,7 @@ export const useFetch = () => {
       for (let id in data) {
         commentArray.push({ id, ...data[id] });
       }
-      setCommentList(commentArray);
+      setCommentList(commentArray.reverse());
       setIsLoading(false);
     });
   }, []);

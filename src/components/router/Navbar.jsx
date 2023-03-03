@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser)
+  // console.log(currentUser)
   return (
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>

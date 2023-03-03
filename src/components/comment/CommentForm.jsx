@@ -7,30 +7,25 @@ import { AddComment } from "../../utils/function";
 import { AuthContext } from "../../context/AuthContextProvider";
 
 export default function CommentForm() {
+  const { currentUser } = useContext(AuthContext);
   const [comment, setComment] = useState({
     content: "",
-    username: "",
-    photoURL: "",
+    username: currentUser?.displayName || "admin",
+    photoURL:
+      currentUser?.photoURL ||
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png",
+    time: Date.now(),
   });
-  const { currentUser } = useContext(AuthContext);
+
   const { content } = comment;
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e.target);
-    // console.log(comment);
+
     AddComment(comment);
+
     setComment({ content: "" });
   };
 
-  const handleForm = (e) => {
-    e.preventDefault();
-    setComment({
-      ...comment,
-      username: currentUser.displayName,
-      photoURL:currentUser.photoURL,
-      [e.target.name]: e.target.value,
-    });
-  };
   // console.log(comment.content);
   return (
     <Form onSubmit={handleSubmit}>
@@ -42,7 +37,7 @@ export default function CommentForm() {
           name="content"
           maxLength={5000}
           value={content}
-          onChange={handleForm}
+          onChange={(e) => setComment({ ...comment, content: e.target.value })}
         />
         <div className="text-end m-3">
           <Button type="submit">Yorumu Gönder</Button>

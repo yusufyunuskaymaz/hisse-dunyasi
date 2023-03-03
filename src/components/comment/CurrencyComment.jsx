@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContextProvider";
 import CommentForm from "./CommentForm";
 import { MdDelete } from "react-icons/md";
 import { DeleteComment } from "../../utils/function";
+import moment from "moment";
 
 function CurrencyComment({ commentList }) {
   //  const {isLoading,commentList}=useFetch();
@@ -23,7 +24,7 @@ function CurrencyComment({ commentList }) {
       </h4>
       <CommentForm />
       <div className="row">
-        {commentList?.reverse().map((item) => {
+        {commentList?.map((item) => {
           return (
             <div className="col-12" key={item.id}>
               <div
@@ -32,11 +33,19 @@ function CurrencyComment({ commentList }) {
               >
                 <div>
                   <div>
-                    <h3 style={{ color: "green" }}>{item?.username}</h3>
+                    <h3 style={{ color: "green" }}>{item?.username }</h3>
                   </div>
-                  <img width="50px" src={item.photoURL} alt="" />
+                  <img
+                    width="50px"
+                    src={
+                      item?.photoURL 
+                    }
+                    alt=""
+                  />
                   <div>
-                    <span style={{ color: "green" }}>{`(3 dakika önce)`}</span>
+                    <span style={{ color: "green" }}>
+                      {moment(item?.time).format("MMM DD, YYYY")}
+                    </span>
                   </div>
                   <span>{item?.content}</span>
                 </div>

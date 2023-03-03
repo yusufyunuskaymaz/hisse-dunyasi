@@ -55,7 +55,7 @@ function CurrencyComment({ commentList }) {
                   style={{
                     fontSize: "1.5rem",
                     cursor: "pointer",
-                    color: "red",
+                    color: "grey",
                   }}
                 >
                   <MdDelete />

@@ -38,15 +38,15 @@ const Kazananlar = () => {
     <div className="container">
       <div className="row">
         <div className="col ps-0">
-          <div class="tradingview-widget-container" ref={contariner}>
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
+          <div className="tradingview-widget-container" ref={contariner}>
+            <div className="tradingview-widget-container__widget"></div>
+            <div className="tradingview-widget-copyright">
               <a
                 href="https://tr.tradingview.com/symbols/BIST-THYAO/financials-overview/"
                 rel="noopener"
                 target="_blank"
               >
-                <span class="blue-text">THYAO temeller</span>
+                <span className="blue-text">THYAO temeller</span>
               </a>{" "}
               TradingView tarafından
             </div>

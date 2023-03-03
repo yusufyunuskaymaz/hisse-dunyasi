@@ -1,75 +1,107 @@
+import { padding } from "@mui/system";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StickySidebar from "../../components/stock/StickySidebar";
 
-
 function Crypto() {
   const navigate = useNavigate();
-  const list = [
-    "Bitcoin Türk Lirası",
-    "Bitcoin Amerikan Doları",
-    "Bitcoin TetherUS",
-    "Ethereum Türk Lirası",
-    "Ethereum TetherUS",
-    "Ethereum Amerikan Doları",
-    "Bitcoin Cash TetherUS",
-    "Litecoin TetherUS",
-    "Ripple Türk Lirası",
-    "Ripple TetherUS",
-    "EOS Türk Lirası",
-    "EOS TetherUS",
-    "1inch TetherUS",
-    "Aave TetherUS",
-    "Acala Token TetherUS",
-    "Alchemy Pay TetherUS",
-    "Cardano Türk Lirası",
-    "Cardano Amerikan Doları",
-    "Cardano TetherUS",
-  ];
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <table className="table table-responsive table-hover">
-            <thead>
-              <tr className="text-white">
-                <th scope="col">Kripto Para </th>
-                <th scope="col"> Yön </th>
-                <th scope="col"> Son </th>
-                <th scope="col">Değişim % </th>
-                <th scope="col">Tarih </th>
-              </tr>
-            </thead>
-            <tbody>
-              {list.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <th
-                      style={{ cursor: "pointer" }}
-                      onClick={() => navigate(`${item}`)}
-                    >
-                      {item}
-                    </th>
-                    <th>
-                      <i className="fa-solid fa-play"></i>
-                    </th>
+  const [newCryptoData, setNewCryptoData] = useState([]);
+  const [loading, setIsLoading] = useState(false);
 
-                    <td>15 </td>
-                    <td>0.17%</td>
-                    <td>12:01</td>
+  const URL =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+
+  const getNewCrypto = () => {
+    setIsLoading(true);
+    axios
+      .get(URL)
+      .then((res) => setNewCryptoData(res.data))
+      .catch((error) => console.log(error))
+      .finally(() => setIsLoading(false));
+  };
+
+  useEffect(() => {
+    getNewCrypto();
+  }, []);
+  // console.log(currencyData);
+
+  console.log(newCryptoData);
+
+  if (loading) {
+    return (
+      <div className="container text-center">
+        <div className="loading">
+          <i
+            className="fa fa-spinner fa-spin "
+            style={{ fontSize: "1.5rem" }}
+          ></i>
+          <h3>Loading...</h3>{" "}
+        </div>{" "}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div className="container my-3">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-8 g-3">
+              <table className="table table-responsive  table-hover ">
+                <thead>
+                  <tr className="text-white">
+                    <th>Crypto Cinsi</th>
+                    <th scope="col"> Yön </th>
+                    <th scope="col">Fiyat </th>
+                    <th scope="col">En Yüksek </th>
+                    <th scope="col">En Düşük </th>
+                    <th scope="col">% Değişim </th>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                </thead>
+                <tbody>
+                  {newCryptoData.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <th
+                          style={{ cursor: "pointer" }}
+                          onClick={() => navigate(`${index}`, { state: item })}
+                        >
+                          {item?.id}
+                        </th>
+                        <th>
+                          {item?.market_cap_change_percentage_24h < 0 ? (
+                            <i
+                              className="fa-solid fa-caret-down"
+                              style={{ color: "red", fontSize: "1.5rem" }}
+                            ></i>
+                          ) : (
+                            <i
+                              className="fa-solid fa-caret-up"
+                              style={{ color: "green", fontSize: "1.5rem" }}
+                            ></i>
+                          )}
+                        </th>
+                        <td>{item.current_price.toFixed(4)} </td>
+                        <td>{item.high_24h.toFixed(4)} </td>
+                        <td>{item.low_24h.toFixed(2)}</td>
+                        <td>
+                          {item.market_cap_change_percentage_24h.toFixed(2)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
 
-        <div className="col-4">
-          <StickySidebar />
+            <div className="col-lg-4">
+              <StickySidebar />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Crypto;

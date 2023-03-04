@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import StickyDiv from "../../components/component/StickyDiv" ;
 import StickySidebar from "../../components/stock/StickySidebar";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 
 function Gold() {
@@ -26,7 +29,26 @@ function Gold() {
     "Tam Altın",
     "Külçe Altın ($)",
   ];
+  const [gold, setGold] = useState([]);
+  const [loading, setIsLoading] = useState(false);
+  const URL="https://api.collectapi.com/economy/goldPrice"
+  const getGold = () => {
+    setIsLoading(true);
+    axios
+      .get(URL, {
+        headers: {
+          Authorization: process.env.REACT_APP_TOKEN,
+        },
+      })
+      .then((res) => setGold(res.data.result))
+      .catch((error) => console.log(error))
+      .finally(() => setIsLoading(false));
+  };
 
+  useEffect(() => {
+    getGold();
+  }, []);
+console.log(gold);
   return (
     <div>
       <div className="container">
@@ -44,22 +66,32 @@ function Gold() {
                 </tr>
               </thead>
               <tbody>
-                {list.map((item, index) => {
+                {gold.map((item, index) => {
                   return (
                     <tr key={index}>
                       <th
                         style={{ cursor: "pointer" }}
                         onClick={() => navigate(`${item}`)}
                       >
-                        {item}
+                        {item?.name}
                       </th>
                       <th>
-                        <i className="fa-solid fa-play"></i>
+                      {item.rate < 0 ? (
+                            <i
+                              className="fa-solid fa-caret-down"
+                              style={{ color: "red", fontSize: "1.5rem" }}
+                            ></i>
+                          ) : (
+                            <i
+                              className="fa-solid fa-caret-up"
+                              style={{ color: "green", fontSize: "1.5rem" }}
+                            ></i>
+                          )}
                       </th>
-                      <td>10 </td>
-                      <td>15 </td>
-                      <td>0.17%</td>
-                      <td>12:01</td>
+                      <td>{item?.buying.toFixed(2)} </td>
+                      <td>{item?.selling.toFixed(2)} </td>
+                      <td>{item?.rate}</td>
+                      <td> {item?.time}</td>
                     </tr>
                   );
                 })}

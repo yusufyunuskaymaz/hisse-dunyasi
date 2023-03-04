@@ -15,8 +15,9 @@ function CurrencyComment({ commentList }) {
     <div>
       <h1> Yorumlar</h1>
       <h4>
-        Yasal Uyarı: https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum
-        ve tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar
+        <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
+        https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum ve
+        tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar
         kullanıcıların kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere
         dayanılarak alınacak yatırım kararları beklentilerinize uygun sonuçlar
         doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına göre yatırım
@@ -33,33 +34,45 @@ function CurrencyComment({ commentList }) {
               >
                 <div>
                   <div>
-                    <h3 style={{ color: "green" }}>{item?.username }</h3>
+                    <h3 style={{ color: "green" }}>{item?.username}</h3>
                   </div>
-                  <img
-                    width="50px"
-                    src={
-                      item?.photoURL 
-                    }
-                    alt=""
-                  />
+                  <img width="50px" src={item?.photoURL} alt="" />
                   <div>
                     <span style={{ color: "green" }}>
-                      {moment(item?.time).format("MMM DD, YYYY")}
+                      {moment(item?.time).format("DD MMM, YYYY")}
                     </span>
                   </div>
                   <span>{item?.content}</span>
                 </div>
-                <div
-                  onClick={() => DeleteComment(item.id)}
-                  className="text-end"
-                  style={{
-                    fontSize: "1.5rem",
-                    cursor: "pointer",
-                    color: "grey",
-                  }}
-                >
-                  <MdDelete />
-                </div>
+                {item.author === currentUser.email ? (
+                  <div
+                    onClick={() => DeleteComment(item.id)}
+                    className="text-end"
+                    style={{
+                      fontSize: "1.5rem",
+                      cursor: "pointer",
+                      color: "grey",
+                    }}
+                  >
+                    <MdDelete />
+                  </div>
+                ) : (
+                  <div
+                    onClick={() =>
+                      alert(
+                        "Sadece yorum sahibi yorumunu silebilir."
+                      )
+                    }
+                    className="text-end"
+                    style={{
+                      fontSize: "1.5rem",
+                      cursor: "pointer",
+                      color: "grey",
+                    }}
+                  >
+                    <MdDelete />
+                  </div>
+                )}
               </div>
             </div>
           );

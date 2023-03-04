@@ -14,6 +14,7 @@ export default function CommentForm() {
     username: "",
     photoURL: "",
     time: "",
+    author:"",
   });
 
   const { content } = comment;
@@ -37,6 +38,7 @@ export default function CommentForm() {
     setComment({
       ...comment,
       content: e.target.value,
+      author:currentUser?.email,
       username: currentUser?.displayName || "admin",
       photoURL:
         currentUser?.photoURL ||

@@ -18,10 +18,10 @@ export const AddComment = (comment) => {
   const newCurrencyRef = push(userRef);
 
   set(newCurrencyRef, {
-    username: comment.username || "admin",
-    photoURL:comment.photoURL ||
-      " https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png",
+    username: comment.username ,
+    photoURL:comment.photoURL ,
     time: comment.time,
+    author:comment.author,
     content: comment.content,
   });
 };

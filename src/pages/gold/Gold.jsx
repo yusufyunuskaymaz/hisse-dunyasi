@@ -6,29 +6,10 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 
 
+
 function Gold() {
   const navigate = useNavigate();
-  const list = [
-    "ALTIN (TL/GR)",
-    "22 Ayar Bilezik",
-    "Altın (ONS)",
-    "Altın ($/kg)",
-    "Altın (Euro/kg)",
-    "Cumhuriyet Altını",
-    "Yarım Altın",
-    "Çeyrek Altın",
-    "Reşat Altını",
-    "Kulplu Reşat Altını",
-    "22 Ayar Altın TL",
-    "18 Ayar Altın TL",
-    "14 Ayar Altın TL",
-    "Kapalicarsi Ziynet 2.5",
-    "Kapalı Çarşı Beşli Altın",
-    "Gremse Altın",
-    "Ata Altın",
-    "Tam Altın",
-    "Külçe Altın ($)",
-  ];
+  
   const [gold, setGold] = useState([]);
   const [loading, setIsLoading] = useState(false);
   const URL="https://api.collectapi.com/economy/goldPrice"
@@ -67,11 +48,12 @@ console.log(gold);
               </thead>
               <tbody>
                 {gold.map((item, index) => {
+                  console.log(item)
                   return (
                     <tr key={index}>
                       <th
                         style={{ cursor: "pointer" }}
-                        onClick={() => navigate(`${item}`)}
+                        onClick={() => navigate(`${index}`, { state: item })}
                       >
                         {item?.name}
                       </th>

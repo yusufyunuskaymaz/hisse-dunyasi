@@ -9,7 +9,7 @@ function CurrencyDetail() {
   const navigate = useNavigate();
 
   // console.log(item);
-console.log(new Date())
+
   return (
     <div className="container  g-4">
       <div className="row">

@@ -81,4 +81,5 @@ table td{
 }
 th{
   color: black;
+  font-weight: 700 !important;
 }

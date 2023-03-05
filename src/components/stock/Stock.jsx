@@ -4,26 +4,19 @@ import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
+import { BIST_100 } from "./BIST_100";
 
-// const socket = io.connect("http://localhost:3001");
 
 const Stock = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [currentMessage, setCurrentMessage] = useState([]);
-  // const sendMessage = () => {
-  //   console.log("first");
-  //   const messageData = "deneme";
-
-  //   socket.emit("send_message", messageData);
-  // };
 
   const getDataFromApi = () => {
     console.log("girdi");
     const config = {
       headers: {
         "Content-type": "application/json",
-        Authorization: process.env.REACT_APP_TOKEN,
+        "Authorization": process.env.REACT_APP_TOKEN,
       },
     };
     axios
@@ -35,115 +28,16 @@ const Stock = () => {
   };
 
   useEffect(() => {
-    // socket.on("receive_message", (data) => {
-    //   console.log(data);
-    //   setData(data);
-    // });
-    // sendMessage();
+
     getDataFromApi();
-  }, []); //socket
+  }, []); 
+
+  const sortBistData = ()=>{
+    return 
+  }
 
   const navigate = useNavigate();
-  console.log(data, "data");
 
-  const BIST_100 = [
-    "AEFES",
-    "AFYON",
-    "AKBNK",
-    "AKENR",
-    "AKSA",
-    "AKSEN",
-    "ALARK",
-    "ALGYO",
-    "ANELE",
-    "ARCLK",
-    "ASELS",
-    "AYGAZ",
-    "BAGFS",
-    "BANVT",
-    "BERA",
-    "BIMAS",
-    "BIZIM",
-    "BJKAS",
-    "BRISA",
-    "BRSAN",
-    "CCOLA",
-    "CEMTS",
-    "CRFSA",
-    "DEVA",
-    "DOAS",
-    "DOHOL",
-    "ECILC",
-    "EGEEN",
-    "EKGYO",
-    "ENKAI",
-    "ERBOS",
-    "EREGL",
-    "FENER",
-    "FROTO",
-    "GARAN",
-    "GLYHO",
-    "GOLTS",
-    "GOODY",
-    "GOZDE",
-    "GSDHO",
-    "GSRAY",
-    "GUBRF",
-    "HALKB",
-    "HLGYO",
-    "HURGZ",
-    "ICBCT",
-    "IEYHO",
-    "IHLAS",
-    "IHLGM",
-    "IPEKE",
-    "ISCTR",
-    "ISGYO",
-    "KARSN",
-    "KARTN",
-    "KCHOL",
-    "KLGYO",
-    "KORDS",
-    "KOZAA",
-    "KOZAL",
-    "KRDMD",
-    "MAVI",
-    "METRO",
-    "MGROS",
-    "NETAS",
-    "NTHOL",
-    "ODAS",
-    "OTKAR",
-    "PETKM",
-    "PGSUS",
-    "PRKME",
-    "SAHOL",
-    "SASA",
-    "SISE",
-    "SKBNK",
-    "SNGYO",
-    "TATGD",
-    "TAVHL",
-    "TCELL",
-    "THYAO",
-    "TKFEN",
-    "TKNSA",
-    "TLMAN",
-    "TMSN",
-    "TOASO",
-    "TRCAS",
-    "TSKB",
-    "TTKOM",
-    "TTRAK",
-    "TUPRS",
-    "ULKER",
-    "VAKBN",
-    "VESTL",
-    "VKGYO",
-    "YATAS",
-    "YKBNK",
-    "ZOREN",
-  ];
 
   if (loading) {
     return (
@@ -179,7 +73,9 @@ const Stock = () => {
                   <tr>
                     <th scope="col">Adı</th>
                     <th scope="col"></th>
-                    <th scope="col">Son</th>
+                    <th scope="col"
+                    //  onClick={()=>sortBistData("")} 
+                     >Son</th>
                     <th scope="col">Min</th>
                     <th scope="col">Max</th>
                     <th scope="col">Hacim(Tl)</th>

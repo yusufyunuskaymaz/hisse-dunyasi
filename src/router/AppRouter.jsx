@@ -1,7 +1,6 @@
 import React from "react";
 
 import Navbar from "../components/router/Navbar";
-import BottomNavbar from "../components/router/BottomNavbar";
 import Home from "../components/home/Home";
 import Footer from "../components/router/Footer";
 import Stock from "../components/stock/Stock";
@@ -26,7 +25,6 @@ const AppRouter = () => {
     <BrowserRouter>
       <Navbar />
       <HareketliNavbar />
-      {/* <BottomNavbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news-detail" element={<SliderNews />} />

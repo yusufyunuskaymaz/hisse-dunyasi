@@ -34,8 +34,8 @@ console.log(gold);
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-8">
-            <table className="table table-responsive table-hover">
+          <div className="col-8 table-responsive">
+            <table className="table  table-hover">
               <thead>
                 <tr className="text-white">
                   <th scope="col">Altın Cinsi </th>

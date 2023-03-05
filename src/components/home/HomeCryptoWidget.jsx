@@ -157,7 +157,7 @@ function HomeCryptoWidget({ itemTitle }) {
           }
         ],
         "title_link": "/markets/cryptocurrencies/prices-all/",
-        "width": 400,
+        "width": 300,
         "height": 600,
         "showChart": true,
         "showFloatingTooltip": false,
@@ -178,9 +178,6 @@ function HomeCryptoWidget({ itemTitle }) {
   }, []);
 
   return (
-    <div className="contariner">
-      <div className="row">
-        <div className="col ps-0">
           <div class="tradingview-widget-container" ref={container}>
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright">
@@ -194,9 +191,7 @@ function HomeCryptoWidget({ itemTitle }) {
               by TradingView
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+ 
   );
 }
 

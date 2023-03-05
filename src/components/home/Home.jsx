@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SwiperSlider from "./SwiperNews/SwiperSlider";
 import axios from "axios";
-import StickyDiv from  "../component/StickyDiv";
+import StickyDiv from "../component/StickyDiv";
 import Kazananlar from "../stock/TvWidgets/Kazananlar";
 import HomeCryptoWidget from "./HomeCryptoWidget";
 import StickySidebar from "../stock/StickySidebar";
@@ -23,19 +23,22 @@ const Home = () => {
   return (
     <div className="container ">
       <div className="row justify-content-between">
-        <div className="col-lg-8">
-          <SwiperSlider />
-          <div className="col d-flex flex-sm-column flex-lg-row flex-md-column">
-            <Kazananlar />
-            <HomeCryptoWidget />
-
-          </div>
+        <div className="col col-lg-8">
           <div className="col">
+            <SwiperSlider />
+          </div>
+          <div className="row justify-content-between">
+            <div className="col-lg-6 col-sm-12">
+              <Kazananlar />
+            </div>
+            <div className="col-lg-6 col-sm-12 ">
+              <HomeCryptoWidget />
+            </div>
           </div>
         </div>
 
-        <div className="col-lg-4">
-        <StickySidebar />
+        <div className="col-lg-4 col d-none d-md-block">
+          <StickySidebar />
         </div>
       </div>
     </div>

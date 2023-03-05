@@ -55,8 +55,8 @@ function Currency() {
       <div>
         <div className="container my-3">
           <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-8 g-3">
-              <table className="table table-responsive  table-hover ">
+            <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
+              <table className="table   table-hover ">
                 <thead>
                   <tr className="text-white">
                     <th>Döviz Cinsi</th>

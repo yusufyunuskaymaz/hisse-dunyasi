@@ -6,7 +6,6 @@ import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
 import { BIST_100 } from "./BIST_100";
 
-
 const Stock = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,27 +15,49 @@ const Stock = () => {
     const config = {
       headers: {
         "Content-type": "application/json",
-        "Authorization": process.env.REACT_APP_TOKEN,
+        Authorization: process.env.REACT_APP_TOKEN,
       },
     };
     axios
       .get("https://api.collectapi.com/economy/hisseSenedi", config)
       .then((res) => {
-        setData(res.data.result);
-        setLoading(false);
+        const data = res.data.result;
+        // Filter Bist 100 between 500 stocks
+        filterAndSortInitialData(data);
       });
   };
 
+  const filterAndSortInitialData = (data) => {
+    data = data
+      .filter((item) => {
+        return BIST_100.includes(item.code);
+      })
+      .sort((a, b) => (a.code < b.code ? -1 : 1));
+    setData(data);
+    setLoading(false);
+  };
+
   useEffect(() => {
-
     getDataFromApi();
-  }, []); 
+  }, []);
 
-  const sortBistData = ()=>{
-    return 
-  }
+  const sortBistData = (id) => {
+    const options = {
+      // Sort Bist data when clicked table title
+      name: [...data].sort((a, b) => (a.code < b.code ? 1 : -1)),
+      last: [...data].sort((a, b) => (a.lastprice - b.lastprice)),
+      min: [...data].sort((a, b) => (a.min - b.min)),
+      max: [...data].sort((a, b) => (a.max - b.max)),
+      cap: [...data].sort((a, b) => (a.hacimstr - b.hacimstr)),
+      rate: [...data].sort((a, b) => (a.rate - b.rate)),
+      time: [...data].sort((a, b) => (a.time - b.time))
+    }
+
+    setData(options[id]);
+  };
 
   const navigate = useNavigate();
+
 
 
   if (loading) {
@@ -70,71 +91,79 @@ const Stock = () => {
                 </tr>
               </thead> */}
                 <thead>
-                  <tr>
-                    <th scope="col">Adı</th>
+                  <tr onClick={(e) => sortBistData(e.target.id)}>
+                    <th scope="col" id="name">
+                      Adı
+                    </th>
                     <th scope="col"></th>
-                    <th scope="col"
-                    //  onClick={()=>sortBistData("")} 
-                     >Son</th>
-                    <th scope="col">Min</th>
-                    <th scope="col">Max</th>
-                    <th scope="col">Hacim(Tl)</th>
-                    <th scope="col">%</th>
-                    <th scope="col">Son İş.</th>
+                    <th scope="col" id="last">
+                      Son
+                    </th>
+                    <th scope="col" id="min">
+                      Min
+                    </th>
+                    <th scope="col" id="max">
+                      Max
+                    </th>
+                    <th scope="col" id="cap">
+                      Hacim(Tl)
+                    </th>
+                    <th scope="col" id="rate">
+                      %
+                    </th>
+                    <th scope="col" id="time">
+                      Son İş.
+                    </th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {data
-                    .filter((item) => {
-                      return BIST_100.includes(item.code);
-                    })
-                    .sort((a, b) => (a.code < b.code ? -1 : 1))
-                    .map((item, index) => {
-                      return (
-                        <tr
-                          key={index}
-                          onClick={() =>
-                            navigate(`${item.code}`, {
-                              state: {
-                                item,
-                              },
-                            })
-                          }
-                          role="button"
+                  {/* // .sort((a, b) => (a.code < b.code ? -1 : 1)) */}
+                  {data.map((item, index) => {
+                    return (
+                      <tr
+                        key={index}
+                        onClick={() =>
+                          navigate(`${item.code}`, {
+                            state: {
+                              item,
+                            },
+                          })
+                        }
+                        role="button"
+                      >
+                        <th
+                          scope="row"
+                          style={{ color: "#2962ff", fontSize: "14px" }}
                         >
-                          <th
-                            scope="row"
-                            style={{ color: "#2962ff", fontSize: "14px" }}
-                          >
-                            {item.code}
-                          </th>
-                          <th>
-                            {item.rate < 0 ? (
-                              <i
-                                class="fa-solid fa-caret-down"
-                                style={{ color: "red", fontSize: "1.5rem" }}
-                              ></i>
-                            ) : (
-                              <i
-                                class="fa-solid fa-caret-up"
-                                style={{ color: "green", fontSize: "1.5rem" }}
-                              ></i>
-                            )}
-                          </th>
-                          <td>{item.lastprice}</td>
-                          <td>{item.min}</td>
-                          <td>{item.max}</td>
-                          <td>{item.hacimstr}</td>
-                          {item.rate > 0 ? (
-                            <td className="text-success">{item.rate}</td>
+                          {item.code}
+                        </th>
+                        <th>
+                          {item.rate < 0 ? (
+                            <i
+                              className="fa-solid fa-caret-down"
+                              style={{ color: "red", fontSize: "1.5rem" }}
+                            ></i>
                           ) : (
-                            <td className="text-danger">{item.rate}</td>
+                            <i
+                              className="fa-solid fa-caret-up"
+                              style={{ color: "green", fontSize: "1.5rem" }}
+                            ></i>
                           )}
-                          <td>{item.time}</td>
-                        </tr>
-                      );
-                    })}
+                        </th>
+                        <td>{item.lastprice}</td>
+                        <td>{item.min}</td>
+                        <td>{item.max}</td>
+                        <td>{item.hacimstr.slice(1)}</td>
+                        {item.rate > 0 ? (
+                          <td className="text-success">{item.rate}</td>
+                        ) : (
+                          <td className="text-danger">{item.rate}</td>
+                        )}
+                        <td>{item.time}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
               <div className="text-center">

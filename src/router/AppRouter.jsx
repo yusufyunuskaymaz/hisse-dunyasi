@@ -1,8 +1,8 @@
 import React from "react";
 
-import Navbar from "../components/router/Navbar";
+import Navbar from "../components/NavbarFooter/Navbar";
 import Home from "../components/home/Home";
-import Footer from "../components/router/Footer";
+import Footer from "../components/NavbarFooter/Footer";
 import Stock from "../components/stock/Stock";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Gold from "../pages/gold/Gold";
@@ -14,7 +14,7 @@ import CryptoDetail from "../pages/crypto/CryptoDetail";
 import Login from "../components/login/Login";
 import Register from "../components/login/Register";
 import StockDetail from "../components/stock/StockDetail";
-import HareketliNavbar from "../components/router/HareketliNavbar";
+import HareketliNavbar from "../components/NavbarFooter/HareketliNavbar";
 import KapDetail from "../components/stock/Kap/KapDetail";
 import SliderNews from "../components/home/SwiperNews/SliderNews";
 import AllStocks from "../components/stock/TvWidgets/AllStocks";

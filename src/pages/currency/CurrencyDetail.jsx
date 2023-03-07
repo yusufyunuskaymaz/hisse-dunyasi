@@ -2,13 +2,18 @@ import {  useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
+import { useFetch } from "../../utils/function";
 
 
 function CurrencyDetail() {
+  const {isLoading,commentList}=useFetch();
+
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
-  // console.log(item);
+
+  let itemCode = item.code.replace(/^\s+|\s+$/gm,'')
+
 
   return (
     <div className="container  g-4">
@@ -78,8 +83,17 @@ function CurrencyDetail() {
 
         <div className=" col-sm-12 col-md-4  stickyDiv"></div>
       </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
+
+          </div>
+        </div>
+      </div>
    
     </div>
+    
   );
 }
 export default CurrencyDetail;

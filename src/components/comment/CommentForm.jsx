@@ -7,7 +7,8 @@ import { AddComment } from "../../utils/function";
 import { AuthContext } from "../../context/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
 
-export default function CommentForm() {
+export default function CommentForm({itemCode}) {
+  console.log(itemCode,"555")
   const { currentUser } = useContext(AuthContext);
   const [comment, setComment] = useState({
     content: "",
@@ -15,6 +16,7 @@ export default function CommentForm() {
     photoURL: "",
     time: "",
     author:"",
+
   });
 
   const { content } = comment;
@@ -33,10 +35,11 @@ export default function CommentForm() {
 
     setComment({ content: "" });
   };
-
+      // itemCode:itemCode,
   const handleForm = (e) => {
     setComment({
       ...comment,
+      itemCode:itemCode,
       content: e.target.value,
       author:currentUser?.email,
       username: currentUser?.displayName || "admin",

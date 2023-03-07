@@ -18,6 +18,7 @@ export const AddComment = (comment) => {
   const newCurrencyRef = push(userRef);
 
   set(newCurrencyRef, {
+    itemCode:comment.itemCode,
     username: comment.username ,
     photoURL:comment.photoURL ,
     time: comment.time,

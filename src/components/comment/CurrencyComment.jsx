@@ -6,26 +6,20 @@ import { MdDelete } from "react-icons/md";
 import { DeleteComment } from "../../utils/function";
 import moment from "moment";
 
-function CurrencyComment({ commentList }) {
+function CurrencyComment({ commentList, itemCode }) {
   //  const {isLoading,commentList}=useFetch();
-  //  console.log(commentList);
+
   const { currentUser } = useContext(AuthContext);
 
   return (
     <div>
       <h1> Yorumlar</h1>
-      <h4>
-        <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
-        https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum ve
-        tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar
-        kullanıcıların kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere
-        dayanılarak alınacak yatırım kararları beklentilerinize uygun sonuçlar
-        doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına göre yatırım
-        kararı almamanız konusunda kesinlikle uyarıyoruz.
-      </h4>
-      <CommentForm />
+      
+      <CommentForm itemCode={itemCode} />
       <div className="row">
-        {commentList?.map((item) => {
+        {commentList?.filter((item)=>{
+          return item.itemCode === itemCode
+        }).map((item) => {
           return (
             <div className="col-12" key={item.id}>
               <div
@@ -78,6 +72,15 @@ function CurrencyComment({ commentList }) {
           );
         })}
       </div>
+      <h4 style={{fontSize:"13px"}} className="mb-5">
+        <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
+        https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum ve
+        tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar
+        kullanıcıların kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere
+        dayanılarak alınacak yatırım kararları beklentilerinize uygun sonuçlar
+        doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına göre yatırım
+        kararı almamanız konusunda kesinlikle uyarıyoruz.
+      </h4>
     </div>
   );
 }

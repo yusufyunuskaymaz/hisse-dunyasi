@@ -105,7 +105,7 @@ function Currency() {
               <StickySidebar />
             </div>
           </div>
-          <CurrencyComment commentList={commentList}/>
+          {/* <CurrencyComment commentList={commentList}/> */}
         </div>
       </div>
     );

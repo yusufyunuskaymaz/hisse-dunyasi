@@ -16,7 +16,7 @@ const Kazananlar = () => {
         "exchange": "BIST",
         "showChart": true,
         "locale": "tr",
-        "largeChartUrl": "",
+        "largeChartUrl": "https://hisse-dunyasi.netlify.app/stock/AEFES",
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,

@@ -8,7 +8,7 @@ import { AuthContext } from "../../context/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
 
 export default function CommentForm({itemCode}) {
-  console.log(itemCode,"555")
+  // console.log(itemCode,"555")
   const { currentUser } = useContext(AuthContext);
   const [comment, setComment] = useState({
     content: "",
@@ -22,7 +22,7 @@ export default function CommentForm({itemCode}) {
   const { content } = comment;
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(comment);
+    // console.log(comment);
     if (currentUser.email) {
       if (comment.content.trim() !== "") {
         AddComment(comment);

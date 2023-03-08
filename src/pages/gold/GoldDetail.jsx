@@ -1,11 +1,17 @@
 import { useLocation,useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
+import { useFetch } from "../../utils/function";
+import CurrencyComment from "../../components/comment/CurrencyComment";
 
 function GoldDetail() {
+  const {isLoading,commentList}=useFetch()
+
+  // console.log(commentList);
   const navigate = useNavigate();
   const { state: item } = useLocation();
-    console.log(item);
+  let itemCode = item?.name.replace(/^\s+|\s+$/gm,'')
+    // console.log(item);
     return (
       <div className="container  g-4">
         <div className="row">
@@ -73,7 +79,14 @@ function GoldDetail() {
           </div>
   
           <div className=" col-sm-12 col-md-4  stickyDiv"></div>
+        </div> <div className="container">
+        <div className="row">
+          <div className="col">
+          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
+
+          </div>
         </div>
+      </div>
      
       </div>
     );

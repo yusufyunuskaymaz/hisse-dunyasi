@@ -35,9 +35,7 @@ function Currency() {
   useEffect(() => {
     getNewCurrency();
   }, []);
-  // console.log(currencyData);
-
-  // console.log(newCurrencyData);
+  
   if (loading) {
     return (
       <div className="container text-center">

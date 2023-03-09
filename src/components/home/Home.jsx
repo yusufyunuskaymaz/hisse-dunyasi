@@ -26,7 +26,8 @@ const Home = () => {
         <div className="col col-lg-8">
           <div className="col">
             <SwiperSlider />
-            <div className="col">
+            <div className="col mb-5">
+              <h1 className="mb-5 text-center">Canlı Yayın</h1>
             <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>

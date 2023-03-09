@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
+import StickySidebar from "../../components/stock/StickySidebar";
 
 function GoldDetail() {
   const navigate = useNavigate();
@@ -79,7 +80,9 @@ function GoldDetail() {
         
           </div>
   
-          <div className=" col-sm-12 col-md-4  stickyDiv"></div>
+          <div className="col-lg-4">
+            <StickySidebar />
+          </div>
         </div>
      
       </div>

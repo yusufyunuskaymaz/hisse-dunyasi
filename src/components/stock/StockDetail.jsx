@@ -53,9 +53,9 @@ const StockDetail = () => {
           <div className="col ps-0 ">
             <CompanyInfo itemTitle={item.code} />
           </div>
-          <div className="col d-none d-md-block">
+          {/* <div className="col d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
-          </div>
+          </div> */}
           <div className="col">
             <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>

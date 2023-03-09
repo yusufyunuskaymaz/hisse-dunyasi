@@ -62,21 +62,24 @@ ul {
   margin: 0 auto !important;
 }
 
-
-.bist100{
+.bist100 {
   color: #131722 !important;
 }
 
-ul li a{
+ul li a {
   color: #131722 !important;
-  font-family: -apple-system,BlinkMacSystemFont,Trebuchet MS,Roboto,Ubuntu,sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu,
+    sans-serif !important;
   /* font-weight: bolder !important; */
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   color: #131722 !important;
 }
 
-a{
+a {
   /* font-weight: 500 !important; */
   color: #131722 !important;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40157fe618c6d2adf8977ffb5f6563853707ae84

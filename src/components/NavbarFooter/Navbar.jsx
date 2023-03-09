@@ -11,13 +11,8 @@ const Navbar = () => {
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
         <nav
-<<<<<<< HEAD
-          className="navbar navbar-expand-lg navbar-dark fixed-top"
-          style={{ backgroundColor: "#343a40" }}
-=======
           className="navbar navbar-expand-lg fixed-top shadow-sm"
           style={{ backgroundColor: "white" }}
->>>>>>> 770e26a7a5ee7f0e10e68a22b8b766d63ccdd304
         >
           <div className="container py-2">
             <NavLink className="navbar-brand text fs-3" to="/">

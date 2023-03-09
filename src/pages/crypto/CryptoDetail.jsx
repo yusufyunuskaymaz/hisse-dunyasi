@@ -2,6 +2,10 @@ import { useLocation } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
 import { useFetch } from "../../utils/function";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { FaPencilAlt } from "react-icons/fa";
+import Widget from "./Widget";
 
 function CryptoDetail() {
   const { commentList } = useFetch();
@@ -10,6 +14,7 @@ function CryptoDetail() {
   const navigate = useNavigate();
 
   let itemCode = item.name.replace(/^\s+|\s+$/gm, "");
+  let itemSymbol = item.symbol.replace(/^\s+|\s+$/gm, "");
 
   return (
     <div className="container  g-4">
@@ -85,8 +90,8 @@ function CryptoDetail() {
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
-            <h3>{state.id}</h3>
-            <Deneme symbol={state.symbol} />
+            <h3>{item.code}</h3>
+            <Widget itemSymbol={itemSymbol} />
             <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
 

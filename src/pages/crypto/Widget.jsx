@@ -15,7 +15,7 @@ function TradingViewWidget({ itemSymbol }) {
           "symbols": [
             [
               "BİTCOİN",
-              "BINANCE:${itemSymbol}USDT|1D"
+              "${itemSymbol}USDT|1D"
             ]
           ],
           "chartOnly": false,

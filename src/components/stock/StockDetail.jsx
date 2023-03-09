@@ -7,14 +7,19 @@ import Kazananlar from "./TvWidgets/Kazananlar";
 import News from "./Kap/News";
 import TradingViewWidget from "./TvWidgets/TradingView";
 import StickySidebar from "./StickySidebar";
+import CurrencyComment from "../comment/CurrencyComment";
+import { useFetch } from "../../utils/function";
 
 
 const StockDetail = () => {
   const { state } = useLocation();
   const { item } = state;
+  let itemCode = item.code
   const navigate = useNavigate();
+  const {isLoading,commentList}=useFetch();
 
-  
+
+
 
   return (
     <div className="container w-75 d-flex justify-content-evenly">
@@ -23,9 +28,9 @@ const StockDetail = () => {
           <TradingViewWidget itemTitle={item.code} />
         </div>
         <div className="col">
-          <h3 className="display-4">{item.code}</h3>
+          {/* <h3 className="display-4">{item.code}</h3> */}
           <table
-            className="table table-striped table-hover table-sm"
+            className="table table-hover table-lg"
             style={{ width: "15rem" }}
           >
             <thead>
@@ -53,6 +58,8 @@ const StockDetail = () => {
         </div>
         <div className="col ps-0">
           <AboutCompany itemTitle={item.code} />
+          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
+
         </div>
         <div className="col ps-0">
           <Analiz itemTitle={item.code} />

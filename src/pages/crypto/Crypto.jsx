@@ -27,7 +27,7 @@ function Crypto() {
   }, []);
   // console.log(currencyData);
 
-  console.log(newCryptoData);
+  console.log(newCryptoData,"ccc");
 
   if (loading) {
     return (

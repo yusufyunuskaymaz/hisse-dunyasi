@@ -1,17 +1,26 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import CurrencyComment from "../../components/comment/CurrencyComment";
+import StickySidebar from "../../components/stock/StickySidebar";
+import { useFetch } from "../../utils/function";
 
 function CryptoDetail() {
-  const { item } = useParams();
-  console.log(item);
+  const {commentList } = useFetch();
+
+  const { state } = useLocation();
+  let itemCode = state.id;
+
   return (
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-8">
-            <h3>{item}</h3>
+          <div className="col-lg-8">
+            <h3>{state.id}</h3>
+          <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
 
-          <div className="col-4 stickyDiv"></div>
+          <div className="col-lg-4">
+            <StickySidebar />
+          </div>
         </div>
       </div>
     </div>

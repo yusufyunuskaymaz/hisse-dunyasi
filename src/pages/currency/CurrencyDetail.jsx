@@ -4,6 +4,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
 import StickySidebar from "../../components/stock/StickySidebar";
+import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
 
 function CurrencyDetail() {
   const { isLoading, commentList } = useFetch();
@@ -79,14 +80,13 @@ function CurrencyDetail() {
               </Button>
             </div>
             <div className="col mt-5">
-            <CurrencyComment itemCode={itemCode} commentList={commentList} />
-
+              <CurrencyComment itemCode={itemCode} commentList={commentList} />
             </div>
           </div>
         </div>
 
         <div className="col-lg-4">
-          <StickySidebar />
+          <CurrencySidebar />
         </div>
       </div>
     </div>

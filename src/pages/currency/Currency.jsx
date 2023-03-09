@@ -1,18 +1,15 @@
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
+import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
 import { useFetch } from "../../utils/function";
-
 
 function Currency() {
   const navigate = useNavigate();
- const {isLoading,commentList}=useFetch();
- console.log(commentList);
-  
-
+  const { isLoading, commentList } = useFetch();
+  console.log(commentList);
 
   const [newCurrencyData, setNewCurrencyData] = useState([]);
   const [loading, setIsLoading] = useState(false);
@@ -102,7 +99,7 @@ function Currency() {
             </div>
 
             <div className="col-lg-4">
-              <StickySidebar />
+              <CurrencySidebar />
             </div>
           </div>
           {/* <CurrencyComment commentList={commentList}/> */}

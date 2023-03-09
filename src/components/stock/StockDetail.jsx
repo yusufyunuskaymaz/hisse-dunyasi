@@ -50,9 +50,9 @@ const StockDetail = () => {
               </tbody>
             </table>
           </div>
-          <div className="col ps-0 ">
+          {/* <div className="col ps-0 ">
             <CompanyInfo itemTitle={item.code} />
-          </div>
+          </div> */}
           {/* <div className="col d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
           </div> */}

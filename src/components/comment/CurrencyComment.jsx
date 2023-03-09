@@ -15,7 +15,7 @@ function CurrencyComment({ commentList, itemCode }) {
   return (
     <div>
       <div className="row justify-content-center mt-5">
-       <div className="col-lg-8 mb-3">
+       <div className="col-12 mb-3">
        <h1> Yorumlar</h1>
         <CommentForm itemCode={itemCode} />
        </div>
@@ -25,19 +25,21 @@ function CurrencyComment({ commentList, itemCode }) {
           })
           .map((item) => {
             return (
-              <div className="col-8" key={item.id}>
+              <div className="col-12" key={item.id}>
                 <div
                   className="card"
                   style={{
                     marginBottom: "1rem",
                     padding: "1rem 0",
                     border: "none",
-                    borderBottom:"2px solid rgb(229 231 235)"
+                    borderTop:"1px solid rgb(229 231 235)"
                   }}
                 >
                   <div>
                     <div className="mb-2">
-                      <span className="bg-success py-1 px-2 rounded-circle text-white me-3">
+                      <span className=" py-1 px-2 rounded-circle me-3 fs-5"
+                      style={{backgroundColor:"#e3effd", color:"#1e53e5"}}
+                      >
                         {item?.username.slice(0, 1).toUpperCase()}
                       </span>
                       <span className="fs-5">{item?.username}</span>{" "}

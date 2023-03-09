@@ -26,6 +26,9 @@ const Home = () => {
         <div className="col col-lg-8">
           <div className="col">
             <SwiperSlider />
+            <div className="col">
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
           </div>
           <div className="row justify-content-between">
             <div className="col-lg-6 col-sm-12">

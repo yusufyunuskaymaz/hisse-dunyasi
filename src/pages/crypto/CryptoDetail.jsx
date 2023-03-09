@@ -1,18 +1,15 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import { FaPencilAlt } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
+import StickySidebar from "../../components/stock/StickySidebar";
 import { useFetch } from "../../utils/function";
-import Widget from "./Widget";
 
 function CryptoDetail() {
-  const { isLoading, commentList } = useFetch();
+  const { commentList } = useFetch();
 
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
   let itemCode = item.name.replace(/^\s+|\s+$/gm, "");
-  let itemSymbol = item.symbol.replace(/^\s+|\s+$/gm, "");
 
   return (
     <div className="container  g-4">
@@ -87,19 +84,14 @@ function CryptoDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col">
-            <Widget itemSymbol={itemSymbol} />
+          <div className="col-lg-8">
+            <h3>{state.id}</h3>
+            <Deneme symbol={state.symbol} />
+            <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <CurrencyComment
-              itemCode={itemCode}
-              commentList={commentList}
-              isLoading={isLoading}
-            />
+
+          <div className="col-lg-4">
+            <StickySidebar />
           </div>
         </div>
       </div>

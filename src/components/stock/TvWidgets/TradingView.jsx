@@ -43,8 +43,7 @@ function TradingViewWidget({itemTitle}) {
 
   return (
     <div className="contariner" >
-      <div className="row">
-        <div className="col">
+
           <div className="tradingview-widget-container" ref={contariner}>
             <div className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright">
@@ -57,8 +56,6 @@ function TradingViewWidget({itemTitle}) {
                 <span className="blue-text">Microsoft</span>
               </a>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

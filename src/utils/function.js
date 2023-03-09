@@ -50,9 +50,7 @@ export const useFetch = () => {
   return { isLoading, commentList };
 };
 
-// DELETE COMMENT
-
-export const DeleteComment= (id)=>{
+export const DeleteComment=(id)=>{
   const db=getDatabase(app);
   remove(ref(db,"currency/"+id))
 }

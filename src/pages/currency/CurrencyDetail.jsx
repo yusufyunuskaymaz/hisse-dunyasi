@@ -18,7 +18,7 @@ function CurrencyDetail() {
   return (
     <div className="container  g-4">
       <div className="row">
-        <div className=" col-sm-12 col-md-8">
+        {/* <div className=" col-sm-12 col-md-8">
           <div
             className=""
             style={{
@@ -79,14 +79,14 @@ function CurrencyDetail() {
             </div>
           </div>
       
-        </div>
+        </div> */}
 
         <div className=" col-sm-12 col-md-4  stickyDiv"></div>
       </div>
       <div className="container">
         <div className="row">
           <div className="col">
-          <CurrencyComment itemCode={itemCode} commentList={commentList } isLoading={isLoading}/>
+          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
 
           </div>
         </div>

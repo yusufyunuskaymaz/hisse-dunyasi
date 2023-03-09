@@ -23,7 +23,7 @@ const CompanyInfo = ({itemTitle}) => {
     contariner.current.appendChild(script);
   }, []);
   return (
-    <div className="container">
+    <div className="container p-0 table-responsive">
       <div className="row">
         <div className="col">
           <div class="tradingview-widget-container" ref={contariner}>

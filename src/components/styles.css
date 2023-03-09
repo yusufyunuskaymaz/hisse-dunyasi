@@ -83,3 +83,37 @@ th{
   color: black;
   font-weight: 700 !important;
 }
+
+@media only screen and (min-width: 300px) {
+
+
+				
+				
+				
+  
+}
+
+@media only screen and (min-width: 576px) {
+
+  .aboutCompany{
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 768px) {
+
+  .aboutCompany{
+    background-color: blue;
+  }
+}
+@media only screen and (min-width: 992px) {
+
+  .aboutCompany{
+    background-color: green;
+  }
+}
+@media only screen and (min-width: 1200px) {
+
+  .aboutCompany{
+    background-color: yellow;
+  }
+}

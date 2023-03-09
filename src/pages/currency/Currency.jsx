@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -5,14 +6,16 @@ import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
 import { useFetch } from "../../utils/function";
 
+
 function Currency() {
   const navigate = useNavigate();
-  const { isLoading, commentList } = useFetch();
-  //  console.log(commentList);
+ const {isLoading,commentList}=useFetch();
+ console.log(commentList);
+  
+
 
   const [newCurrencyData, setNewCurrencyData] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState();
 
   const URL = "https://api.collectapi.com/economy/allCurrency";
 
@@ -25,14 +28,16 @@ function Currency() {
         },
       })
       .then((res) => setNewCurrencyData(res.data.result))
-      .catch((error) => setErrorMessage(error.message))
+      .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
     getNewCurrency();
   }, []);
-  console.log(errorMessage);
+  // console.log(currencyData);
+
+  // console.log(newCurrencyData);
   if (loading) {
     return (
       <div className="container text-center">
@@ -42,15 +47,7 @@ function Currency() {
             style={{ fontSize: "1.5rem" }}
           ></i>
           <h3>Loading...</h3>{" "}
-        </div>
-      </div>
-    );
-  } else if (errorMessage) {
-    return (
-      <div className="container text-center">
-        <div className="loading">
-          <h3 style={{ color: "red" }}>{errorMessage}!</h3>{" "}
-        </div>
+        </div>{" "}
       </div>
     );
   } else {

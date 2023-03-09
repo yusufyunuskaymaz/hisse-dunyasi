@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
-import StickySidebar from "../../components/stock/StickySidebar";
+import CryptoSidebar from "../../components/stock/TvWidgets/CryptoSidebar";
+
 import { useFetch } from "../../utils/function";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -18,10 +19,8 @@ function CryptoDetail() {
 
   return (
     <div className="container  g-4">
-        
-
-        <div className="row">
-          <div className="col-lg-8">
+      <div className="row">
+        <div className="col-lg-8">
           <div
             className=""
             style={{
@@ -76,26 +75,26 @@ function CryptoDetail() {
               <div>Günlük Değişim</div>
             </div>
             <div className="col-3">
-            <a href="#comments"> <Button
-                color="red"
-                size="md"
-              >
-                <FaPencilAlt /> Yorum Yap
-              </Button></a>
-            </div>
-          </div>
-        
-            <h3>{item.code}</h3>
-            <Widget itemSymbol={itemSymbol} />
-            <div id="comments">
-            <CurrencyComment itemCode={itemCode} commentList={commentList} />
+              <a href="#comments">
+                {" "}
+                <Button color="red" size="md">
+                  <FaPencilAlt /> Yorum Yap
+                </Button>
+              </a>
             </div>
           </div>
 
-          <div className="col-lg-4">
-            <StickySidebar />
+          <h3>{item.code}</h3>
+          <Widget itemSymbol={itemSymbol} />
+          <div id="comments">
+            <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
         </div>
+
+        <div className="col-lg-4">
+          <CryptoSidebar />
+        </div>
+      </div>
     </div>
   );
 }

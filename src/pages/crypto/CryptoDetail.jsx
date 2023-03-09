@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
+import Widget from "./Widget";
 
 function CryptoDetail() {
   const { isLoading, commentList } = useFetch();
@@ -11,6 +12,7 @@ function CryptoDetail() {
   const navigate = useNavigate();
 
   let itemCode = item.name.replace(/^\s+|\s+$/gm, "");
+  let itemSymbol = item.symbol.replace(/^\s+|\s+$/gm, "");
 
   return (
     <div className="container  g-4">
@@ -82,6 +84,13 @@ function CryptoDetail() {
         </div>
 
         <div className=" col-sm-12 col-md-4  stickyDiv"></div>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Widget itemSymbol={itemSymbol} />
+          </div>
+        </div>
       </div>
       <div className="container">
         <div className="row">

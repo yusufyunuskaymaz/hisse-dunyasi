@@ -79,7 +79,9 @@ a {
   /* font-weight: 500 !important; */
   color: #131722 !important;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 40157fe618c6d2adf8977ffb5f6563853707ae84
+#basic-nav-dropdown{
+  color: #1e53e5 !important;
+  background-color: #e3effd !important;
+  padding: .5rem 1rem;
+  border-radius: 2rem;
+}

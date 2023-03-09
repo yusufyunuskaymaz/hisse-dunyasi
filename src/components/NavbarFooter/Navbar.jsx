@@ -58,20 +58,19 @@ const Navbar = () => {
               </ul>
 
               <NavDropdown
-                style={{ color: "white" }}
-                title={currentUser ? currentUser.displayName : "GİRİŞ"}
+                title={currentUser ? currentUser.displayName : "Giriş Yap"}
                 id="basic-nav-dropdown"
               >
                 {currentUser ? (
                   <NavDropdown.Item href="/login" onClick={() => logOut()}>
-                    Log Out
+                    Çıkış Yap
                   </NavDropdown.Item>
                 ) : (
                   <>
+                    <NavDropdown.Item href="/login">Giriş Yap</NavDropdown.Item>
                     <NavDropdown.Item href="/register">
-                      Register
+                      Kayıt Ol
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   </>
                 )}
               </NavDropdown>

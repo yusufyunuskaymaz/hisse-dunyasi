@@ -5,6 +5,7 @@ import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
 import StickySidebar from "../../components/stock/StickySidebar";
 import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
+import CurrencyWidget from "./CurrencyWidget";
 
 function CurrencyDetail() {
   const { isLoading, commentList } = useFetch();
@@ -13,6 +14,7 @@ function CurrencyDetail() {
   const navigate = useNavigate();
 
   let itemCode = item.code.replace(/^\s+|\s+$/gm, "");
+  console.log(item, "burası item");
 
   return (
     <div className="container  g-4">
@@ -80,6 +82,8 @@ function CurrencyDetail() {
               </Button>
             </div>
             <div className="col mt-5">
+              <h3>{item.code}</h3>
+              <CurrencyWidget itemCode={itemCode} />
               <CurrencyComment itemCode={itemCode} commentList={commentList} />
             </div>
           </div>

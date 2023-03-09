@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
 import { useFetch } from "../../utils/function";
+import Deneme from "./Deneme";
 
 function CryptoDetail() {
   const {commentList } = useFetch();
@@ -15,6 +16,7 @@ function CryptoDetail() {
         <div className="row">
           <div className="col-lg-8">
             <h3>{state.id}</h3>
+          <Deneme symbol={state.symbol} />
           <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
 

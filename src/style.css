@@ -61,3 +61,24 @@ ul {
 .allStocks {
   margin: 0 auto !important;
 }
+<<<<<<< HEAD
+=======
+
+.bist100{
+  color: #131722 !important;
+}
+
+ul li a{
+  color: #131722 !important;
+  font-family: -apple-system,BlinkMacSystemFont,Trebuchet MS,Roboto,Ubuntu,sans-serif !important;
+  /* font-weight: bolder !important; */
+  letter-spacing: .4px;
+  color: #131722 !important;
+}
+
+a{
+  /* font-weight: 500 !important; */
+  color: #131722 !important;
+}
+
+>>>>>>> 770e26a7a5ee7f0e10e68a22b8b766d63ccdd304

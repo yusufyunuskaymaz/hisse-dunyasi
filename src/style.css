@@ -66,7 +66,7 @@ ul {
   color: #131722 !important;
 }
 
-ul li a {
+nav ul li a {
   color: #131722 !important;
   font-family: -apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu,
     sans-serif !important;
@@ -76,13 +76,17 @@ ul li a {
 
 }
 
-ul li{
+nav ul li{
   padding: 0 .5rem;
   border-radius: 1.3rem;
-
 }
 
-ul li:hover{
+.list-group-item{
+  border: none !important;
+  font-size: 1.5rem;
+}
+
+nav ul li:hover{
   background-color: #e3effd !important;
   color: #1e53e5 !important;
   border-radius: 1.3rem;
@@ -99,4 +103,18 @@ a {
   background-color: #e3effd !important;
   padding: .5rem 1rem;
   border-radius: 2rem;
+}
+
+
+.main-bg{
+  background-color: #e3effd !important;
+}
+
+.main-color{
+  color: #1e53e5 !important;
+
+}
+
+.capacity{
+  margin-top: 1rem !important;
 }

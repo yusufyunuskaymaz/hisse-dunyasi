@@ -84,36 +84,42 @@ th{
   font-weight: 700 !important;
 }
 
-@media only screen and (min-width: 300px) {
 
+@media screen and (min-width: 300px) and (max-width: 576px){
 
-				
-				
-				
+  .capacity{
+    font-size: .7rem;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
   
 }
+@media only screen and (min-width: 768px) and (max-width: 992px)  {
 
-@media only screen and (min-width: 576px) {
-
-  .aboutCompany{
-    background-color: red;
-  }
+  
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px)   {
 
-  .aboutCompany{
-    background-color: blue;
-  }
+  
 }
-@media only screen and (min-width: 992px) {
-
-  .aboutCompany{
-    background-color: green;
+@media only screen and (min-width: 1200px)  and (max-width: 1400px)  {
+  .list-group2{
+    flex-direction: row !important;
+    /* background-color: palegoldenrod; */
   }
+ 
 }
-@media only screen and (min-width: 1200px) {
 
-  .aboutCompany{
-    background-color: yellow;
-  }
+.stock-table{
+  font-size: 1.5rem;
+}
+.stock-table td:first-of-type{
+  color: green;
+  vertical-align: center;
+}
+.stock-table td{
+  font-size: 1.5rem;
+
 }

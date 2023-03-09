@@ -14,14 +14,14 @@ const Kazananlar = () => {
         "colorTheme": "light",
         "dateRange": "12M",
         "exchange": "BIST",
-        "showChart": false,
+        "showChart": true,
         "locale": "tr",
         "largeChartUrl": "https://hisse-dunyasi.netlify.app/stock/AEFES",
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,
         "width": "300",
-        "height": "400",
+        "height": "600",
         "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
         "plotLineColorFalling": "rgba(41, 98, 255, 1)",
         "gridLineColor": "rgba(240, 243, 250, 0)",
@@ -35,10 +35,10 @@ const Kazananlar = () => {
     contariner.current.appendChild(script);
   }, []);
   return (
-    <div className="container">
+    <div className="container ">
       <div className="row">
         <div className="col ps-0">
-          <div className="tradingview-widget-container" ref={contariner}>
+          <div className="tradingview-widget-container shadow-lg" ref={contariner}>
             <div className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright">
               <a

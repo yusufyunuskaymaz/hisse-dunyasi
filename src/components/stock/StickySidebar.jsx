@@ -6,7 +6,7 @@ const StickySidebar = () => {
     <div className="row stickSidebar d-none d-lg-block">
       <div className="col">
         <div className="">
-          <Kazananlar />
+          {/* <Kazananlar /> */}
           <div className="stockDetail mb-5"></div>
         </div>
       </div>

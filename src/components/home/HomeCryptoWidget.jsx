@@ -176,7 +176,7 @@ function HomeCryptoWidget({ itemTitle }) {
   }, []);
 
   return (
-    <div class="tradingview-widget-container" ref={container}>
+    <div class="tradingview-widget-container shadow-lg" ref={container}>
       <div class="tradingview-widget-container__widget"></div>
       <div class="tradingview-widget-copyright">
         <a

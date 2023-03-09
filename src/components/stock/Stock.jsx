@@ -76,7 +76,7 @@ const Stock = () => {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-8">
+          <div className="col-lg-8 text-center">
             <h1 className="text-center mb-4 fs-1 bist100">Bist 100 Tablo</h1>
             <div className="table-responsive">
               <table

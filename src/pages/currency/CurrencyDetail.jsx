@@ -86,7 +86,7 @@ function CurrencyDetail() {
       <div className="container">
         <div className="row">
           <div className="col">
-          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
+          <CurrencyComment itemCode={itemCode} commentList={commentList } isLoading={isLoading}/>
 
           </div>
         </div>

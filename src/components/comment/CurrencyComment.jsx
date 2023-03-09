@@ -13,66 +13,71 @@ function CurrencyComment({ commentList, itemCode }) {
 
   return (
     <div>
-      <h1> Yorumlar</h1>
-      
-      <CommentForm itemCode={itemCode} />
-      <div className="row">
-        {commentList?.filter((item)=>{
-          return item.itemCode === itemCode
-        }).map((item) => {
-          return (
-            <div className="col-12" key={item.id}>
-              <div
-                className="card border border-3"
-                style={{ marginBottom: "1rem", padding: "1rem" }}
-              >
-                <div>
+      <div className="row justify-content-center mt-5">
+       <div className="col-lg-8 mb-3">
+       <h1> Yorumlar</h1>
+        <CommentForm itemCode={itemCode} />
+       </div>
+        {commentList
+          ?.filter((item) => {
+            return item.itemCode === itemCode;
+          })
+          .map((item) => {
+            return (
+              <div className="col-8" key={item.id}>
+                <div
+                  className="card"
+                  style={{
+                    marginBottom: "1rem",
+                    padding: "1rem 0",
+                    border: "none",
+                  }}
+                >
                   <div>
-                    <h3 style={{ color: "green" }}>{item?.username}</h3>
+                    <div className="mb-2">
+                      <span className="bg-success py-1 px-2 rounded-circle text-white me-3">
+                        {item?.username.slice(0, 1).toUpperCase()}
+                      </span>
+                      <span className="fs-5">{item?.username}</span>{" "}
+                      <span className="ms-3 fs-6">
+                        {moment(item?.time).format("DD MMM, YYYY")}
+                      </span>
+                    </div>
+                    <span className="ms-5">{item?.content}</span>
                   </div>
-                  <img width="50px" src={item?.photoURL} alt="" />
-                  <div>
-                    <span style={{ color: "green" }}>
-                      {moment(item?.time).format("DD MMM, YYYY")}
-                    </span>
-                  </div>
-                  <span>{item?.content}</span>
+                  {item.author === currentUser.email ? (
+                    <div
+                      onClick={() => DeleteComment(item.id)}
+                      className="text-end"
+                      style={{
+                        fontSize: "1.5rem",
+                        cursor: "pointer",
+                        color: "grey",
+                      }}
+                    >
+                      <MdDelete />
+                    </div>
+                  ) : (
+                    <div
+                      onClick={() =>
+                        alert("Sadece yorum sahibi yorumunu silebilir.")
+                      }
+                      className="text-end"
+                      style={{
+                        fontSize: "1.5rem",
+                        cursor: "pointer",
+                        color: "grey",
+                      }}
+                    >
+                      <MdDelete />
+                    </div>
+                  )}
                 </div>
-                {item.author === currentUser.email ? (
-                  <div
-                    onClick={() => DeleteComment(item.id)}
-                    className="text-end"
-                    style={{
-                      fontSize: "1.5rem",
-                      cursor: "pointer",
-                      color: "grey",
-                    }}
-                  >
-                    <MdDelete />
-                  </div>
-                ) : (
-                  <div
-                    onClick={() =>
-                      alert(
-                        "Sadece yorum sahibi yorumunu silebilir."
-                      )
-                    }
-                    className="text-end"
-                    style={{
-                      fontSize: "1.5rem",
-                      cursor: "pointer",
-                      color: "grey",
-                    }}
-                  >
-                    <MdDelete />
-                  </div>
-                )}
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
-      <h4 style={{fontSize:"13px"}} className="mb-5">
+      <h4 style={{ fontSize: "13px" }} className="mb-5">
         <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
         https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum ve
         tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar

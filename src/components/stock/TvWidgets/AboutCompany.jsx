@@ -23,11 +23,8 @@ function TradingViewWidget({itemTitle}) {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="tradingview-widget-container" ref={contariner}>
-            <div className="tradingview-widget-container__widget"></div>
+          <div className="tradingview-widget-container p-0 " ref={contariner}>
+            <div className="tradingview-widget-container__widget p-0"></div>
             <div className="tradingview-widget-copyright">
               TradingView'den{" "}
               <a
@@ -38,10 +35,7 @@ function TradingViewWidget({itemTitle}) {
                 <span className="blue-text">Microsoft</span>
               </a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
   );
 }
 

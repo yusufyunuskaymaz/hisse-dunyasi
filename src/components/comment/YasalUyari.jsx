@@ -2,7 +2,7 @@ import React from 'react'
 
 const YasalUyari = () => {
   return (
-    <div >
+    <div className='mb-5'>
           <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
        <p
        style={{fontSize:".9rem"}}

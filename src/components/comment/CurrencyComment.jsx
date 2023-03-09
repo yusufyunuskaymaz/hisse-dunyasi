@@ -5,6 +5,7 @@ import CommentForm from "./CommentForm";
 import { MdDelete } from "react-icons/md";
 import { DeleteComment } from "../../utils/function";
 import moment from "moment";
+import YasalUyari from "./YasalUyari";
 
 function CurrencyComment({ commentList, itemCode }) {
   //  const {isLoading,commentList}=useFetch();
@@ -31,6 +32,7 @@ function CurrencyComment({ commentList, itemCode }) {
                     marginBottom: "1rem",
                     padding: "1rem 0",
                     border: "none",
+                    borderBottom:"2px solid rgb(229 231 235)"
                   }}
                 >
                   <div>
@@ -39,11 +41,15 @@ function CurrencyComment({ commentList, itemCode }) {
                         {item?.username.slice(0, 1).toUpperCase()}
                       </span>
                       <span className="fs-5">{item?.username}</span>{" "}
-                      <span className="ms-3 fs-6">
+                      <span className="ms-3 fs-6"
+                      style={{color:"rgb(107 114 128)"}}
+                      >
                         {moment(item?.time).format("DD MMM, YYYY")}
                       </span>
                     </div>
-                    <span className="ms-5">{item?.content}</span>
+                    <span className="ms-5"
+                    style={{color:"rgb(107 114 128)"}}
+                    >{item?.content}</span>
                   </div>
                   {item.author === currentUser.email ? (
                     <div
@@ -77,15 +83,7 @@ function CurrencyComment({ commentList, itemCode }) {
             );
           })}
       </div>
-      <h4 style={{ fontSize: "13px" }} className="mb-5">
-        <span style={{ color: "red" }}>Yasal Uyarı:</span>{" "}
-        https://hisse-dunyasi.netlify.app/'de yer alan bilgi, yorum ve
-        tavsiyeler Yatırım Danışmanlığı kapsamında değildir. Yorumlar
-        kullanıcıların kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere
-        dayanılarak alınacak yatırım kararları beklentilerinize uygun sonuçlar
-        doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına göre yatırım
-        kararı almamanız konusunda kesinlikle uyarıyoruz.
-      </h4>
+      <YasalUyari />
     </div>
   );
 }

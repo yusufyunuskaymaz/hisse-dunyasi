@@ -117,3 +117,12 @@ th{
     background-color: yellow;
   }
 }
+
+h1{
+  font-family: 'Manrope', sans-serif;
+  font-size: 3rem !important;
+  color: #131722;
+}
+.navbar-brand{
+  font-family: 'Manrope', sans-serif;
+}

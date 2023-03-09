@@ -11,11 +11,11 @@ const Navbar = () => {
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
         <nav
-          className="navbar navbar-expand-lg navbar-dark fixed-top"
-          style={{ backgroundColor: "#343a40" }}
+          className="navbar navbar-expand-lg fixed-top"
+          // style={{ backgroundColor: "#343a40" }}
         >
           <div className="container py-2">
-            <NavLink className="navbar-brand text fs-3" to="/">
+            <NavLink className="navbar-brand text fs-3 " to="/">
               Hisse Dünyası
             </NavLink>
             <button
@@ -58,20 +58,21 @@ const Navbar = () => {
               </ul>
 
               <NavDropdown
-                style={{ color: "white" }}
+                // style={{ color: "white" }}
                 title={currentUser ? currentUser.displayName : "GİRİŞ"}
                 id="basic-nav-dropdown"
               >
                 {currentUser ? (
                   <NavDropdown.Item href="/login" onClick={() => logOut()}>
-                    Log Out
+                    Çıkış
                   </NavDropdown.Item>
                 ) : (
                   <>
+                    <NavDropdown.Item href="/login">Giriş Yap</NavDropdown.Item>
+
                     <NavDropdown.Item href="/register">
-                      Register
+                      Kayıt Ol
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   </>
                 )}
               </NavDropdown>

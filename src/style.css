@@ -1,57 +1,68 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh !important;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 600;
 }
 
-th{
-    font-weight: 500;
+th {
+  font-weight: 500;
+}
+
+a {
+  font-size: 1.1rem !important;
+  text-decoration: none !important;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.fa-play {
+  transform: rotate(-90deg);
+  color: #5fffa3;
+  margin-right: 0.7rem;
+}
+
+.stickyDiv {
+  height: 15rem;
+  width: 15rem;
+  background-image: url("https://img7.mynet.com/finans/anlikborsa/finans-2023-banner-min-1.png");
+  background-position: center;
+  background-size: cover;
+  position: sticky;
+  top: 100px;
+}
+
+.deneme2 {
+  position: relative;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #deeef4;
+}
+
+.mySwiper {
+  /* margin: 0 auto !important; */
+}
+
+.allStocks {
+  margin: 0 auto !important;
+}
+
+
+ul li a{
+  color: #131722 !important;
 }
 
 a{
-    font-size: 1.1rem !important;
-    text-decoration: none !important;
+  color: #131722 !important;
 }
 
-.nav-item{
-    margin-right: 1rem;
-}
-
-ul{
-    list-style-type: none;
-}
-
-.fa-play{
-    transform: rotate(-90deg);
-    color: #5FFFA3;
-    margin-right: .7rem;
-}
-
-.stickyDiv{
-    height: 15rem;
-    width: 15rem;
-    background-image: url("https://img7.mynet.com/finans/anlikborsa/finans-2023-banner-min-1.png");
-    background-position: center;
-    background-size: cover;
-    position: sticky;
-    top: 100px;
-  }
-
-.deneme2{
-    position: relative;
-}
-
-.table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #deeef4; 
- }
-
- .mySwiper{
-    /* margin: 0 auto !important; */
- }
-
- .allStocks{
-    margin: 0 auto !important;
- }

@@ -45,7 +45,7 @@ export default function App() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper m-0"
         style={{ maxHeight: "40rem", maxWidth: "50rem" }}
       >
         {news.map((item) => {

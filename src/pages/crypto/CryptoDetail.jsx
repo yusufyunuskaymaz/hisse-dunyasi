@@ -18,8 +18,10 @@ function CryptoDetail() {
 
   return (
     <div className="container  g-4">
-      <div className="row">
-        <div className=" col-sm-12 col-md-8">
+        
+
+        <div className="row">
+          <div className="col-lg-8">
           <div
             className=""
             style={{
@@ -36,7 +38,7 @@ function CryptoDetail() {
             ></i>
             {item?.name}
           </div>
-          <div className="row  p-4 mb-5">
+          <div className="row  p-4 mb-5 align-items-center justify-content-between">
             <div className="col-1">
               {item?.price_change_percentage_24h < 0 ? (
                 <i
@@ -74,32 +76,26 @@ function CryptoDetail() {
               <div>Günlük Değişim</div>
             </div>
             <div className="col-3">
-              <Button
-                onClick={() => navigate("/")}
-                variant="outline-dark"
-                size="lg"
+            <a href="#comments"> <Button
+                color="red"
+                size="md"
               >
                 <FaPencilAlt /> Yorum Yap
-              </Button>
+              </Button></a>
             </div>
           </div>
-        </div>
-
-        <div className=" col-sm-12 col-md-4  stickyDiv"></div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8">
+        
             <h3>{item.code}</h3>
             <Widget itemSymbol={itemSymbol} />
+            <div id="comments">
             <CurrencyComment itemCode={itemCode} commentList={commentList} />
+            </div>
           </div>
 
           <div className="col-lg-4">
             <StickySidebar />
           </div>
         </div>
-      </div>
     </div>
   );
 }

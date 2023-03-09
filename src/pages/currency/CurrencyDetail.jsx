@@ -1,24 +1,22 @@
-import {  useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
-
+import StickySidebar from "../../components/stock/StickySidebar";
 
 function CurrencyDetail() {
-  const {isLoading,commentList}=useFetch();
+  const { isLoading, commentList } = useFetch();
 
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
-
-  let itemCode = item.code.replace(/^\s+|\s+$/gm,'')
-
+  let itemCode = item.code.replace(/^\s+|\s+$/gm, "");
 
   return (
     <div className="container  g-4">
       <div className="row">
-        {/* <div className=" col-sm-12 col-md-8">
+        <div className=" col-sm-12 col-md-8">
           <div
             className=""
             style={{
@@ -29,7 +27,10 @@ function CurrencyDetail() {
               padding: "2rem",
             }}
           >
-            <i className="fa-regular fa-star" style={{ marginRight: "1rem" }}></i>
+            <i
+              className="fa-regular fa-star"
+              style={{ marginRight: "1rem" }}
+            ></i>
             {item?.code}
           </div>
           <div className="row  p-4 mb-5">
@@ -69,31 +70,26 @@ function CurrencyDetail() {
               <div>Günlük Değişim</div>
             </div>
             <div className="col-3">
-              <Button onClick={()=>navigate("/")}
+              <Button
+                onClick={() => navigate("/")}
                 variant="outline-dark"
                 size="lg"
-                
               >
                 <FaPencilAlt /> Yorum Yap
               </Button>
             </div>
-          </div>
-      
-        </div> */}
+            <div className="col mt-5">
+            <CurrencyComment itemCode={itemCode} commentList={commentList} />
 
-        <div className=" col-sm-12 col-md-4  stickyDiv"></div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-          <CurrencyComment itemCode={itemCode} commentList={commentList}/>
-
+            </div>
           </div>
         </div>
+
+        <div className="col-lg-4">
+          <StickySidebar />
+        </div>
       </div>
-   
     </div>
-    
   );
 }
 export default CurrencyDetail;

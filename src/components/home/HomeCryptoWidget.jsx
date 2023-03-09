@@ -19,9 +19,7 @@ function HomeCryptoWidget({ itemTitle }) {
             "title": "Overview",
             "title_raw": "Overview",
             "symbols": [
-              {
-                "s": "CRYPTOCAP:TOTAL"
-              },
+             
               {
                 "s": "BITSTAMP:BTCUSD"
               },

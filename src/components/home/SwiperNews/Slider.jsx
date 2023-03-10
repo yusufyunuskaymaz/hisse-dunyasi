@@ -41,7 +41,7 @@ function Slider() {
                   />
 
                   <Carousel.Caption >
-                    <h1 className="slider-title-mobil">{item.name}</h1>
+                    <span className="carousel-title">{item.name}</span>
                   </Carousel.Caption>
                 </div>
               </Carousel.Item>

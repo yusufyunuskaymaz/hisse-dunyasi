@@ -1,5 +1,5 @@
 // import { useFetch } from "../../utils/function";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContextProvider";
 import CommentForm from "./CommentForm";
 import { MdDelete } from "react-icons/md";
@@ -9,8 +9,19 @@ import YasalUyari from "./YasalUyari";
 
 function CurrencyComment({ commentList, itemCode }) {
   //  const {isLoading,commentList}=useFetch();
+  const [selectedCommentId, setSelectedCommentId] = useState("")
 
   const { currentUser } = useContext(AuthContext);
+
+  const handleDelete =(id)=>{
+    if(window.confirm("Yorumu silmek istediğinize emin misiniz")){
+      DeleteComment(id)
+    }
+  }
+
+  const handleClick = (id) => {
+    setSelectedCommentId(id);
+  };
 
   return (
     <div>
@@ -53,9 +64,19 @@ function CurrencyComment({ commentList, itemCode }) {
                     style={{color:"rgb(107 114 128)"}}
                     >{item?.content}</span>
                   </div>
+                  <div className="reply mt-3 mb-3" type="button"
+                  onClick={()=>handleClick(item.id)}
+                  >
+                    <span className="">Cevap ver</span>
+                  </div>
+                  {
+                    selectedCommentId === item.id ? (<div className="col-lg-8">
+                    <CommentForm itemCode={itemCode} />
+                    </div>) : null
+                  }
                   {item.author === currentUser.email ? (
                     <div
-                      onClick={() => DeleteComment(item.id)}
+                      onClick={() => handleDelete(item.id)}
                       className="text-end"
                       style={{
                         fontSize: "1.5rem",
@@ -65,21 +86,7 @@ function CurrencyComment({ commentList, itemCode }) {
                     >
                       <MdDelete />
                     </div>
-                  ) : (
-                    <div
-                      onClick={() =>
-                        alert("Sadece yorum sahibi yorumunu silebilir.")
-                      }
-                      className="text-end"
-                      style={{
-                        fontSize: "1.5rem",
-                        cursor: "pointer",
-                        color: "grey",
-                      }}
-                    >
-                      <MdDelete />
-                    </div>
-                  )}
+                  ) : null}
                 </div>
               </div>
             );

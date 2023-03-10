@@ -186,3 +186,56 @@ h1 {
 .tradingview-widget-copyright{
   display: none !important;
 }
+
+.carousel-title{
+  font-size: 2rem !important;
+}
+
+@media screen and (min-width: 300px) and (max-width: 576px){
+
+  .capacity{
+    font-size: .5rem;
+  }
+  .slider-title-mobil{
+    font-size: .5rem !important;
+    /* position: absolute; */
+    /* bottom: 1rem !important; */
+    margin-top: 1rem !important;
+  }
+  .carousel-caption{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1rem;
+  }
+  .carousel-indicators{
+    margin-bottom: 0 !important;
+  }
+  .title{
+    margin-top: 0 !important;
+  }
+  .title-mobil{
+    margin-top: 3rem !important;
+  }
+  .carousel-title{
+    font-size: .8rem !important;
+    line-height: 0 !important;
+  }
+ 
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 992px)  {
+
+  
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px)   {
+
+  
+}
+@media only screen and (min-width: 1200px)  and (max-width: 1400px)  {
+
+ 
+}

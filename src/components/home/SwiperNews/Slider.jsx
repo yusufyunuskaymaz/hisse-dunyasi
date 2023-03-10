@@ -41,7 +41,9 @@ function Slider() {
                   />
 
                   <Carousel.Caption >
-                    <span className="carousel-title">{item.name}</span>
+                    {/* <span className="carousel-title">{item.name}</span> */}
+                    <h3 className="m-0 carousel-title">{item.name}</h3>
+                    {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, officia!</p> */}
                   </Carousel.Caption>
                 </div>
               </Carousel.Item>

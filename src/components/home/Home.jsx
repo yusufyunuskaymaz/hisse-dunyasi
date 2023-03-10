@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SwiperSlider from "./SwiperNews/SwiperSlider";
 import axios from "axios";
 import StickyDiv from "../component/StickyDiv";
 import Kazananlar from "../stock/TvWidgets/Kazananlar";
@@ -28,17 +27,18 @@ const Home = () => {
           <div className="col">
             {/* <SwiperSlider /> */}
             <div className="col slider-bg">
+              <h1 className="title mt-0 mb-5">Haberler</h1>
             <Slider />
             </div>
             <div className="col mb-5 text-center ">
-              <h1 className="mb-5 text-center title">Canlı Yayın</h1>
+              <h1 className="mb-5 text-center title title-mobil">Canlı Yayın</h1>
               <div className="ratio ratio-16x9">
               <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
            
             </div>
           </div>
-            <h1 className=" mb-5 title">Borsa ve Kripto Tablosu</h1>
+            <h1 className=" mb-5 title mt-2">Borsa ve Kripto Tablosu</h1>
           <div className="row justify-content-between mb-5 text-center">
             <div className="col-lg-6 col-sm-12">
               <Kazananlar />

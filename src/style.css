@@ -126,6 +126,7 @@ a {
   padding: 0 0 0.7rem 0;
   /* border-radius: 2rem; */
   margin-top: 3rem;
+  line-height: 1.5rem;
 }
 h1 {
   font-family: "Hind Siliguri", sans-serif !important;
@@ -133,9 +134,12 @@ h1 {
 
 #slider-bg {
   position: relative;
+  cursor: pointer;
 }
 
+
 #slider-bg:before {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0;
@@ -155,6 +159,7 @@ h1 {
 }
 
 .carousel-item::before {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0;

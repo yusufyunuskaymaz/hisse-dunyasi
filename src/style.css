@@ -182,3 +182,7 @@ h1 {
   z-index: 3;
   text-align: left;
 }
+
+.tradingview-widget-copyright{
+  display: none !important;
+}

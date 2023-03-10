@@ -41,20 +41,7 @@ const Stock = () => {
     getDataFromApi();
   }, []);
 
-  const sortBistData = (id) => {
-    const options = {
-      // Sort Bist data when clicked table title
-      name: [...data].sort((a, b) => (a.code < b.code ? 1 : -1)),
-      last: [...data].sort((a, b) => (a.lastprice - b.lastprice)),
-      min: [...data].sort((a, b) => (a.min - b.min)),
-      max: [...data].sort((a, b) => (a.max - b.max)),
-      cap: [...data].sort((a, b) => (a.hacimstr - b.hacimstr)),
-      rate: [...data].sort((a, b) => (a.rate - b.rate)),
-      time: [...data].sort((a, b) => (a.time - b.time))
-    }
 
-    setData(options[id]);
-  };
 
   const navigate = useNavigate();
 
@@ -77,21 +64,14 @@ const Stock = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 text-center">
-            <h1 className="text-center mb-4 fs-1 bist100">Bist 100 Tablo</h1>
+            <h1 className="text-center mb-5 fs-1 bist100 title mt-1">Bist 100 Tablo</h1>
             <div className="table-responsive">
               <table
                 className="table table-hover"
-                //   style={{ width: "15rem" }}
               >
-                {/* <thead>
-                <tr className="text-white" style={{ background: "#464c52" }}>
-                  <th scope="col" colSpan="13">
-                    BIST100 Tablo
-                  </th>
-                </tr>
-              </thead> */}
+                
                 <thead>
-                  <tr onClick={(e) => sortBistData(e.target.id)}>
+                  <tr>
                     <th scope="col" id="name">
                       Adı
                     </th>

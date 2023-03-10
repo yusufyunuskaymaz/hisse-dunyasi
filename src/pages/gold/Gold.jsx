@@ -35,6 +35,9 @@ console.log(gold);
       <div className="container">
         <div className="row">
           <div className="col-8 table-responsive">
+          <div className="title-crypto text-center">
+            <h1 className=" fs-1 bist100 title mt-1">Altın Tablosu</h1>
+            </div>
             <table className="table  table-hover">
               <thead>
                 <tr className="text-white">

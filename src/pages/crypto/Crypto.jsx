@@ -46,6 +46,9 @@ function Crypto() {
         <div className="container my-3">
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
+            <div className="title-crypto text-center">
+            <h1 className=" fs-1 bist100 title mt-1">Kripto Tablosu</h1>
+            </div>
               <table className="table   table-hover ">
                 <thead>
                   <tr className="text-white">

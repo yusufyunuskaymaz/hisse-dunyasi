@@ -33,6 +33,8 @@ function Currency() {
     getNewCurrency();
   }, []);
   console.log(errorMessage);
+
+  
   if (loading) {
     return (
       <div className="container text-center">

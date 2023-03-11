@@ -3,13 +3,18 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContextProvider";
 import CommentForm from "./CommentForm";
 import { MdDelete } from "react-icons/md";
+
 import { DeleteComment } from "../../utils/function";
 import moment from "moment";
 
 function CurrencyComment({ commentList, itemCode, isLoading }) {
-  //  const {isLoading,commentList}=useFetch();
-
   const { currentUser } = useContext(AuthContext);
+
+  const commentButtonStyle = {
+    fontSize: "1.5rem",
+    cursor: "pointer",
+    color: "grey",
+  };
   if (isLoading) {
     return (
       <div className="container text-center">
@@ -52,33 +57,17 @@ function CurrencyComment({ commentList, itemCode, isLoading }) {
                       </div>
                       <span>{item?.content}</span>
                     </div>
-                    {item.author === currentUser.email ? (
-                      <div
-                        onClick={() => DeleteComment(item.id)}
-                        className="text-end"
-                        style={{
-                          fontSize: "1.5rem",
-                          cursor: "pointer",
-                          color: "grey",
+
+                    <div className="text-end">
+                      <MdDelete
+                        onClick={() => {
+                          item.author === currentUser.email
+                            ? DeleteComment(item.id)
+                            : alert("Sadece yorum sahibi yorumunu silebilir.");
                         }}
-                      >
-                        <MdDelete />
-                      </div>
-                    ) : (
-                      <div
-                        onClick={() =>
-                          alert("Sadece yorum sahibi yorumunu silebilir.")
-                        }
-                        className="text-end"
-                        style={{
-                          fontSize: "1.5rem",
-                          cursor: "pointer",
-                          color: "grey",
-                        }}
-                      >
-                        <MdDelete />
-                      </div>
-                    )}
+                        style={commentButtonStyle}
+                      />
+                    </div>
                   </div>
                 </div>
               );

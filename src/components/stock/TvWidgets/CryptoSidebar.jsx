@@ -1,12 +1,12 @@
 import React from "react";
-import Kazananlar from "./TvWidgets/Kazananlar";
+import HomeCryptoWidget from "../../home/HomeCryptoWidget";
 
-const StickySidebar = () => {
+const CryptoSidebar = () => {
   return (
     <div className="row stickSidebar d-none d-lg-block">
       <div className="col">
         <div className="">
-          {/* <Kazananlar /> */}
+          <HomeCryptoWidget />
           <div className="stockDetail mb-5"></div>
         </div>
       </div>
@@ -14,4 +14,4 @@ const StickySidebar = () => {
   );
 };
 
-export default StickySidebar;
+export default CryptoSidebar;

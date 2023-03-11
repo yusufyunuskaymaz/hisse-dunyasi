@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import SwiperSlider from "./SwiperNews/SwiperSlider";
 import axios from "axios";
 import StickyDiv from "../component/StickyDiv";
 import Kazananlar from "../stock/TvWidgets/Kazananlar";
 import HomeCryptoWidget from "./HomeCryptoWidget";
 import StickySidebar from "../stock/StickySidebar";
+import Slider from "./SwiperNews/Slider";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -23,11 +23,23 @@ const Home = () => {
   return (
     <div className="container ">
       <div className="row justify-content-between">
-        <div className="col col-lg-8">
+        <div className="col col-lg-8 text-center">
           <div className="col">
-            <SwiperSlider />
+            {/* <SwiperSlider /> */}
+            <div className="col slider-bg">
+              <h1 className="title mt-0 mb-5">Haberler</h1>
+            <Slider />
+            </div>
+            <div className="col mb-5 text-center ">
+              <h1 className="mb-5 text-center title title-mobil">Canlı Yayın</h1>
+              <div className="ratio ratio-16x9">
+              <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+           
+            </div>
           </div>
-          <div className="row justify-content-between">
+            <h1 className=" mb-5 title mt-2">Borsa ve Kripto Tablosu</h1>
+          <div className="row justify-content-between mb-5 text-center">
             <div className="col-lg-6 col-sm-12">
               <Kazananlar />
             </div>

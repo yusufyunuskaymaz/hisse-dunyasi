@@ -23,9 +23,7 @@ const CompanyInfo = ({itemTitle}) => {
     contariner.current.appendChild(script);
   }, []);
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
+
           <div class="tradingview-widget-container" ref={contariner}>
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright">
@@ -39,9 +37,7 @@ const CompanyInfo = ({itemTitle}) => {
               TradingView tarafından
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+  
   );
 };
 

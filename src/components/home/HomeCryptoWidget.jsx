@@ -19,9 +19,7 @@ function HomeCryptoWidget({ itemTitle }) {
             "title": "Overview",
             "title_raw": "Overview",
             "symbols": [
-              {
-                "s": "CRYPTOCAP:TOTAL"
-              },
+             
               {
                 "s": "BITSTAMP:BTCUSD"
               },
@@ -174,24 +172,23 @@ function HomeCryptoWidget({ itemTitle }) {
         "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
         "colorTheme": "light"
       }`;
-      container.current.appendChild(script);
+    container.current.appendChild(script);
   }, []);
 
   return (
-          <div class="tradingview-widget-container" ref={container}>
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
-              <a
-                href="https://www.tradingview.com/markets/cryptocurrencies/"
-                rel="noopener"
-                target="_blank"
-              >
-                <span class="blue-text">Bitcoin and Altcoin Prices</span>
-              </a>{" "}
-              by TradingView
-            </div>
-          </div>
- 
+    <div class="tradingview-widget-container shadow-lg" ref={container}>
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/markets/currencies/"
+          rel="noopener"
+          target="_blank"
+        >
+          <span class="blue-text">Bitcoin and Altcoin Prices</span>
+        </a>{" "}
+        by TradingView
+      </div>
+    </div>
   );
 }
 

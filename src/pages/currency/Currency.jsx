@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
+import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
 import { useFetch } from "../../utils/function";
 
 function Currency() {
   const navigate = useNavigate();
   const { isLoading, commentList } = useFetch();
-  //  console.log(commentList);
+  console.log(commentList);
 
   const [newCurrencyData, setNewCurrencyData] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState();
 
   const URL = "https://api.collectapi.com/economy/allCurrency";
 
@@ -25,16 +25,22 @@ function Currency() {
         },
       })
       .then((res) => setNewCurrencyData(res.data.result))
-      .catch((error) => setErrorMessage(error.message))
+      .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
     getNewCurrency();
   }, []);
+<<<<<<< HEAD
   console.log(errorMessage);
 
   
+=======
+  // console.log(currencyData);
+
+  // console.log(newCurrencyData);
+>>>>>>> 32f15e0689b8ba669c976e0b84441da5d8d73a43
   if (loading) {
     return (
       <div className="container text-center">
@@ -44,15 +50,7 @@ function Currency() {
             style={{ fontSize: "1.5rem" }}
           ></i>
           <h3>Loading...</h3>{" "}
-        </div>
-      </div>
-    );
-  } else if (errorMessage) {
-    return (
-      <div className="container text-center">
-        <div className="loading">
-          <h3 style={{ color: "red" }}>{errorMessage}!</h3>{" "}
-        </div>
+        </div>{" "}
       </div>
     );
   } else {
@@ -61,6 +59,9 @@ function Currency() {
         <div className="container my-3">
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
+            <div className="title-currency text-center">
+            <h1 className=" fs-1 bist100 title mt-1">Döviz Tablosu</h1>
+            </div>
               <table className="table   table-hover ">
                 <thead>
                   <tr className="text-white">
@@ -107,7 +108,7 @@ function Currency() {
             </div>
 
             <div className="col-lg-4">
-              <StickySidebar />
+              <CurrencySidebar />
             </div>
           </div>
           {/* <CurrencyComment commentList={commentList}/> */}

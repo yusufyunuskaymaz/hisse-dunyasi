@@ -2,8 +2,7 @@ import { padding } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import StickySidebar from "../../components/stock/StickySidebar";
-
+import CryptoSidebar from "../../components/stock/TvWidgets/CryptoSidebar";
 function Crypto() {
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ function Crypto() {
   }, []);
   // console.log(currencyData);
 
-  console.log(newCryptoData);
+  console.log(newCryptoData, "ccc");
 
   if (loading) {
     return (
@@ -47,6 +46,9 @@ function Crypto() {
         <div className="container my-3">
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
+            <div className="title-crypto text-center">
+            <h1 className=" fs-1 bist100 title mt-1">Kripto Tablosu</h1>
+            </div>
               <table className="table   table-hover ">
                 <thead>
                   <tr className="text-white">
@@ -95,7 +97,7 @@ function Crypto() {
             </div>
 
             <div className="col-lg-4">
-              <StickySidebar />
+              <CryptoSidebar />
             </div>
           </div>
         </div>

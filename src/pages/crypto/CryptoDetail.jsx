@@ -1,21 +1,26 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import { FaPencilAlt } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import CurrencyComment from "../../components/comment/CurrencyComment";
+import CryptoSidebar from "../../components/stock/TvWidgets/CryptoSidebar";
+
 import { useFetch } from "../../utils/function";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { FaPencilAlt } from "react-icons/fa";
+import Widget from "./Widget";
 
 function CryptoDetail() {
-  const { isLoading, commentList } = useFetch();
+  const { commentList } = useFetch();
 
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
   let itemCode = item.name.replace(/^\s+|\s+$/gm, "");
+  let itemSymbol = item.symbol.replace(/^\s+|\s+$/gm, "");
 
   return (
     <div className="container  g-4">
       <div className="row">
-        <div className=" col-sm-12 col-md-8">
+        <div className="col-lg-8">
           <div
             className=""
             style={{
@@ -32,7 +37,7 @@ function CryptoDetail() {
             ></i>
             {item?.name}
           </div>
-          <div className="row  p-4 mb-5">
+          <div className="row  p-4 mb-5 align-items-center justify-content-between">
             <div className="col-1">
               {item?.price_change_percentage_24h < 0 ? (
                 <i
@@ -70,28 +75,24 @@ function CryptoDetail() {
               <div>Günlük Değişim</div>
             </div>
             <div className="col-3">
-              <Button
-                onClick={() => navigate("/")}
-                variant="outline-dark"
-                size="lg"
-              >
-                <FaPencilAlt /> Yorum Yap
-              </Button>
+              <a href="#comments">
+                {" "}
+                <Button color="red" size="md">
+                  <FaPencilAlt /> Yorum Yap
+                </Button>
+              </a>
             </div>
+          </div>
+
+          <h3>{item.code}</h3>
+          <Widget itemSymbol={itemSymbol} />
+          <div id="comments">
+            <CurrencyComment itemCode={itemCode} commentList={commentList} />
           </div>
         </div>
 
-        <div className=" col-sm-12 col-md-4  stickyDiv"></div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <CurrencyComment
-              itemCode={itemCode}
-              commentList={commentList}
-              isLoading={isLoading}
-            />
-          </div>
+        <div className="col-lg-4">
+          <CryptoSidebar />
         </div>
       </div>
     </div>

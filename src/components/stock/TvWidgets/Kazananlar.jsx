@@ -35,10 +35,10 @@ const Kazananlar = () => {
     contariner.current.appendChild(script);
   }, []);
   return (
-    <div className="container">
+    <div className="container ">
       <div className="row">
         <div className="col ps-0">
-          <div className="tradingview-widget-container" ref={contariner}>
+          <div className="tradingview-widget-container shadow-lg" ref={contariner}>
             <div className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright">
               <a

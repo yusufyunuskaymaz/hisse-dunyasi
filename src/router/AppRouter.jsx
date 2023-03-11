@@ -24,7 +24,7 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <HareketliNavbar />
+      {/* <HareketliNavbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news-detail" element={<SliderNews />} />

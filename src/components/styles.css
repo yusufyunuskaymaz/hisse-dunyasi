@@ -3,8 +3,8 @@
 }
 html,
 body {
-  /* position: relative; */
-  /* height: 100%; */
+  position: relative;
+  height: 100%;
 }
 
 body {
@@ -14,7 +14,6 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
-  
 }
 
 .swiper {
@@ -40,9 +39,12 @@ body {
   object-fit: cover;
 }
 
-.tradingview-widget-copyright{
-  display: none;
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 
 .stockDetail{
   background-image: url("https://img7.mynet.com/finans/anlikborsa/finans-2023-banner-min-1.png");
@@ -55,19 +57,9 @@ body {
 }
 
 .bigpara-banner-web{
-  display: none;
+  display: none !important;
 }
-.mytest {
-  background-color: rgba(17, 17, 17, 0.7);
-  color: white;
-	position: absolute;
-  width: 100%;
-	top: 24rem;
-  min-height: 5rem;
-	/* left: 30px; */
-	z-index: 10000;
-  text-align: center;
-}
+
 
 .stickSidebar{
   position: sticky;
@@ -76,10 +68,42 @@ body {
 
 table td{
   font-size: 14px;
-  color: #131722;
-  font-weight: lighter;
+  color: red !important;
+  font-weight: bolder !important;
 }
 th{
   color: black;
   font-weight: 700 !important;
 }
+
+
+
+
+.stock-table{
+  font-size: 1.5rem;
+}
+.stock-table td:first-of-type{
+  color: green;
+  vertical-align: center;
+}
+.stock-table td{
+  font-size: 1.5rem;
+
+}
+
+.mytest {
+  background-color: rgba(17, 17, 17, 0.7);
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 24rem;
+  min-height: 5rem;
+  /* left: 30px; */
+  z-index: 10000;
+  text-align: center;
+}
+
+.tradingview-widget-copyright{
+  display: none !important;
+}
+

@@ -9,9 +9,6 @@ const SliderNews = () => {
     <div className="container" style={{ minHeight: "62vh" }}>
       <div className="row justify-content-center">
         <div className="col-lg-6 fs-4 mb-5">
-          <div className="btn btn-warning mb-3" onClick={() => navigate(-1)}>
-            Geri
-          </div>
           <div className="text-center d-flex flex-column">
             <h2
               className="mt-3 mb-5 fs-1 text-center"

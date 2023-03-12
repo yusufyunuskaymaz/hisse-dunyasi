@@ -117,12 +117,12 @@ const Stock = () => {
                           {item.rate < 0 ? (
                             <i
                               className="fa-solid fa-caret-down"
-                              style={{ color: "red", fontSize: "1.5rem" }}
+                              style={{ color: "#ff173e", fontSize: "1.5rem" }}
                             ></i>
                           ) : (
                             <i
                               className="fa-solid fa-caret-up"
-                              style={{ color: "green", fontSize: "1.5rem" }}
+                              style={{ color: "#00a97f", fontSize: "1.5rem" }}
                             ></i>
                           )}
                         </th>
@@ -131,9 +131,19 @@ const Stock = () => {
                         <td>{item.max}</td>
                         <td>{item.hacimstr.slice(1)}</td>
                         {item.rate > 0 ? (
-                          <td className="text-success">{item.rate}</td>
+                          <td
+                            className="text-success"
+                            style={{ color: "#00a97f" }}
+                          >
+                            {item.rate}
+                          </td>
                         ) : (
-                          <td className="text-danger">{item.rate}</td>
+                          <td
+                            className="text-danger"
+                            style={{ color: "#ff173e" }}
+                          >
+                            {item.rate}
+                          </td>
                         )}
                         <td>{item.time}</td>
                       </tr>

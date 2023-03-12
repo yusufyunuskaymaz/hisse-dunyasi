@@ -12,9 +12,9 @@ import CommentDiv from "../comment/CommentDiv";
 
 const StockDetail = () => {
   const { state } = useLocation();
-  const {item} = state
+  const { item } = state;
   const itemCode = item.code;
-  const type = "stock"
+  const type = "stock";
 
   // console.log(item,"item...")
 
@@ -27,36 +27,35 @@ const StockDetail = () => {
           </div>
 
           <div className="col table-responsive">
-          <table className="table table-borderless stock-table">
-  <thead>
-    <tr className="text-center main-bg ">
-    <th scope="col" colSpan="5" className="main-color ps-0">{item.text}</th>
-    </tr>
-    <tr>
-      <th scope="col" colSpan="2" rowSpan="2">Son</th>
-      <th scope="col">Min</th>
-      <th scope="col">Max</th>
-      <th scope="col">Hacim</th>
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colSpan="2" rowSpan="2">{item.lastprice}</td>
-      <td>{item.min}</td>
-      <td>{item.max}</td>
-      <td className="capacity">{item.hacimstr}</td>
-    </tr>
-
-  </tbody>
-</table>
+            <table className="table table-borderless stock-table">
+              <thead>
+                <tr className="text-center main-bg ">
+                  <th scope="col" colSpan="5" className="main-color ps-0">
+                    {item.text}
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" colSpan="2" rowSpan="2">
+                    Son
+                  </th>
+                  <th scope="col">Min</th>
+                  <th scope="col">Max</th>
+                  <th scope="col">Hacim</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="2" rowSpan="2">
+                    {item.lastprice}
+                  </td>
+                  <td>{item.min}</td>
+                  <td>{item.max}</td>
+                  <td className="capacity">{item.hacimstr}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-         
-           
-          
-               
           {/* <div className="col ps-0 ">
             <CompanyInfo itemTitle={item.code} />
           </div> */}
@@ -64,7 +63,7 @@ const StockDetail = () => {
             <AboutCompany itemTitle={item.code} />
           </div> */}
           <div className="col">
-            <CommentDiv itemCode={itemCode} type={type}/>
+            <CommentDiv itemCode={itemCode} type={type} />
           </div>
         </div>
         <div className="col-lg-4">

@@ -62,17 +62,16 @@ body {
 
 
 .stickSidebar{
-  position: sticky;
+  position: sticky !important;
   top: 100px;
 }
 
 table td{
   font-size: 14px;
-  color: red !important;
   font-weight: bolder !important;
 }
 th{
-  color: black;
+  color: red !important;
   font-weight: 700 !important;
 }
 

@@ -41,6 +41,7 @@ const News = ({ itemTitle, itemText }) => {
   }, []);
   const navigate = useNavigate();
   return (
+    <div className="news">
     <ul class="list-group">
       {socketData.slice(0, numberOfNews).map((item) => {
         return (
@@ -73,6 +74,7 @@ const News = ({ itemTitle, itemText }) => {
         </button>
       )}
     </ul>
+    </div>
   );
 };
 

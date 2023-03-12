@@ -49,7 +49,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-lg-4 col d-none d-md-block">
+        <div className="col-lg-4 col d-none d-md-block stickSidebar">
           <StickySidebar />
         </div>
       </div>

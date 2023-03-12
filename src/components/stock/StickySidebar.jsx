@@ -1,14 +1,15 @@
-import React from "react";
-import Kazananlar from "./TvWidgets/Kazananlar";
+
+
+// 
+
+import StockTable from "../home/HomeStockTable";
 
 const StickySidebar = () => {
+
   return (
-    <div className="row stickSidebar d-none d-lg-block">
+    <div className="row stickSidebar d-none d-lg-block ">
       <div className="col">
-        <div className="">
-          {/* <Kazananlar /> */}
-          <div className="stockDetail mb-5"></div>
-        </div>
+         <StockTable />
       </div>
     </div>
   );

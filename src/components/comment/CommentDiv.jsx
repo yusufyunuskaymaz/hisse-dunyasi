@@ -21,7 +21,7 @@ function CommentDiv({ commentList, itemCode, type }) {
           <h1> Yorumlar</h1>
           <CommentInput itemCode={itemCode} type={type} />
         </div>
-        {data.commentList.map((item, index) => {
+        {data.commentList.sort((a,b)=>(b.time-a.time)).map((item, index) => {
           return (
             <div className="comments">
               <CommonCommentDiv item={item} setReplyCommentId={setReplyCommentId} />

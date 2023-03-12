@@ -51,7 +51,7 @@ function Crypto() {
             </div>
               <table className="table   table-hover ">
                 <thead>
-                  <tr className="text-white">
+                  <tr className="text-dark">
                     <th>Crypto Cinsi</th>
                     <th scope="col"> Yön </th>
                     <th scope="col">Fiyat </th>

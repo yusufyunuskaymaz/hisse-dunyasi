@@ -62,6 +62,9 @@ const StockDetail = () => {
           <div className="col d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
           </div>
+          <div className="col d-none d-md-block">
+            <News itemTitle={item.code} />
+          </div>
           <div className="col ps-0">
           <Analiz itemTitle={item.code} />
         </div>

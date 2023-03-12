@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
 import { BIST_100 } from "./BIST_100";
+import { Form } from "react-bootstrap";
 
 const Stock = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [allStock, setAllStock] = useState([])
+  
   const getDataFromApi = () => {
     // console.log("girdi");
     const config = {
@@ -24,6 +26,7 @@ const Stock = () => {
         const data = res.data.result;
         // Filter Bist 100 between 500 stocks
         filterAndSortInitialData(data);
+        setAllStock(data)
       });
   };
 
@@ -33,16 +36,32 @@ const Stock = () => {
         return BIST_100.includes(item.code);
       })
       .sort((a, b) => (a.code < b.code ? -1 : 1));
-    setData(data);
-    setLoading(false);
+      setData(data);
+      setLoading(false);
   };
+
+  const showAllStocks = ()=>{
+    const data = allStock.sort((a, b) => (a.code < b.code ? -1 : 1))
+    setData(data)
+  }
 
   useEffect(() => {
     getDataFromApi();
   }, []);
 
   const navigate = useNavigate();
-
+  const [showOrHide, setShowOrHide] = useState(false)
+  
+  const changeStock = ()=>{
+    setShowOrHide(!showOrHide)
+    if(!showOrHide){
+      showAllStocks()
+    }else{
+      filterAndSortInitialData(allStock)
+    }
+  }
+  
+  console.log(data,"dsa")
   if (loading) {
     return (
       <div className="container text-center">
@@ -63,10 +82,23 @@ const Stock = () => {
             <h1 className="text-center mb-5 fs-1 bist100 title mt-1">
               Bist 100 Tablo
             </h1>
+            <div className="d-flex justify-content-between px-3">
+              <p className="text-muted">{data.length} adet</p>
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Tümünü göster"
+              onChange={()=>changeStock()}
+              style={{ transform: "scale(1.2)" }}
+            />
+            </div>
             <div className="table-responsive">
               <table className="table table-hover">
                 <thead>
                   <tr>
+                    <th scope="col" >
+                      #
+                    </th>
                     <th scope="col" id="name">
                       Adı
                     </th>
@@ -99,7 +131,7 @@ const Stock = () => {
                       <tr
                         key={index}
                         onClick={() =>
-                          navigate(`${item.code}`, {
+                          navigate(`${item.text.toLowerCase().replace(" ", "-")}`, {
                             state: {
                               item,
                             },
@@ -107,6 +139,12 @@ const Stock = () => {
                         }
                         role="button"
                       >
+
+                        <th
+                          scope="row"
+                        >
+                          {index+1}
+                        </th>
                         <th
                           scope="row"
                           style={{ color: "#2962ff", fontSize: "14px" }}

@@ -16,7 +16,7 @@ const StockDetail = () => {
   const itemCode = item.code;
   const type = "stock"
 
-  console.log(item,"item...")
+  // console.log(item,"item...")
 
   return (
     <div className="container">

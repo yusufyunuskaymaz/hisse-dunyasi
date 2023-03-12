@@ -11,7 +11,7 @@ const Stock = () => {
   const [loading, setLoading] = useState(true);
 
   const getDataFromApi = () => {
-    console.log("girdi");
+    // console.log("girdi");
     const config = {
       headers: {
         "Content-type": "application/json",

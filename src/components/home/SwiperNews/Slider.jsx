@@ -18,7 +18,7 @@ function Slider() {
     });
     setNews(data.data.result);
   };
-  console.log(news, "haber");
+  // console.log(news, "haber");
   useEffect(() => {
     getData();
   }, []);

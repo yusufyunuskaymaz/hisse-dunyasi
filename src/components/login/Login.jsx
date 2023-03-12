@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     signIn(email, password, navigate);
 
-    console.log(email, password);
+    // console.log(email, password);
   };
 
   const handleGoogleProvider = () => {

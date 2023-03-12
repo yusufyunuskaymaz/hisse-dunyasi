@@ -19,7 +19,7 @@ const Home = () => {
     getData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="container ">
       <div className="row justify-content-between">

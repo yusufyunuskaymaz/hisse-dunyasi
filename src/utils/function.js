@@ -33,12 +33,36 @@ export const useFetch = (type, code) => {
       const userArray = [];
 
       for (let id in data) {
-        userArray.push({ id, ...data[id] });
+        const commentObj = data[id];
+        const subCommentList = commentObj.subCommentList || {};
+        const subCommentArray = [];
+
+        for (let subCommentId in subCommentList) {
+          subCommentArray.push({
+            id: subCommentId,
+            ...subCommentList[subCommentId],
+          });
+        }
+
+        const comment = {
+          id,
+          ...commentObj,
+          subCommentList: subCommentArray,
+        };
+
+        userArray.push(comment);
       }
+
       setCommentList(userArray);
     });
   }, []);
+
   return { commentList };
 };
 
-export const DeleteComment = (id) => {};
+export const UpdateComment = (type, code, id, content) => {
+  const db = getDatabase(commentsApp);
+  const commentRef = ref(db, `${type}/${code}/${id}/subCommentList`);
+
+  return push(commentRef, content);
+};

@@ -29,7 +29,7 @@ function Gold() {
   useEffect(() => {
     getGold();
   }, []);
-console.log(gold);
+// console.log(gold);
   return (
     <div>
       <div className="container">
@@ -51,7 +51,7 @@ console.log(gold);
               </thead>
               <tbody>
                 {gold.map((item, index) => {
-                  console.log(item)
+                  // console.log(item)
                   return (
                     <tr key={index}>
                       <th

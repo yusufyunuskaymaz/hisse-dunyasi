@@ -15,7 +15,7 @@ const Register = () => {
     const displayName = `${userName}`;
     createUser(email, password, navigate, displayName);
 
-    console.log(userName);
+    // console.log(userName);
   };
 
   const handleGoogleProvider = () => {

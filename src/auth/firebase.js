@@ -37,7 +37,7 @@ export const createUser = async (email, password, navigate, displayName) => {
       displayName: displayName,
     });
     navigate("/");
-    console.log(userCredental);
+    // console.log(userCredental);
   } catch (error) {
     alert(error.message);
   }
@@ -60,7 +60,7 @@ export const userObserver = (setCurrentUser) => {
       // console.log(user);
     } else {
       setCurrentUser(false);
-      console.log("user sign out");
+      // console.log("user sign out");
     }
   });
 };
@@ -74,7 +74,7 @@ export const signUpWithGoogle = (navigate) => {
 
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       navigate("/");
 
       // ...

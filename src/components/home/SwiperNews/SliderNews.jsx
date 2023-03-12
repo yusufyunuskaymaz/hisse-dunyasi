@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SliderNews = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
-  console.log(state, "ssb");
+  // console.log(state, "ssb");
   return (
     <div className="container" style={{ minHeight: "62vh" }}>
       <div className="row justify-content-center">

@@ -5,10 +5,14 @@ import { MdDelete } from "react-icons/md";
 import moment from "moment";
 import YasalUyari from "./YasalUyari";
 import { useFetch } from "../../utils/function";
+import ReplyComment from "./ReplyComment";
+import CommonCommentDiv from "./CommonCommentDiv";
 
 function CommentDiv({ commentList, itemCode, type }) {
   const data = useFetch(type, itemCode);
-  console.log(data,"mapp")
+  const [replyCommentId, setReplyCommentId] = useState();
+
+  console.log(data,"mapped data")
 
   return (
     <div>
@@ -20,17 +24,20 @@ function CommentDiv({ commentList, itemCode, type }) {
         {data.commentList.map((item, index) => {
           return (
             <div className="comments">
-              <div className="d-flex comment-avatar">
-                <p>{item.name.slice(0,1)}</p>
-                <p>{item.name}</p>
-                <p>{moment(item.time).format("DD MMM, YYYY")}</p>
-              </div>
-              <div>
-                <p>{item.body}</p>
-              </div>
-              <div>
-                <p>Cevap ver</p>
-              </div>
+              <CommonCommentDiv item={item} setReplyCommentId={setReplyCommentId} />
+              {replyCommentId === item.id ? (
+                <div className="w-75 ms-5">
+                  <ReplyComment itemCode={itemCode} id={item.id} type={type}  />
+                </div>
+              ) : null}
+              {item?.subCommentList.sort((a,b)=>b.time-a.time).map((item)=>{
+                return (
+                  // <p className="text-success ms-5">{item.body}</p>
+                  <div className="">
+                    <CommonCommentDiv item={item} sub={"subComment"} />
+                  </div>
+                )
+              })}
             </div>
           );
         })}

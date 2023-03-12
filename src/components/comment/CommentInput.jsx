@@ -9,7 +9,7 @@ export default function CommentInput({itemCode, type}) {
   console.log(itemCode,type,"sda")
   const { currentUser } = useContext(AuthContext);
 
-  console.log(currentUser,"user1")
+  // console.log(currentUser,"user1")
 
 
   const [content, setContent] = useState({
@@ -17,13 +17,14 @@ export default function CommentInput({itemCode, type}) {
     email:currentUser.email,
     name:currentUser.displayName || "Kullanıcı",
     time:Date.now()
-  })
+    })
 
   const handleChange =(e)=>{
+    
     setContent({...content, body:e.target.value})
     
   }
-  console.log(content,"content")
+  // console.log(content,"content")
   const handleSubmit =()=>{
     if(!currentUser.email ){ 
       alert("Yorum yapmak için giriş yapın...")
@@ -32,6 +33,7 @@ export default function CommentInput({itemCode, type}) {
       alert("Bu alan boş bırakılamaz")
     }else{
       AddComment(type,itemCode,  content)
+      setContent({...content,body:""})
     }
   }
 

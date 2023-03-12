@@ -5,7 +5,7 @@ import parse from 'html-react-parser';
 
 const KapDetail = () => {
     const {state}=useLocation()
-    console.log(state)
+    // console.log(state)
     const navigate = useNavigate()
   return (
     <div className="container w-50 mb-5">

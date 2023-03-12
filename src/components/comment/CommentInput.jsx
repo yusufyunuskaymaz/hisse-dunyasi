@@ -14,14 +14,14 @@ export default function CommentInput({itemCode, type}) {
 
   const [content, setContent] = useState({
     body:"",
-    email:currentUser.email,
-    name:currentUser.displayName || "Kullanıcı",
+    email:"",
+    name:"",
     time:Date.now()
     })
 
   const handleChange =(e)=>{
     
-    setContent({...content, body:e.target.value})
+    setContent({...content, body:e.target.value,email:currentUser.email, name:currentUser.displayName })
     
   }
   // console.log(content,"content")

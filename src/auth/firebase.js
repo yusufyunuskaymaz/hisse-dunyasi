@@ -57,7 +57,7 @@ export const userObserver = (setCurrentUser) => {
     if (user) {
       const { email, displayName, photoURL } = user;
       setCurrentUser({ email, displayName, photoURL });
-      // console.log(user);
+      localStorage.setItem("user", JSON.stringify({email,displayName}))
     } else {
       setCurrentUser(false);
       // console.log("user sign out");

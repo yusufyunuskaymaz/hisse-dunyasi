@@ -26,9 +26,12 @@ function Slider() {
     <div id="slider-bg">
       <div className="deneme">
         <Carousel>
-          {news.map((item) => {
+          {news.map((item,index) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item
+              key={index+1}
+
+              >
                 <div
                   className="news"
                   onClick={() => navigate("/news-detail", { state: item })}

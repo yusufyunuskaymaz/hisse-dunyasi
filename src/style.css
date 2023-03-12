@@ -220,3 +220,24 @@ h1 {
  
 }
 
+.comments{
+  border-bottom: 1px solid rgb(229, 231, 235);
+  margin-bottom: 1rem;
+}
+
+.comment-avatar p{
+  padding: 0 1rem;
+}
+.comment-avatar p:first-child{
+  background-color: #e3effd;
+  color:#1e53e5;
+  padding: .3rem .7rem;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
+.comments div:nth-child(2){
+  display: inline-block;
+  margin-left: 2rem;
+  color: rgb(107, 114, 128);
+}

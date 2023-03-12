@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import CurrencyComment from "../../components/comment/CurrencyComment";
 import CryptoSidebar from "../../components/stock/TvWidgets/CryptoSidebar";
 
 import { useFetch } from "../../utils/function";
@@ -7,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaPencilAlt } from "react-icons/fa";
 import Widget from "./Widget";
+import CommentDiv from "../../components/comment/CommentDiv";
 
 function CryptoDetail() {
   const { commentList } = useFetch();
@@ -87,7 +87,7 @@ function CryptoDetail() {
           <h3>{item.code}</h3>
           <Widget itemSymbol={itemSymbol} />
           <div id="comments">
-            <CurrencyComment itemCode={itemCode} commentList={commentList} />
+            <CommentDiv itemCode={itemCode} commentList={commentList} />
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CurrencyComment from "../../components/comment/CurrencyComment";
 import StickySidebar from "../../components/stock/StickySidebar";
 import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
 import { useFetch } from "../../utils/function";

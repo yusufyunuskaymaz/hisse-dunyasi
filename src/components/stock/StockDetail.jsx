@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import AboutCompany from "./TvWidgets/AboutCompany";
 import Analiz from "./TvWidgets/Analiz";
 import CompanyInfo from "./TvWidgets/CompanyInfo";
@@ -7,15 +7,16 @@ import Kazananlar from "./TvWidgets/Kazananlar";
 import News from "./Kap/News";
 import TradingViewWidget from "./TvWidgets/TradingView";
 import StickySidebar from "./StickySidebar";
-import CurrencyComment from "../comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
+import CommentDiv from "../comment/CommentDiv";
 
 const StockDetail = () => {
   const { state } = useLocation();
-  const { item } = state;
-  let itemCode = item.code;
-  const navigate = useNavigate();
-  const { isLoading, commentList } = useFetch();
+  const {item} = state
+  const itemCode = item.code;
+  const type = "stock"
+
+  console.log(item,"item...")
 
   return (
     <div className="container">
@@ -26,7 +27,7 @@ const StockDetail = () => {
           </div>
 
           <div className="col table-responsive">
-          <table class="table table-borderless stock-table">
+          <table className="table table-borderless stock-table">
   <thead>
     <tr className="text-center main-bg ">
     <th scope="col" colSpan="5" className="main-color ps-0">{item.text}</th>
@@ -63,7 +64,7 @@ const StockDetail = () => {
             <AboutCompany itemTitle={item.code} />
           </div> */}
           <div className="col">
-            <CurrencyComment itemCode={itemCode} commentList={commentList} />
+            <CommentDiv itemCode={itemCode} type={type}/>
           </div>
         </div>
         <div className="col-lg-4">

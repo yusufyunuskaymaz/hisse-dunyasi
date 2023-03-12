@@ -12,7 +12,6 @@ import {
 import { async } from "q";
 import { ChevronLeft } from "react-feather";
 
-//* Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -22,9 +21,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 export default app;
 
@@ -86,3 +83,20 @@ export const signUpWithGoogle = (navigate) => {
       console.log(error);
     });
 };
+
+
+
+// Comments 
+
+
+const firebaseConfig2 = {
+  apiKey: "AIzaSyBP7dqD0f0zjz3uhguoJeH51ZBZVU9A8xY",
+  authDomain: "hisse-dunyasi-493d9.firebaseapp.com",
+  projectId: "hisse-dunyasi-493d9",
+  storageBucket: "hisse-dunyasi-493d9.appspot.com",
+  messagingSenderId: "901177359390",
+  appId: "1:901177359390:web:b146a92a45eb7b6a42420f"
+};
+
+// Initialize Firebase
+export const commentsApp = initializeApp(firebaseConfig2,"other");

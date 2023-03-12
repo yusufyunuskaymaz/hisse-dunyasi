@@ -33,7 +33,7 @@ const Home = () => {
             <div className="col mb-5 text-center ">
               <h1 className="mb-5 text-center title title-mobil">Canlı Yayın</h1>
               <div className="ratio ratio-16x9">
-              <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
               </div>
            
             </div>

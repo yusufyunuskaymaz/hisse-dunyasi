@@ -1,4 +1,4 @@
-import app from "../auth/firebase";
+import app, { commentsApp } from "../auth/firebase";
 import {
   getDatabase,
   ref,
@@ -11,46 +11,34 @@ import {
 import { useEffect, useState } from "react";
 
 // ADD COMMENT
-export const AddComment = (comment) => {
-  // console.log("1"+ comment.content);
-  const db = getDatabase(app);
-  const userRef = ref(db, "currency/");
-  const newCurrencyRef = push(userRef);
+export const AddComment = (type, code, content) => {
+  console.log(type, code, content, "eklendi...");
+  const db = getDatabase(commentsApp);
+  const commentRef = ref(db, `${type}/${code}`);
+  const newCommentRef = push(commentRef);
 
-  set(newCurrencyRef, {
-    itemCode:comment.itemCode,
-    username: comment.username ,
-    photoURL:comment.photoURL ,
-    time: comment.time,
-    author:comment.author,
-    content: comment.content,
-  });
+  set(newCommentRef, content);
 };
 
 // READ COMMENT
 
-export const useFetch = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [commentList, setCommentList] = useState();
+export const useFetch = (type, code) => {
+  const [commentList, setCommentList] = useState([]);
   useEffect(() => {
-    const db = getDatabase(app);
-    const userRef = ref(db, "currency/");
+    const db = getDatabase(commentsApp);
+    const commentRef = ref(db, `${type}/${code}`);
 
-    onValue(userRef, (snapshot) => {
+    onValue(commentRef, (snapshot) => {
       const data = snapshot.val();
-      const commentArray = [];
+      const userArray = [];
 
       for (let id in data) {
-        commentArray.push({ id, ...data[id] });
+        userArray.push({ id, ...data[id] });
       }
-      setCommentList(commentArray.reverse());
-      setIsLoading(false);
+      setCommentList(userArray);
     });
   }, []);
-  return { isLoading, commentList };
+  return { commentList };
 };
 
-export const DeleteComment=(id)=>{
-  const db=getDatabase(app);
-  remove(ref(db,"currency/"+id))
-}
+export const DeleteComment = (id) => {};

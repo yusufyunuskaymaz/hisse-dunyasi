@@ -41,11 +41,7 @@ const Stock = () => {
     getDataFromApi();
   }, []);
 
-
-
   const navigate = useNavigate();
-
-
 
   if (loading) {
     return (
@@ -64,12 +60,11 @@ const Stock = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 text-center">
-            <h1 className="text-center mb-5 fs-1 bist100 title mt-1">Bist 100 Tablo</h1>
+            <h1 className="text-center mb-5 fs-1 bist100 title mt-1">
+              Bist 100 Tablo
+            </h1>
             <div className="table-responsive">
-              <table
-                className="table table-hover"
-              >
-                
+              <table className="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col" id="name">

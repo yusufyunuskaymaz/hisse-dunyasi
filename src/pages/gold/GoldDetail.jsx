@@ -1,9 +1,9 @@
 import { useLocation,useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { FaPencilAlt } from "react-icons/fa";
-import CurrencyComment from "../../components/comment/CurrencyComment";
 import { useFetch } from "../../utils/function";
 import StickySidebar from "../../components/stock/StickySidebar";
+import CommentDiv from "../../components/comment/CommentDiv";
 
 function GoldDetail() {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ function GoldDetail() {
                   <FaPencilAlt /> Yorum Yap
                 </Button>
               </div>
-              <CurrencyComment itemCode={itemCode} commentList={commentList} />
+              <CommentDiv itemCode={itemCode} commentList={commentList} />
 
             </div>
         

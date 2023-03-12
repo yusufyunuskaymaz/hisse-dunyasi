@@ -97,12 +97,13 @@ a {
   color: #131722 !important;
 }
 
-#basic-nav-dropdown {
+.login-dropdown {
   color: #1e53e5 !important;
   background-color: #e3effd !important;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
 }
+
 
 .main-bg {
   background-color: #e3effd !important;

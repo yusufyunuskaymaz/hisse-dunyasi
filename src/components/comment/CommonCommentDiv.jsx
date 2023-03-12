@@ -5,7 +5,7 @@ import { RiQuestionAnswerLine } from "react-icons/ri";
 const CommonCommentDiv = ({ item, setReplyCommentId, sub }) => {
   return (
     <div
-      className={`${sub} border p-2 mb-4 rounded`}
+      className={`${sub} border p-3 mb-4 rounded`}
       style={{ border: "1px solid #e3e9f1" }}
     >
       <div className={`d-flex comment-avatar`}>

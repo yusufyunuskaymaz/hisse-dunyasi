@@ -21,12 +21,12 @@ const StockDetail = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-lg-8 ps-1 ">
+        <div className="col-lg-7 ps-1 ">
           <div className="col d-none d-md-block">
             <TradingViewWidget itemTitle={item.code} />
           </div>
 
-          <div className="col table-responsive">
+          <div className="col table-responsive w-75">
             <table className="table table-borderless stock-table">
               <thead>
                 <tr className="text-center main-bg ">
@@ -56,12 +56,15 @@ const StockDetail = () => {
             </table>
           </div>
 
-          {/* <div className="col ps-0 ">
+          <div className="col ps-0 ">
             <CompanyInfo itemTitle={item.code} />
-          </div> */}
-          {/* <div className="col d-none d-md-block">
+          </div>
+          <div className="col d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
-          </div> */}
+          </div>
+          <div className="col ps-0">
+          <Analiz itemTitle={item.code} />
+        </div>
           <div className="col">
             <CommentDiv itemCode={itemCode} type={type} />
           </div>

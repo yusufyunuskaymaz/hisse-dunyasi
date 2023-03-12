@@ -1,11 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { logOut } from "../../auth/firebase";
 import { AuthContext } from "../../context/AuthContextProvider";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { BsPerson } from "react-icons/bs";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const handleDropdownToggle = () => {
+    setShowDropdown(!showDropdown);
+  };
   // console.log(currentUser)
   return (
     <>
@@ -56,24 +61,34 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
-
-              <NavDropdown
-                title={currentUser ? currentUser.displayName : "Giriş Yap"}
-                id="basic-nav-dropdown"
+              <div
+                className="d-flex login-dropdown"
+                onClick={handleDropdownToggle}
               >
-                {currentUser ? (
-                  <NavDropdown.Item href="/login" onClick={() => logOut()}>
-                    Çıkış Yap
-                  </NavDropdown.Item>
-                ) : (
-                  <>
-                    <NavDropdown.Item href="/login">Giriş Yap</NavDropdown.Item>
-                    <NavDropdown.Item href="/register">
-                      Kayıt Ol
+                <div className="me-2">
+                  <BsPerson size={27} />
+                </div>
+                <NavDropdown
+                  title={currentUser ? currentUser.displayName : "Giriş Yap"}
+                  id="basic-nav-dropdown"
+                  show={showDropdown}
+                >
+                  {currentUser ? (
+                    <NavDropdown.Item href="/login" onClick={() => logOut()}>
+                      Çıkış Yap
                     </NavDropdown.Item>
-                  </>
-                )}
-              </NavDropdown>
+                  ) : (
+                    <>
+                      <NavDropdown.Item href="/login">
+                        Giriş Yap
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="/register">
+                        Kayıt Ol
+                      </NavDropdown.Item>
+                    </>
+                  )}
+                </NavDropdown>
+              </div>
             </div>
           </div>
         </nav>

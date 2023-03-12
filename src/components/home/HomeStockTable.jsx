@@ -26,8 +26,10 @@ function StockTable() {
     
       console.log(data,"borsa")
   return (
-    <div className=''>
-      <Table  bordered hover >
+    <div className=''
+    style={{width:"85%"}}
+    >
+      <Table  bordered variant='light' hover >
       <thead>
         <tr>
           <th colSpan={4} className="fs-4 text-center">Borsa İstanbul Verileri</th>

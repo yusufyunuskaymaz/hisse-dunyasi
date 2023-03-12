@@ -28,22 +28,33 @@ const Home = () => {
             {/* <SwiperSlider /> */}
             <div className="col slider-bg">
               <h1 className="title mt-0 mb-5">Haberler</h1>
-            <Slider />
+              <Slider />
             </div>
             <div className="col mb-5 text-center ">
-              <h1 className="mb-5 text-center title title-mobil">Canlı Yayın</h1>
+              <h1 className="mb-5 text-center title title-mobil">
+                Canlı Yayın
+              </h1>
               <div className="ratio ratio-16x9">
-              <iframe width="760" height="515" src="https://www.youtube.com/embed/hHSmBJk6w0c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                <iframe
+                  width="760"
+                  height="515"
+                  src="https://www.youtube.com/embed/hHSmBJk6w0c"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </div>
-           
             </div>
           </div>
-            <h1 className=" mb-5 title mt-2">Borsa ve Kripto Tablosu</h1>
+          <h1 className=" mb-5 title mt-2">Borsa ve Kripto Tablosu</h1>
           <div className="row justify-content-between mb-5 text-center">
-            <div className="col-lg-6 col-sm-12">
+            <div className="col"
+            >
               <Kazananlar />
+              
             </div>
-            <div className="col-lg-6 col-sm-12 ">
+            <div className="col ">
               <HomeCryptoWidget />
             </div>
           </div>

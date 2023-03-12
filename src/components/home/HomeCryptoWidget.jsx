@@ -160,6 +160,7 @@ function HomeCryptoWidget({ itemTitle }) {
         "showChart": true,
         "showFloatingTooltip": false,
         "locale": "tr",
+        "largeChartUrl": "https://hisse-dunyasi.netlify.app/crypto/",
         "plotLineColorGrowing": "#2962FF",
         "plotLineColorFalling": "#2962FF",
         "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
@@ -176,7 +177,7 @@ function HomeCryptoWidget({ itemTitle }) {
   }, []);
 
   return (
-    <div class="tradingview-widget-container shadow-lg" ref={container}>
+    <div class="tradingview-widget-container" ref={container}>
       <div class="tradingview-widget-container__widget"></div>
       <div class="tradingview-widget-copyright">
         <a

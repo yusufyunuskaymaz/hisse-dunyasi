@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Kazananlar = () => {
   const contariner = useRef();
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -16,7 +20,7 @@ const Kazananlar = () => {
         "exchange": "BIST",
         "showChart": true,
         "locale": "tr",
-        "largeChartUrl": "https://hisse-dunyasi.netlify.app/stock/AEFES",
+        "largeChartUrl": "https://hisse-dunyasi.netlify.app/stock/",
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,
@@ -34,11 +38,16 @@ const Kazananlar = () => {
       }`;
     contariner.current.appendChild(script);
   }, []);
+  
   return (
-    <div className="container ">
+    <div className="container "
+    >
       <div className="row">
         <div className="col ps-0">
-          <div className="tradingview-widget-container shadow-lg" ref={contariner}>
+          <div className="tradingview-widget-container" ref={contariner}
+              onClick={()=>navigate("/stock")}
+
+          >
             <div className="tradingview-widget-container__widget"></div>
             <div className="tradingview-widget-copyright">
               <a
@@ -51,6 +60,7 @@ const Kazananlar = () => {
               TradingView tarafından
             </div>
           </div>
+          
         </div>
       </div>
     </div>

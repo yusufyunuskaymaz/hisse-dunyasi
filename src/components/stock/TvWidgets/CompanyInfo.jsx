@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const CompanyInfo = ({itemTitle}) => {
+const CompanyInfo = ({ itemTitle }) => {
   const contariner = useRef();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const CompanyInfo = ({itemTitle}) => {
         "isTransparent": false,
         "largeChartUrl": "",
         "displayMode": "regular",
-        "width": 480,
+        "width": 600,
         "height": 830,
         "symbol": "BIST:${itemTitle}",
         "locale": "tr"
@@ -23,21 +23,19 @@ const CompanyInfo = ({itemTitle}) => {
     contariner.current.appendChild(script);
   }, []);
   return (
-
-          <div class="tradingview-widget-container" ref={contariner}>
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
-              <a
-                href="https://tr.tradingview.com/symbols/BIST-THYAO/financials-overview/"
-                rel="noopener"
-                target="_blank"
-              >
-                <span class="blue-text">THYAO temeller</span>
-              </a>{" "}
-              TradingView tarafından
-            </div>
-          </div>
-  
+    <div class="tradingview-widget-container" ref={contariner}>
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://tr.tradingview.com/symbols/BIST-THYAO/financials-overview/"
+          rel="noopener"
+          target="_blank"
+        >
+          <span class="blue-text">THYAO temeller</span>
+        </a>{" "}
+        TradingView tarafından
+      </div>
+    </div>
   );
 };
 

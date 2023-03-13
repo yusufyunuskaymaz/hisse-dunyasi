@@ -10,8 +10,8 @@ import { Form } from "react-bootstrap";
 const Stock = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [allStock, setAllStock] = useState([])
-  
+  const [allStock, setAllStock] = useState([]);
+
   const getDataFromApi = () => {
     // console.log("girdi");
     const config = {
@@ -26,7 +26,7 @@ const Stock = () => {
         const data = res.data.result;
         // Filter Bist 100 between 500 stocks
         filterAndSortInitialData(data);
-        setAllStock(data)
+        setAllStock(data);
       });
   };
 
@@ -36,32 +36,32 @@ const Stock = () => {
         return BIST_100.includes(item.code);
       })
       .sort((a, b) => (a.code < b.code ? -1 : 1));
-      setData(data);
-      setLoading(false);
+    setData(data);
+    setLoading(false);
   };
 
-  const showAllStocks = ()=>{
-    const data = allStock.sort((a, b) => (a.code < b.code ? -1 : 1))
-    setData(data)
-  }
+  const showAllStocks = () => {
+    const data = allStock.sort((a, b) => (a.code < b.code ? -1 : 1));
+    setData(data);
+  };
 
   useEffect(() => {
     getDataFromApi();
   }, []);
 
   const navigate = useNavigate();
-  const [showOrHide, setShowOrHide] = useState(false)
-  
-  const changeStock = ()=>{
-    setShowOrHide(!showOrHide)
-    if(!showOrHide){
-      showAllStocks()
-    }else{
-      filterAndSortInitialData(allStock)
+  const [showOrHide, setShowOrHide] = useState(false);
+
+  const changeStock = () => {
+    setShowOrHide(!showOrHide);
+    if (!showOrHide) {
+      showAllStocks();
+    } else {
+      filterAndSortInitialData(allStock);
     }
-  }
-  
-  console.log(data,"dsa")
+  };
+
+  console.log(data, "dsa");
   if (loading) {
     return (
       <div className="container text-center">
@@ -84,21 +84,19 @@ const Stock = () => {
             </h1>
             <div className="d-flex justify-content-between px-3">
               <p className="text-muted">{data.length} adet</p>
-            <Form.Check
-              type="switch"
-              id="custom-switch"
-              label="Tümünü göster"
-              onChange={()=>changeStock()}
-              style={{ transform: "scale(1.2)" }}
-            />
+              <Form.Check
+                type="switch"
+                id="custom-switch"
+                label="Tümünü göster"
+                onChange={() => changeStock()}
+                style={{ transform: "scale(1.2)" }}
+              />
             </div>
             <div className="table-responsive">
               <table className="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col" >
-                      #
-                    </th>
+                    <th scope="col">Sıra</th>
                     <th scope="col" id="name">
                       Adı
                     </th>
@@ -131,20 +129,18 @@ const Stock = () => {
                       <tr
                         key={index}
                         onClick={() =>
-                          navigate(`${item.text.toLowerCase().replace(" ", "-")}`, {
-                            state: {
-                              item,
-                            },
-                          })
+                          navigate(
+                            `${item.text.toLowerCase().replace(" ", "-")}`,
+                            {
+                              state: {
+                                item,
+                              },
+                            }
+                          )
                         }
                         role="button"
                       >
-
-                        <th
-                          scope="row"
-                        >
-                          {index+1}
-                        </th>
+                        <th scope="row">{index + 1}</th>
                         <th
                           scope="row"
                           style={{ color: "#2962ff", fontSize: "14px" }}

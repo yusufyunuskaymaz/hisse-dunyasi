@@ -19,12 +19,11 @@ import KapDetail from "../components/stock/Kap/KapDetail";
 import SliderNews from "../components/home/SwiperNews/SliderNews";
 import AllStocks from "../components/stock/TvWidgets/AllStocks";
 
-
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      {/* <HareketliNavbar /> */}
+      <HareketliNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news-detail" element={<SliderNews />} />

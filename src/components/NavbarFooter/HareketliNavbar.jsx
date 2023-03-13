@@ -14,26 +14,30 @@ function TradingViewWidget() {
       {
         "symbols": [
           
-            {
-                "proName": "BITSTAMP:ETHUSD",
-                "title": "Ethereum"
-              },
-              {
-                "description": "THY",
-                "proName": "BIST:THYAO"
-              },
-              {
-                "description": "",
-                "proName": "BIST:SASA"
-              },
-              {
-                "description": "",
-                "proName": "BIST:ARCLK"
-              },
-              {
-                "description": "",
-                "proName": "BIST:AKBNK"
-              }
+          {
+            "proName": "BITSTAMP:BTCUSD",
+            "title": "Bitcoin"
+          },
+          {
+            "proName": "BITSTAMP:ETHUSD",
+            "title": "Ethereum"
+          },
+          {
+            "description": "Dolar",
+            "proName": "FX:USDTRY"
+          },
+          {
+            "description": "Euro",
+            "proName": "FX:EURTRY"
+          },
+          {
+            "description": "Bist100",
+            "proName": "BIST:XU100"
+          },
+          {
+            "description": "Gram Altın",
+            "proName": "FX_IDC:XAUTRYG"
+          }
         ],
         "showSymbolLogo": true,
         "colorTheme": "light",

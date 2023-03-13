@@ -15,15 +15,15 @@ function TradingViewWidget({ itemSymbol }) {
           "symbols": [
             [
               "BİTCOİN",
-              "${itemSymbol}USDT|1D"
+              ":${itemSymbol}USDT|1D"
             ]
           ],
           "chartOnly": false,
-          "width": 800,
-          "height": 400,
+          "width": 730,
+          "height": 500,
           "locale": "tr",
           "colorTheme": "light",
-          "autosize": false,
+          "autosize": true,
           "showVolume": false,
           "showMA": false,
           "hideDateRanges": false,

@@ -8,7 +8,6 @@ import { DeleteComment } from "../../utils/function";
 import moment from "moment";
 import YasalUyari from "./YasalUyari";
 
-<<<<<<< HEAD
 function CurrencyComment({ commentList, itemCode, isLoading }) {
   const { currentUser } = useContext(AuthContext);
 

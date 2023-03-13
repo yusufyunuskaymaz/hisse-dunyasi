@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import StickySidebar from "../../components/stock/StickySidebar";
 import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
 import { useFetch } from "../../utils/function";
+import CurrencyTableWidget from "./CurrencyTableWidget";
 
 function Currency() {
   const navigate = useNavigate();
@@ -53,6 +54,10 @@ function Currency() {
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
               <div className="title-currency text-center">
+                <h2 className=" fs-1 bist100 title mt-1">
+                  Çapraz Döviz Kurları
+                </h2>
+                <CurrencyTableWidget />
                 <h1 className=" fs-1 bist100 title mt-1">Döviz Tablosu</h1>
               </div>
               <table className="table   table-hover ">

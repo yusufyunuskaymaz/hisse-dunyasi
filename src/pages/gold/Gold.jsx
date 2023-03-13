@@ -1,18 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import StickyDiv from "../../components/component/StickyDiv" ;
+import StickyDiv from "../../components/component/StickyDiv";
 import StickySidebar from "../../components/stock/StickySidebar";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from "moment";
 
-
-
 function Gold() {
   const navigate = useNavigate();
-  
+
   const [gold, setGold] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const URL="https://api.collectapi.com/economy/goldPrice"
+  const URL = "https://api.collectapi.com/economy/goldPrice";
   const getGold = () => {
     setIsLoading(true);
     axios
@@ -29,18 +27,18 @@ function Gold() {
   useEffect(() => {
     getGold();
   }, []);
-// console.log(gold);
+  // console.log(gold);
   return (
     <div>
       <div className="container">
         <div className="row">
           <div className="col-8 table-responsive">
-          <div className="title-crypto text-center">
-            <h1 className=" fs-1 bist100 title mt-1">Altın Tablosu</h1>
+            <div className="title-crypto text-center">
+              <h1 className=" fs-1 bist100 title mt-1">Altın Tablosu</h1>
             </div>
             <table className="table  table-hover">
               <thead>
-                <tr className="text-white">
+                <tr className="text-dark">
                   <th scope="col">Altın Cinsi </th>
                   <th scope="col"> Yön </th>
                   <th scope="col">Alış </th>
@@ -61,17 +59,17 @@ function Gold() {
                         {item?.name}
                       </th>
                       <th>
-                      {item.rate < 0 ? (
-                            <i
-                              className="fa-solid fa-caret-down"
-                              style={{ color: "red", fontSize: "1.5rem" }}
-                            ></i>
-                          ) : (
-                            <i
-                              className="fa-solid fa-caret-up"
-                              style={{ color: "green", fontSize: "1.5rem" }}
-                            ></i>
-                          )}
+                        {item.rate < 0 ? (
+                          <i
+                            className="fa-solid fa-caret-down"
+                            style={{ color: "red", fontSize: "1.5rem" }}
+                          ></i>
+                        ) : (
+                          <i
+                            className="fa-solid fa-caret-up"
+                            style={{ color: "green", fontSize: "1.5rem" }}
+                          ></i>
+                        )}
                       </th>
                       <td>{item?.buying.toFixed(2)} </td>
                       <td>{item?.selling.toFixed(2)} </td>

@@ -41,7 +41,12 @@ const Navbar = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
                   <Link to="/stock" className="nav-link">
-                    Borsa
+                    Borsa İstanbul
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/stock" className="nav-link">
+                    Dünya Borsaları
                   </Link>
                 </li>
                 <li className="nav-item">

@@ -80,16 +80,16 @@ nav ul li {
   border-radius: 1.3rem;
 }
 
+nav ul li:hover {
+  background-color: #e3effd !important;
+  color: #1e53e5;
+  border-radius: 1.3rem;
+  transition: 1s;
+}
+
 .news .list-group-item {
   border: none !important;
   font-size: 1.5rem;
-}
-
-nav ul li:hover {
-  background-color: #e3effd !important;
-  color: #1e53e5 !important;
-  border-radius: 1.3rem;
-  transition: 1s;
 }
 
 a {
@@ -197,18 +197,22 @@ h1 {
   .carousel-title {
     font-size: 0.9rem !important;
   }
-  .general-info div{
+  .general-info div {
     width: 40%;
   }
-  .info-mobil{
+  .info-mobil {
     font-size: 1rem;
   }
-  .general-info div{
+  .general-info div {
     display: flex;
     flex-direction: row;
     font-size: 1rem !important;
     max-width: 90vw !important;
   }
+  .stock-detail-table{
+    min-width: 100% !important;
+  }
+  
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
@@ -312,5 +316,7 @@ h1:after {
   content: "";
   flex: 1 1;
   border-bottom: 3px solid #1e53e5 !important;
-  margin: auto .9rem;
+  margin: auto 0.9rem;
 }
+
+

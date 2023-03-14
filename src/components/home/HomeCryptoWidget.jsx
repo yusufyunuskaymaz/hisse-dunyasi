@@ -155,7 +155,7 @@ function HomeCryptoWidget({ itemTitle }) {
           }
         ],
         "title_link": "/markets/cryptocurrencies/prices-all/",
-        "width": 300,
+        "width": 380,
         "height": 600,
         "showChart": true,
         "showFloatingTooltip": false,

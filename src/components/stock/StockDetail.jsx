@@ -26,7 +26,7 @@ const StockDetail = () => {
             <TradingViewWidget itemTitle={item.code} />
           </div>
 
-          <div className="col table-responsive w-75">
+          <div className="col table-responsive w-75 rounded stock-detail-table">
             <table className="table table-borderless stock-table">
               <thead>
                 <tr className="text-center main-bg ">
@@ -56,17 +56,17 @@ const StockDetail = () => {
             </table>
           </div>
 
-          <div className="col ps-0 ">
+          <div className="col d-none d-lg-block ps-0 ">
             <CompanyInfo itemTitle={item.code} />
           </div>
-          <div className="col d-none d-md-block">
+          <div className="col d-none d-lg-block d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
           </div>
           <div className="col d-none d-md-block">
             <News itemTitle={item.code} />
           </div>
-          <div className="col ps-0">
-            <Analiz itemTitle={item.code} />
+          <div className="col d-none d-lg-block ps-0">
+            <Analiz  itemTitle={item.code} />
           </div>
           <div className="col">
             <CommentDiv itemCode={itemCode} type={type} />

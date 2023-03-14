@@ -16,7 +16,7 @@ function CommentDiv({ commentList, itemCode, type }) {
 
   return (
     <div>
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center mt-5 ps-2">
         <div className="col-12 mb-3">
           <h1> Yorumlar</h1>
           <CommentInput itemCode={itemCode} type={type} />

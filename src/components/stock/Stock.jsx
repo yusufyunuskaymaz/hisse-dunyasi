@@ -84,13 +84,13 @@ const Stock = () => {
             </h1>
             <div className="d-flex justify-content-between px-3">
               <p className="text-muted">{data.length} adet</p>
-              <Form.Check
-                type="switch"
-                id="custom-switch"
-                label="Tümünü göster"
+              <input
+                type="checkbox"
+                id="switch"
                 onChange={() => changeStock()}
-                style={{ transform: "scale(1.2)" }}
+                style={{ transform: "scale(0.5)" }}
               />
+              <label for="switch">Toggle</label>
             </div>
             <div className="table-responsive">
               <table className="table table-hover">

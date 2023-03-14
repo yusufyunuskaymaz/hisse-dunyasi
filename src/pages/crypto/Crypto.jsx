@@ -52,6 +52,7 @@ function Crypto() {
               <table className="table   table-hover ">
                 <thead>
                   <tr className="text-dark">
+                    <th> </th>
                     <th>Crypto Cinsi</th>
                     <th scope="col"> Yön </th>
                     <th scope="col">Fiyat </th>
@@ -64,6 +65,10 @@ function Crypto() {
                   {newCryptoData.map((item, index) => {
                     return (
                       <tr key={index}>
+                        <th>
+                          {" "}
+                          <img src={item.image} alt="image" width="30px" />{" "}
+                        </th>
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => navigate(`${index}`, { state: item })}

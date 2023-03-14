@@ -117,7 +117,7 @@ a {
   margin-top: 1rem !important;
 }
 
-.title {
+/* .title {
   border: 5px solid #3982E5;
   border-top: none;
   border-right: none;
@@ -125,10 +125,10 @@ a {
   border-width: .2rem;
   display: inline-block;
   padding: 0 0 0.7rem 0;
-  /* border-radius: 2rem; */
+  border-radius: 2rem;
   margin-top: 3rem;
   line-height: 1.5rem;
-}
+} */
 h1 {
   font-family: "Hind Siliguri", sans-serif !important;
 }
@@ -303,10 +303,17 @@ label:active:after {
 	width: 25px;
 }
 
- /* centering */
-/* body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-} */
+h1{
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem !important;
+  margin-bottom: 2rem !important;
+}
+
+h1:before,
+        h1:after {
+            content: "";
+            flex: 1 1;
+            border-bottom: 2px solid #1e53e5 !important;
+            margin: auto;
+        }

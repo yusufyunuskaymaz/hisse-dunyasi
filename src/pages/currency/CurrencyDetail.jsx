@@ -13,9 +13,10 @@ function CurrencyDetail() {
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
-  let itemCode = item?.code.replace(/^s+|s+$/gm, "");
-  console.log(item);
-  console.log(itemCode);
+  let itemCode = item?.code.split('\n')[0].trim();
+  console.log(itemCode, "bilgiler");
+  console.log(item, "aa");
+
 
   return (
     <div className="container  g-4">

@@ -41,7 +41,7 @@ export default function CommentInput({itemCode, type}) {
 
   return (
     <Form >
-      <FloatingLabel controlId="floatingTextarea2" label="Yorumunuzu yazın...">
+      <FloatingLabel controlId="floatingTextarea" label="Yorumunuzu yazın...">
         <Form.Control
           as="textarea"
           placeholder=""

@@ -19,7 +19,7 @@ function TradingViewWidget({ itemSymbol }) {
             ]
           ],
           "chartOnly": false,
-          "width": 730,
+          "width": 840,
           "height": 500,
           "locale": "tr",
           "colorTheme": "light",

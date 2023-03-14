@@ -104,7 +104,6 @@ a {
   border-radius: 2rem;
 }
 
-
 .main-bg {
   background-color: #e3effd !important;
 }
@@ -137,7 +136,6 @@ h1 {
   position: relative;
   cursor: pointer;
 }
-
 
 #slider-bg:before {
   pointer-events: none;
@@ -184,136 +182,135 @@ h1 {
   text-align: left;
 }
 
-.tradingview-widget-copyright{
+.tradingview-widget-copyright {
   display: none !important;
 }
 
-.carousel-title{
+.carousel-title {
   font-size: 2rem !important;
 }
 
-@media screen and (min-width: 300px) and (max-width: 576px){
-
-  .carousel-caption{
+@media screen and (min-width: 300px) and (max-width: 576px) {
+  .carousel-caption {
     margin: 0 !important;
   }
-  .carousel-title{
-    font-size: .9rem !important;
+  .carousel-title {
+    font-size: 0.9rem !important;
   }
- 
- 
+  .general-info div{
+    width: 40%;
+  }
+  .info-mobil{
+    font-size: 1rem;
+  }
+  .general-info div{
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem !important;
+    max-width: 90vw !important;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
-  
-  
 }
-@media only screen and (min-width: 768px) and (max-width: 992px)  {
-
-  
+@media only screen and (min-width: 768px) and (max-width: 992px) {
 }
-@media only screen and (min-width: 992px) and (max-width: 1200px)   {
-
-  
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
 }
-@media only screen and (min-width: 1200px)  and (max-width: 1400px)  {
-
- 
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
 }
 
-.comments{
+.comments {
   border-bottom: 1px solid rgb(229, 231, 235);
   margin-bottom: 1rem;
 }
 
-.comment-avatar p{
+.comment-avatar p {
   padding: 0 1rem;
 }
-.comment-avatar p:first-child{
-  background-color: #CB313D;
-  color:white;
-  padding: .3rem .7rem;
+.comment-avatar p:first-child {
+  background-color: #cb313d;
+  color: white;
+  padding: 0.3rem 0.7rem;
   border-radius: 50%;
   text-transform: uppercase;
 }
 
-.comments{
+.comments {
   display: inline-block;
   margin-left: 2rem;
   color: rgb(107, 114, 128);
 }
 
-.subComment{
+.subComment {
   margin-left: 3rem;
 }
 
-.stickSidebar{
+.stickSidebar {
   position: sticky !important;
   top: 100px;
 }
 
-.carousel-indicators button{
-  width: .7rem !important;
-  height: .7rem !important;
+.carousel-indicators button {
+  width: 0.7rem !important;
+  height: 0.7rem !important;
   border-radius: 50%;
 }
 
- /* Checkbox Toggle */
+/* Checkbox Toggle */
 
-
- input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
+.checkbox input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
 
-label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 70px;
-	height: 30px;
-	background: grey;
-	display: block;
-	border-radius: 20px;
-	position: relative;
+.checkbox label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 20px;
+  position: relative;
 }
 
-label:after {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 20px;
-	height: 20px;
-	background: #fff;
-	border-radius: 20px;
-	transition: 0.3s;
+.checkbox label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-input:checked + label {
-	background: #3982E5;
+.checkbox input:checked + label {
+  background: #3982e5;
 }
 
-input:checked + label:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
+.checkbox input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
 }
 
-label:active:after {
-	width: 25px;
+.checkbox label:active:after {
+  width: 25px;
 }
 
-h1{
+h1 {
   display: flex;
   flex-direction: row;
-  margin: 0 1rem !important;
   margin-bottom: 2rem !important;
 }
 
 h1:before,
-        h1:after {
-            content: "";
-            flex: 1 1;
-            border-bottom: 2px solid #1e53e5 !important;
-            margin: auto;
-        }
+h1:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 3px solid #1e53e5 !important;
+  margin: auto .9rem;
+}

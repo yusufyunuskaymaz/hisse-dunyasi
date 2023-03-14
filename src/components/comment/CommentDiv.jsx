@@ -23,7 +23,7 @@ function CommentDiv({ commentList, itemCode, type }) {
         </div>
         {data.commentList.sort((a,b)=>(b.time-a.time)).map((item, index) => {
           return (
-            <div className="comments">
+            <div className="comments ms-0 ps-1" >
               <CommonCommentDiv item={item} setReplyCommentId={setReplyCommentId} />
               {replyCommentId === item.id ? (
                 <div className="w-75 ms-5">

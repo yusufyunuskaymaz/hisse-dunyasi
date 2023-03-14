@@ -31,7 +31,7 @@ const Home = () => {
               <Slider />
             </div>
             <div className="col mb-5 text-center ">
-              <h1 className="mb-5 text-center title title-mobil">
+              <h1 className="my-5 text-center title title-mobil">
                 Canlı Yayın
               </h1>
               <div className="ratio ratio-16x9">

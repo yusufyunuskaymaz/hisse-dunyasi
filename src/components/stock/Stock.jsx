@@ -84,6 +84,7 @@ const Stock = () => {
             </h1>
             <div className="d-flex justify-content-between px-3">
               <p className="text-muted">{data.length} adet</p>
+              <div className="checkbox">
               <input
                 type="checkbox"
                 id="switch"
@@ -91,6 +92,7 @@ const Stock = () => {
                 style={{ transform: "scale(0.5)" }}
               />
               <label for="switch">Toggle</label>
+              </div>
             </div>
             <div className="table-responsive">
               <table className="table table-hover">

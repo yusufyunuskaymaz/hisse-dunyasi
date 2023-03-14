@@ -33,7 +33,7 @@ const ReplyComment = ({itemCode,id,type}) => {
 
   return (
     <Form ref={textAreaRef}>
-      <FloatingLabel controlId="floatingTextarea2" label="Yorumunuzu yazın...">
+      <FloatingLabel controlId="floatingTextarea" label="Yorumunuzu yazın...">
         <Form.Control
           as="textarea"
           placeholder=""

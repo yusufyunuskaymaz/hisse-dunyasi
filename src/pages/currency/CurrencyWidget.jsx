@@ -3,7 +3,7 @@ import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget({ itemCode }) {
   const contariner = useRef();
-  let Code = itemCode.substring(0, itemCode.indexOf("\n"));
+  // let Code = itemCode.substring(0, itemCode.indexOf("\n"));
   //   console.log(Code, "bu bizim code");
   useEffect(() => {
     const script = document.createElement("script");
@@ -16,7 +16,7 @@ function TradingViewWidget({ itemCode }) {
           "symbols": [
             [
               "Dolar",
-              "${Code}TRY|1D"
+              "${itemCode}TRY|1D"
             ]
           ],
           "chartOnly": false,

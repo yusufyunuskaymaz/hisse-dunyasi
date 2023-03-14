@@ -12,7 +12,7 @@ function TradingViewWidget() {
     script.async = true;
     script.innerHTML = `
       {
-        "width": 720,
+        "width": 840,
         "height": 400,
         "currencies": [
 

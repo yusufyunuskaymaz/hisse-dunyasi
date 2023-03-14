@@ -6,7 +6,6 @@ import { AuthContext } from "../../context/AuthContextProvider";
 import { AddComment } from "../../utils/function";
 
 export default function CommentInput({itemCode, type}) {
-  console.log(itemCode,type,"sda")
   const { currentUser } = useContext(AuthContext);
 
   // console.log(currentUser,"user1")

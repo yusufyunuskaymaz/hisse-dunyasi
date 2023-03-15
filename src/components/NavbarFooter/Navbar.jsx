@@ -4,6 +4,7 @@ import { logOut } from "../../auth/firebase";
 import { AuthContext } from "../../context/AuthContextProvider";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BsPerson } from "react-icons/bs";
+import { Form } from "react-bootstrap";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -39,16 +40,18 @@ const Navbar = () => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                <li className="nav-item">
-                  <Link to="/stock" className="nav-link">
-                    Borsa İstanbul
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/world-stock" className="nav-link">
-                    Dünya Borsaları
-                  </Link>
-                </li>
+                <NavDropdown title="Borsa">
+                  <li className="nav-item">
+                    <Link to="/stock" className="nav-link">
+                      Borsa İstanbul
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/world-stock" className="nav-link">
+                      Dünya Borsaları
+                    </Link>
+                  </li>
+                </NavDropdown>
                 <li className="nav-item">
                   <NavLink to="/currency" className="nav-link ">
                     Döviz
@@ -66,6 +69,14 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+              </Form>
               <div
                 className="d-flex login-dropdown"
                 onClick={handleDropdownToggle}

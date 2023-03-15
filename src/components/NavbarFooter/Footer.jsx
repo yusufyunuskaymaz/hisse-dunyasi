@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 
 function Footer() {
   return (
-    <Card className="m-4">
+    <Card className="mt-5">
       <div className="container">
         <Card.Header className="mt-3"></Card.Header>
         <div className="row">

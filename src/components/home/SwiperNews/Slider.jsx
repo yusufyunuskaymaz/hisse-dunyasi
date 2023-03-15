@@ -13,7 +13,7 @@ function Slider() {
       "https://api.collectapi.com/news/getNews?country=tr&tag=economy";
     const data = await axios.get(URL, {
       headers: {
-        Authorization: `apikey 5AgkLxu3nrlKZ7pKKHEury:6gU7ouXtLMyQ8SrJr1n39X`,
+        Authorization: `apikey 0GfhXvgq2qyuh5H168dpRM:4PbEXQavYZIvM1fWHafRJe`,
       },
     });
     setNews(data.data.result);

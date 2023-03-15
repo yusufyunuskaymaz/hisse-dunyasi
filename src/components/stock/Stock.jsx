@@ -95,9 +95,9 @@ const Stock = () => {
             <h1 className="text-center mb-5 fs-1 bist100 title mt-1">
               Bist 100 Tablo
             </h1>
-            <div className="d-flex justify-content-between px-3">
-              <p className="text-muted">{data.length} adet</p>
-              <div className="checkbox">
+            <div className="d-flex justify-content-between px-3 align-items-center mb-3">
+              <p className="text-muted mb-0">{data.length} adet</p>
+              <div className="checkbox d-flex">
               <input
                 type="checkbox"
                 id="switch"

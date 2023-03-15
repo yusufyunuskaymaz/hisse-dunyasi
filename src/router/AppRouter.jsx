@@ -18,6 +18,8 @@ import HareketliNavbar from "../components/NavbarFooter/HareketliNavbar";
 import KapDetail from "../components/stock/Kap/KapDetail";
 import SliderNews from "../components/home/SwiperNews/SliderNews";
 import AllStocks from "../components/stock/TvWidgets/AllStocks";
+import WorldStock from "../components/world-stock/WorldStock";
+import WorldStockDetail from "../components/world-stock/WorldStockDetail";
 
 const AppRouter = () => {
   return (
@@ -31,12 +33,12 @@ const AppRouter = () => {
         <Route path="all-stocks" element={<AllStocks />} />
         <Route path="stock/:item" element={<StockDetail />} />
         <Route path="stock/newsDetail" element={<KapDetail />} />
+        <Route path="world-stock" element={<WorldStock />} />
+        <Route path="world-stock/:item" element={<WorldStockDetail />} />
         <Route path="gold" element={<Gold />} />
         <Route path="gold/:item" element={<GoldDetail />} />
         <Route path="currency" element={<Currency />} />
-
         <Route path="currency/:item" element={<CurrencyDetail />} />
-
         <Route path="crypto" element={<Crypto />} />
         <Route path="crypto/:item" element={<CryptoDetail />} />
         <Route path="login" element={<Login />} />

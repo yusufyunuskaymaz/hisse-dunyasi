@@ -6,7 +6,7 @@ const CryptoSidebar = () => {
     <div className="row stickSidebar d-none d-lg-block">
       <div className="col">
         <div className="">
-          <HomeCryptoWidget />
+          <HomeCryptoWidget width={"370"} />
           <div className="stockDetail mb-5"></div>
         </div>
       </div>

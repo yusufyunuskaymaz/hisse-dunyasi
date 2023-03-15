@@ -18,13 +18,14 @@ function TradingViewWidget() {
 
          "EUR",
          "USD",
+         "TRY",
          "JPY",
          "GBP",
          "CHF",
          "AUD",
          "CAD",
-         "NZD",
-         "TRY"
+         "NZD"
+         
          ],
   
       

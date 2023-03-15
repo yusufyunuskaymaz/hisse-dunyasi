@@ -72,19 +72,19 @@ nav ul li a {
     sans-serif !important;
   /* font-weight: bolder !important; */
   letter-spacing: 0.4px;
-  color: #1e53e5 !important;
+  color: black !important;
 }
 
 nav ul li {
-  padding: 0 0.5rem;
+  padding: 0 0.3rem;
   border-radius: 1.3rem;
 }
 
 nav ul li:hover {
-  background-color: #e3effd !important;
-  color: #1e53e5;
+  background-color: #6196d3 !important;
+  color: #0a45e8;
   border-radius: 1.3rem;
-  transition: 1s;
+  transition: 0.7s;
 }
 
 .news .list-group-item {

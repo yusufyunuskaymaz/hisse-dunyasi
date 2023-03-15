@@ -45,7 +45,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/stock" className="nav-link">
+                  <Link to="/world-stock" className="nav-link">
                     Dünya Borsaları
                   </Link>
                 </li>

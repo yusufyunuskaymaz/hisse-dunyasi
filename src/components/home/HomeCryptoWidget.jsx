@@ -1,7 +1,7 @@
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo } from "react";
 
-function HomeCryptoWidget({ itemTitle }) {
+function HomeCryptoWidget({ itemTitle, width }) {
   const container = useRef();
 
   useEffect(() => {
@@ -155,7 +155,7 @@ function HomeCryptoWidget({ itemTitle }) {
           }
         ],
         "title_link": "/markets/cryptocurrencies/prices-all/",
-        "width": 380,
+        "width": ${width},
         "height": 600,
         "showChart": true,
         "showFloatingTooltip": false,

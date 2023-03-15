@@ -55,7 +55,7 @@ const Home = () => {
               
             </div>
             <div className="col ">
-              <HomeCryptoWidget />
+              <HomeCryptoWidget width={"300"} />
             </div>
           </div>
         </div>

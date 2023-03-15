@@ -10,12 +10,9 @@ import StickySidebar from "./StickySidebar";
 import { useFetch } from "../../utils/function";
 import CommentDiv from "../comment/CommentDiv";
 
-const StockDetail = () => {
+const WSDetailPage = () => {
   const { state } = useLocation();
-  const { item } = state;
-  const itemCode = item.code;
-  const type = "stock";
-  const country = "BIST"
+
 
   // console.log(item,"item...")
 
@@ -24,7 +21,7 @@ const StockDetail = () => {
       <div className="row justify-content-center">
         <div className="col-lg-7 ps-1 ">
           <div className="col d-none d-md-block">
-            <TradingViewWidget itemTitle={item.code} country={country} />
+            <TradingViewWidget itemTitle={item.code} />
           </div>
 
           <div className="col table-responsive w-75 rounded stock-detail-table">
@@ -57,21 +54,18 @@ const StockDetail = () => {
             </table>
           </div>
 
-          <div className="col d-none d-lg-block ps-0 ">
+          {/* <div className="col d-none d-lg-block ps-0 ">
             <CompanyInfo itemTitle={item.code} />
           </div>
           <div className="col d-none d-lg-block d-none d-md-block">
             <AboutCompany itemTitle={item.code} />
-          </div>
-          <div className="col d-none d-md-block">
-            <News itemTitle={item.code} />
-          </div>
-          <div className="col d-none d-lg-block ps-0">
+          </div> */}
+          {/* <div className="col d-none d-lg-block ps-0">
             <Analiz  itemTitle={item.code} />
           </div>
           <div className="col">
             <CommentDiv itemCode={itemCode} type={type} />
-          </div>
+          </div> */}
         </div>
         <div className="col-lg-4">
           <StickySidebar />
@@ -81,4 +75,4 @@ const StockDetail = () => {
   );
 };
 
-export default StockDetail;
+export default WSDetailPage;

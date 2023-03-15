@@ -6,8 +6,7 @@ function Footer() {
   return (
     <Card className="text-center">
       <Card.Header>
-        {" "}
-        <strong>HİSSE DÜNYASI</strong>{" "}
+        <strong>HİSSE DÜNYASI</strong>
       </Card.Header>
       <Card.Body>
         <Card.Title>YASAL UYARI</Card.Title>

@@ -6,9 +6,9 @@ function Footer() {
   return (
     <Card className="text-center">
       <Card.Header>
-        <h3>
+        <h2>
           <strong>HİSSE DÜNYASI</strong>
-        </h3>
+        </h2>
       </Card.Header>
       <Card.Body>
         <Card.Title>YASAL UYARI</Card.Title>

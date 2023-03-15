@@ -1,7 +1,7 @@
 // TradingViewWidget.jsx
 import React, { useEffect, useRef, memo } from "react";
 
-function TradingViewWidget({itemTitle}) {
+function TradingViewWidget({itemTitle, country}) {
   const contariner = useRef();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function TradingViewWidget({itemTitle}) {
             
             [
               "THY",
-              "BIST:${itemTitle}|1D"
+              "${country}:${itemTitle}|1D"
             ]
           ],
           "chartOnly": false,

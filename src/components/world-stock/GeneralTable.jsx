@@ -6,6 +6,9 @@ const GeneralTable = ({stockCode}) => {
   const contariner = useRef();
   const navigate = useNavigate()
   console.log(stockCode,"ss")
+  if(stockCode === "united kingdom"){
+    stockCode = "uk"
+  }
 
 
   useEffect(() => {
@@ -17,7 +20,7 @@ const GeneralTable = ({stockCode}) => {
     script.innerHTML = `
     {
         "width": 1300,
-        "height": 1100,
+        "height": 2000,
         "defaultColumn": "overview",
         "defaultScreen": "most_capitalized",
         "market": "${stockCode}",

@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import io from "socket.io-client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
 import { BIST_100 } from "./BIST_100";
 import { Form } from "react-bootstrap";
 
 const Stock = () => {
+  const navigate = useNavigate();
+ // Check if the `tvwidgetsymbol` query parameter exists in the URL
+//  const urlParams = new URLSearchParams(window.location.search);
+//  const tvwidgetsymbol = urlParams.get("tvwidgetsymbol");
+
+//  useEffect(() => {
+//    // If `tvwidgetsymbol` exists, navigate to `StockDetail` component with its value as the `deneme` param
+//    if (tvwidgetsymbol) {
+//      navigate(`/stock/${tvwidgetsymbol}`);
+//    }
+//  }, [navigate, tvwidgetsymbol]);
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [allStock, setAllStock] = useState([]);
+  const {deneme}=useParams()
+  console.log(deneme,"deneme...")
 
   const getDataFromApi = () => {
     // console.log("girdi");
@@ -49,7 +63,6 @@ const Stock = () => {
     getDataFromApi();
   }, []);
 
-  const navigate = useNavigate();
   const [showOrHide, setShowOrHide] = useState(false);
 
   const changeStock = () => {
@@ -82,16 +95,16 @@ const Stock = () => {
             <h1 className="text-center mb-5 fs-1 bist100 title mt-1">
               Bist 100 Tablo
             </h1>
-            <div className="d-flex justify-content-between px-3">
-              <p className="text-muted">{data.length} adet</p>
-              <div className="checkbox">
+            <div className="d-flex justify-content-between px-3 align-items-center mb-3">
+              <p className="text-muted mb-0">{data.length} adet</p>
+              <div className="checkbox d-flex">
               <input
                 type="checkbox"
                 id="switch"
                 onChange={() => changeStock()}
                 style={{ transform: "scale(0.5)" }}
               />
-              <label for="switch">Toggle</label>
+              <label htmlFor="switch">Toggle</label>
               </div>
             </div>
             <div className="table-responsive">

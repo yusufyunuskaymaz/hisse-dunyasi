@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import AboutCompany from "./TvWidgets/AboutCompany";
 import Analiz from "./TvWidgets/Analiz";
 import CompanyInfo from "./TvWidgets/CompanyInfo";
@@ -9,15 +9,41 @@ import TradingViewWidget from "./TvWidgets/TradingView";
 import StickySidebar from "./StickySidebar";
 import { useFetch } from "../../utils/function";
 import CommentDiv from "../comment/CommentDiv";
+import axios from "axios";
 
 const StockDetail = () => {
+  let {item2} = useParams()
   const { state } = useLocation();
+  const [data, setData] = useState([])
+  const getDataFromApi = () => {
+    // console.log("girdi");
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: process.env.REACT_APP_TOKEN,
+      },
+    };
+    axios
+      .get("https://api.collectapi.com/economy/hisseSenedi", config)
+      .then((res) => {
+        const data = res.data.result;
+        setData(data)
+      });
+  };
+  let itemCode2 = item2= item2.split(":")[1]
+  if (!state) {
+    getDataFromApi()
+    return <div>Loading...</div>;
+  }
   const { item } = state;
+
+
   const itemCode = item.code;
   const type = "stock";
   const country = "BIST"
 
-  // console.log(item,"item...")
+
+console.log(data,"dsa")
 
   return (
     <div className="container">

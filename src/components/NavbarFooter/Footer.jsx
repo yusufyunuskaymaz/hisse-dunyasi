@@ -4,10 +4,11 @@ import Card from "react-bootstrap/Card";
 
 function Footer() {
   return (
-    <Card>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-2 col-lg-2 col-md-6">
+    <Card className="m-4">
+      <div className="container">
+        <Card.Header className="mt-3"></Card.Header>
+        <div className="row">
+          <div className="col-xl-2 col-lg-2 col-md-6">
             <div>
               <h3>
                 <strong> Hisse Dünyası </strong>
@@ -18,9 +19,9 @@ function Footer() {
             </div>
           </div>
           <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
-            <div class="">
+            <div>
               <h4>Keşfet</h4>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
                   <a href="#" class="text-decoration-none">
                     Anasayfa
@@ -49,10 +50,10 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-2 col-md-6">
+          <div className="col-xl-2 col-lg-2 col-md-6">
             <div>
               <h4>Service</h4>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
                   <a href="#" class="text-decoration-none">
                     Marketing
@@ -76,7 +77,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-6 col-md-6">
+          <div className="col-xl-5 col-lg-6 col-md-6">
             <div>
               <h4>YASAL UYARI</h4>
               <div>

@@ -23,8 +23,8 @@ function TradingViewWidget() {
          "GBP",
          "CHF",
          "AUD",
-         "CAD",
-         "NZD"
+         "CAD"
+         
          
          ],
   

@@ -1,6 +1,7 @@
 import { padding } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import CryptoSidebar from "../../components/stock/TvWidgets/CryptoSidebar";
 function Crypto() {
@@ -47,58 +48,68 @@ function Crypto() {
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
               <div className="title-crypto text-center">
-                <h1 className=" fs-1 bist100 title mt-1">Kripto Paralar</h1>
+                <h1 className=" fs-1 bist100 title mt-1">
+                  Kripto Para Piyasası
+                </h1>
               </div>
-              <table className="table   table-hover ">
-                <thead>
-                  <tr className="text-dark">
-                    <th> </th>
-                    <th>Crypto Cinsi</th>
-                    <th scope="col"> Yön </th>
-                    <th scope="col">Fiyat </th>
-                    <th scope="col">En Yüksek </th>
-                    <th scope="col">En Düşük </th>
-                    <th scope="col">% Değişim </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {newCryptoData.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <th>
-                          {" "}
-                          <img src={item.image} alt="image" width="30px" />{" "}
-                        </th>
-                        <th
-                          style={{ cursor: "pointer" }}
-                          onClick={() => navigate(`${index}`, { state: item })}
-                        >
-                          {item?.name}
-                        </th>
-                        <th>
-                          {item?.market_cap_change_percentage_24h < 0 ? (
-                            <i
-                              className="fa-solid fa-caret-down"
-                              style={{ color: "red", fontSize: "1.5rem" }}
-                            ></i>
-                          ) : (
-                            <i
-                              className="fa-solid fa-caret-up"
-                              style={{ color: "green", fontSize: "1.5rem" }}
-                            ></i>
-                          )}
-                        </th>
-                        <td>{item.current_price.toFixed(4)} </td>
-                        <td>{item.high_24h.toFixed(4)} </td>
-                        <td>{item.low_24h.toFixed(2)}</td>
-                        <td>
-                          {item.market_cap_change_percentage_24h.toFixed(2)}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <Card>
+                <table className="table   table-hover ">
+                  <thead>
+                    <tr className="text-dark">
+                      <th> </th>
+                      <th>Crypto Cinsi</th>
+                      <th scope="col"> Yön </th>
+                      <th scope="col">Fiyat </th>
+                      <th scope="col">En Yüksek </th>
+                      <th scope="col">En Düşük </th>
+                      <th scope="col">% Değişim </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {newCryptoData.map((item, index) => {
+                      return (
+                        <tr key={index}>
+                          <th>
+                            {" "}
+                            <img
+                              src={item.image}
+                              alt="image"
+                              width="30px"
+                            />{" "}
+                          </th>
+                          <th
+                            style={{ cursor: "pointer" }}
+                            onClick={() =>
+                              navigate(`${index}`, { state: item })
+                            }
+                          >
+                            {item?.name}
+                          </th>
+                          <th>
+                            {item?.market_cap_change_percentage_24h < 0 ? (
+                              <i
+                                className="fa-solid fa-caret-down"
+                                style={{ color: "red", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa-solid fa-caret-up"
+                                style={{ color: "green", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
+                          </th>
+                          <td>{item.current_price.toFixed(4)} </td>
+                          <td>{item.high_24h.toFixed(4)} </td>
+                          <td>{item.low_24h.toFixed(2)}</td>
+                          <td>
+                            {item.market_cap_change_percentage_24h.toFixed(2)}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </Card>
             </div>
 
             <div className="col-lg-4">

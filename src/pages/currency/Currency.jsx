@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import StickySidebar from "../../components/stock/StickySidebar";
 import CurrencySidebar from "../../components/stock/TvWidgets/CurrencySidebar";
@@ -59,50 +60,55 @@ function Currency() {
                 </h1>
                 <CurrencyTableWidget />
               </div>
-                <h1 className=" fs-1 bist100 title mt-1">Döviz Tablosu</h1>
-              <table className="table   table-hover ">
-                <thead>
-                  <tr className="text-dark">
-                    <th>Döviz Cinsi</th>
-                    <th scope="col"> Yön </th>
-                    <th scope="col">Alış </th>
-                    <th scope="col">Satış </th>
-                    <th scope="col">Değişim % </th>
-                    <th scope="col">Saat </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {newCurrencyData.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <th
-                          style={{ cursor: "pointer" }}
-                          onClick={() => navigate(`${index}`, { state: item })}
-                        >
-                          {item?.code}
-                        </th>
-                        <th>
-                          {item.rate < 0 ? (
-                            <i
-                              className="fa-solid fa-caret-down"
-                              style={{ color: "red", fontSize: "1.5rem" }}
-                            ></i>
-                          ) : (
-                            <i
-                              className="fa-solid fa-caret-up"
-                              style={{ color: "green", fontSize: "1.5rem" }}
-                            ></i>
-                          )}
-                        </th>
-                        <td>{item.buying.toFixed(4)} </td>
-                        <td>{item.selling.toFixed(4)} </td>
-                        <td>{item.rate.toFixed(2)}</td>
-                        <td>{item.time}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <h1 className=" fs-1 bist100 title mt-1">Döviz Piyasası</h1>
+
+              <Card>
+                <table className="table   table-hover ">
+                  <thead>
+                    <tr className="text-dark">
+                      <th>Döviz Cinsi</th>
+                      <th scope="col"> Yön </th>
+                      <th scope="col">Alış </th>
+                      <th scope="col">Satış </th>
+                      <th scope="col">Değişim % </th>
+                      <th scope="col">Saat </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {newCurrencyData.map((item, index) => {
+                      return (
+                        <tr key={index}>
+                          <th
+                            style={{ cursor: "pointer" }}
+                            onClick={() =>
+                              navigate(`${index}`, { state: item })
+                            }
+                          >
+                            {item?.code}
+                          </th>
+                          <th>
+                            {item.rate < 0 ? (
+                              <i
+                                className="fa-solid fa-caret-down"
+                                style={{ color: "red", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa-solid fa-caret-up"
+                                style={{ color: "green", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
+                          </th>
+                          <td>{item.buying.toFixed(4)} </td>
+                          <td>{item.selling.toFixed(4)} </td>
+                          <td>{item.rate.toFixed(2)}</td>
+                          <td>{item.time}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </Card>
             </div>
 
             <div className="col-lg-4">

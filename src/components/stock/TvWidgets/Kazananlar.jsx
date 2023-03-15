@@ -20,7 +20,7 @@ const Kazananlar = () => {
         "exchange": "BIST",
         "showChart": true,
         "locale": "tr",
-        "largeChartUrl": "https://hisse-dunyasi.netlify.app/stock/",
+        "largeChartUrl": "http://localhost:3000/stock/",
         "isTransparent": false,
         "showSymbolLogo": true,
         "showFloatingTooltip": false,
@@ -45,7 +45,7 @@ const Kazananlar = () => {
       <div className="row">
         <div className="col ps-0">
           <div className="tradingview-widget-container" ref={contariner}
-              onClick={()=>navigate("/stock")}
+              // onClick={()=>navigate("/deneme123")}
 
           >
             <div className="tradingview-widget-container__widget"></div>

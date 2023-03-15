@@ -6,12 +6,14 @@ function Footer() {
   return (
     <Card className="text-center">
       <Card.Header>
-        <h2>
+        <h3>
           <strong>HİSSE DÜNYASI</strong>
-        </h2>
+        </h3>
       </Card.Header>
       <Card.Body>
-        <Card.Title>YASAL UYARI</Card.Title>
+        <Card.Title>
+          <h4> YASAL UYARI </h4>
+        </Card.Title>
         <Card.Text>
           hissedunyasi.com'da yer alan bilgi, yorum ve tavsiyeler Yatırım
           Danışmanlığı kapsamında değildir. Yorumlar kullanıcıların kişisel

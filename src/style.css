@@ -81,8 +81,8 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: #6196d3 !important;
-  color: #0a45e8;
+  background-color: #9eb1c6 !important;
+  color: #5f7ed2;
   border-radius: 1.3rem;
   transition: 0.7s;
 }

@@ -81,10 +81,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: #e3effd !important;
-  color: #5f7ed2;
-  border-radius: 1.3rem;
-  transition: 0.7s;
+  cursor: pointer;
 }
 
 .navbar-brand{
@@ -356,4 +353,36 @@ table thead tr th{
 
 .footer h5{
   color:  white;
+}
+
+#wrapper{
+  overflow: hidden;
+}
+
+
+#wrapper li{
+  transition: all ease-in-out .3s;
+}
+
+li.different{
+  border:none;
+  position: relative;
+}
+li.different:hover{
+  border: none;
+}
+
+.different::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 5px;
+  left: 50%;
+  bottom:0;
+  background-color: white;
+  transition: all ease-in-out .3s;
+}
+.different:hover::after{
+  width: 100%;
+  left: 0;
 }

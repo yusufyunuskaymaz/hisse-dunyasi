@@ -17,6 +17,7 @@ const Navbar = () => {
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
         <nav
           className="navbar navbar-expand-lg fixed-top shadow-sm"
+          id="wrapper"
           style={{ backgroundColor: "#242441" }}
         >
           <div className="container py-2">
@@ -39,29 +40,29 @@ const Navbar = () => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
-                <li className="nav-item">
+                <li className="nav-item different">
                   <Link to="/stock" className="nav-link">
                     Borsa İstanbul
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item different">
                   <Link to="/world-stock" className="nav-link">
                     Dünya Borsaları
                   </Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item different">
                   <NavLink to="/currency" className="nav-link ">
                     Döviz
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item different">
                   <NavLink to="/gold" className="nav-link ">
                     Altın
                   </NavLink>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item different">
                   <NavLink to="/crypto" className="nav-link ">
                     Kripto
                   </NavLink>

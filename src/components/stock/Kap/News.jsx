@@ -46,11 +46,11 @@ const News = ({ itemTitle, itemText }) => {
       <h2>
         <span style={{ color: "#2962ff" }}>{itemTitle}</span> KAP Haberleri
       </h2>
-      <ul class="list-group">
+      <ul className="list-group">
         {socketData.slice(0, numberOfNews).map((item) => {
           return (
             <li
-              class="list-group-item fw-bold"
+              className="list-group-item fw-bold"
               type="button"
               style={{ fontSize: "13px" }}
               onClick={() => sendLink(item.link)}

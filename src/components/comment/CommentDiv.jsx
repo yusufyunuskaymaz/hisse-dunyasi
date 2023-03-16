@@ -12,7 +12,7 @@ function CommentDiv({ commentList, itemCode, type }) {
   const data = useFetch(type, itemCode);
   const [replyCommentId, setReplyCommentId] = useState();
 
-  console.log(data,"mapped data")
+  // console.log(data,"mapped data")
 
   return (
     <div>
@@ -23,17 +23,17 @@ function CommentDiv({ commentList, itemCode, type }) {
         </div>
         {data.commentList.sort((a,b)=>(b.time-a.time)).map((item, index) => {
           return (
-            <div className="comments ms-0 ps-1" >
+            <div className="comments ms-0 ps-1" key={index+1} >
               <CommonCommentDiv item={item} setReplyCommentId={setReplyCommentId} />
               {replyCommentId === item.id ? (
                 <div className="w-75 ms-5">
                   <ReplyComment itemCode={itemCode} id={item.id} type={type}  />
                 </div>
               ) : null}
-              {item?.subCommentList.sort((a,b)=>b.time-a.time).map((item)=>{
+              {item?.subCommentList.sort((a,b)=>b.time-a.time).map((item, index)=>{
                 return (
                   // <p className="text-success ms-5">{item.body}</p>
-                  <div className="">
+                  <div  key={index+1}>
                     <CommonCommentDiv item={item} sub={"subComment"} />
                   </div>
                 )

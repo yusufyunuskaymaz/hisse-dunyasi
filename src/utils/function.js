@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 // ADD COMMENT
 export const AddComment = (type, code, content) => {
-  console.log(type, code, content, "eklendi...");
+  // console.log(type, code, content, "eklendi...");
   const db = getDatabase(commentsApp);
   const commentRef = ref(db, `${type}/${code}`);
   const newCommentRef = push(commentRef);

@@ -32,11 +32,11 @@ io.on("connection", (socket) => {
     try {
       const response = await axios.get(url2);
       const $ = cheerio.load(response.data);
-      const booksa = $('div[class="tBody"] > ul');
+      const booksa = $('div[className="tBody"] > ul');
       booksa.each(function () {
-        const date = $(this).find('li[class="cell031 fsn"]').text().trim();
-        const title = $(this).find('li[class="cell029"]').text().trim();
-        const link = $(this).find('li[class="cell029"]').find("a").attr("href");
+        const date = $(this).find('li[className="cell031 fsn"]').text().trim();
+        const title = $(this).find('li[className="cell029"]').text().trim();
+        const link = $(this).find('li[className="cell029"]').find("a").attr("href");
 
         news.push({ date, title, link });
       });
@@ -56,13 +56,13 @@ io.on("connection", (socket) => {
       console.log(response.data); // log the response object
 
       const $ = cheerio.load(response.data);
-      const body = $('div[class="tag-content"]').html()
+      const body = $('div[className="tag-content"]').html()
       // console.log(body)
       socket.broadcast.emit("news_body",body)
       // booksa.each(function () {
-      //   const date = $(this).find('li[class="cell031 fsn"]').text().trim();
-      //   const title = $(this).find('li[class="cell029"]').text().trim();
-      //   const link = $(this).find('li[class="cell029"]').find("a").attr("href");
+      //   const date = $(this).find('li[className="cell031 fsn"]').text().trim();
+      //   const title = $(this).find('li[className="cell029"]').text().trim();
+      //   const link = $(this).find('li[className="cell029"]').find("a").attr("href");
 
       //   news.push({ date, title, link });
       // });

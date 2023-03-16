@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const GeneralTable = ({stockCode, width, height}) => {
   const contariner = useRef();
   const navigate = useNavigate()
-  console.log(stockCode,"ss")
+  // console.log(stockCode,"ss")
   if(stockCode === "united kingdom"){
     stockCode = "uk"
   }

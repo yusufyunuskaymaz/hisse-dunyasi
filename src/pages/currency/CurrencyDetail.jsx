@@ -13,16 +13,14 @@ function CurrencyDetail() {
   const { state: item } = useLocation();
   const navigate = useNavigate();
 
-  let itemCode = item?.code.split('\n')[0].trim();
-  console.log(itemCode, "bilgiler");
+  let itemCode = item?.code.split("\n")[0].trim();
   console.log(item, "aa");
-
 
   return (
     <div className="container  g-4">
       <div className="row">
         <div className=" col-sm-12 col-md-8">
-          <div
+          {/* <div
              className="rounded"
              style={{
                color: "#1e53e5",
@@ -86,9 +84,42 @@ function CurrencyDetail() {
             <div className="col mt-5">
               <h3>{item.code}</h3>
               <CurrencyWidget itemCode={itemCode} />
-              <CommentDiv itemCode={itemCode} commentList={commentList} />
             </div>
+          </div> */}
+          <h1>{item.code}</h1>
+          <div className="col table-responsive w-75 rounded stock-detail-table">
+            <table className="table table-borderless stock-table">
+              <thead>
+                <tr className="text-center main-bg ">
+                  <th scope="col" colSpan="5" className="main-color ps-0">
+                    {item.text}
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" colSpan="2" rowSpan="2">
+                    Alış
+                  </th>
+                  <th scope="col">Satış</th>
+                  <th scope="col">Oran</th>
+                  <th scope="col">Saat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="2" rowSpan="2">
+                    {item.buying}
+                  </td>
+                  <td>{item.selling}</td>
+                  <td>{item.rate}</td>
+                  <td className="capacity">{item.time}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <div className="col">
+            <CurrencyWidget itemCode={itemCode} />
+          </div>
+          <CommentDiv itemCode={itemCode} commentList={commentList} />
         </div>
 
         <div className="col-lg-4">

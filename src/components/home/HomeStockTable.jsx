@@ -24,7 +24,7 @@ function StockTable() {
         getDataFromApi()
       }, [])
     
-      console.log(data,"borsa")
+      // console.log(data,"borsa")
   return (
     <div className=''
     style={{width:"85%"}}

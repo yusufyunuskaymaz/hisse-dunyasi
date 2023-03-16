@@ -232,7 +232,7 @@ function Footer() {
         </div>
       </div>
 
-      <Card.Footer bgColor="light" className="text-center text-lg-left">
+      <Card.Footer className="text-center text-lg-left">
         <div
           className="text-center fs-6 p-3"
           style={{ backgroundColor: "rgba(43, 41, 41, 0.2)" }}

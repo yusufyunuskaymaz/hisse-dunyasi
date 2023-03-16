@@ -177,15 +177,15 @@ function HomeCryptoWidget({ itemTitle, width }) {
   }, []);
 
   return (
-    <div class="tradingview-widget-container" ref={container}>
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
+    <div className="tradingview-widget-container" ref={container}>
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright">
         <a
           href="https://www.tradingview.com/markets/currencies/"
           rel="noopener"
           target="_blank"
         >
-          <span class="blue-text">Bitcoin and Altcoin Prices</span>
+          <span className="blue-text">Bitcoin and Altcoin Prices</span>
         </a>{" "}
         by TradingView
       </div>

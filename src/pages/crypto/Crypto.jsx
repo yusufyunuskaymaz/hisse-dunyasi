@@ -68,7 +68,7 @@ function Crypto() {
                   <tbody>
                     {newCryptoData.map((item, index) => {
                       return (
-                        <tr key={index}>
+                        <tr key={index+1}>
                           <th>
                             {" "}
                             <img

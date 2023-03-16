@@ -48,7 +48,7 @@ const WorldStock = () => {
               </thead>
               <tbody>
                 {WorldStocklist.map((item) => {
-                  console.log(item, "dd");
+                  // console.log(item, "dd");
                   return (
                     <tr
                     onClick={()=>navigate(`item`,{state:item})}

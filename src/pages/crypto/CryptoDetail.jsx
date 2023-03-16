@@ -20,11 +20,12 @@ function CryptoDetail() {
   let itemSymbol = item.symbol.replace(/^\s+|\s+$/gm, "");
   moment.locale("tr");
 
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-8 col-12">
-          <div
+          {/* <div
             className="rounded"
             style={{
               color: "#1e53e5",
@@ -94,12 +95,43 @@ function CryptoDetail() {
                 </Button>
               </a>
             </div>
+          </div> */}
+
+<div className="d-none d-lg-block">
+            <Widget itemSymbol={itemSymbol} />
           </div>
 
-          <h3>{item.code}</h3>
-          <div className="d-none d-lg-block">
-          <Widget itemSymbol={itemSymbol} />
+          <div className="col table-responsive w-75 rounded stock-detail-table">
+            <table className="table table-borderless stock-table">
+              <thead>
+                <tr className="text-center main-bg ">
+                  <th scope="col" colSpan="5" className="main-color ps-0">
+                    {item.text}
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" colSpan="2" rowSpan="2">
+                    Son 
+                  </th>
+                  <th scope="col">Günlük En Yüksek </th>
+                  <th scope="col">Günlük En Düşük</th>
+                  <th scope="col">Hacim</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="2" rowSpan="2">
+                    {item.current_price}
+                  </td>
+                  <td>{item.high_24h}</td>
+                  <td>{item.low_24h}</td>
+                  <td className="capacity">{item.market_cap }</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
+          
           <div id="comments" className="ms-0">
             <CommentDiv itemCode={itemCode} commentList={commentList} />
           </div>

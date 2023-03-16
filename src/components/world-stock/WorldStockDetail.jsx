@@ -5,7 +5,7 @@ import GeneralTable from './GeneralTable'
 const WorldStockDetail = () => {
     const {state} = useLocation()
     const stockCode = state.split(" (")[0].toLowerCase().trim()
-    console.log(stockCode)
+    // console.log(stockCode)
 
   return (
     <div className='container'>

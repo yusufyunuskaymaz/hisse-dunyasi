@@ -28,15 +28,15 @@ function AllStocks() {
     <div className="container table-responsive" ref={contariner}>
       <div className="row ">
         <div className="col ">
-          <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
+          <div className="tradingview-widget-container">
+            <div className="tradingview-widget-container__widget"></div>
+            <div className="tradingview-widget-copyright">
               <a
                 href="https://tr.tradingview.com/screener/"
                 rel="noopener"
                 target="_blank"
               >
-                <span class="blue-text">Hisse takipçisi</span>
+                <span className="blue-text">Hisse takipçisi</span>
               </a>{" "}
               TradingView tarafından
             </div>

@@ -20,7 +20,7 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`User Connected: ${socket.id}`);
+  // console.log(`User Connected: ${socket.id}`);
 
   socket.on("send_message", (data) => {
     socket.emit("receive_message", news);
@@ -41,18 +41,18 @@ let news = [];
 const getNews = async () => {
   const response = await axios.get(url2);
   const $ = cheerio.load(response.data);
-  const booksa = $('div[class="tBody"] > ul');
+  const booksa = $('div[className="tBody"] > ul');
   booksa.each(function () {
-    date = $(this).find('li[class="cell031 fsn"]').text().trim();
-    title = $(this).find('li[class="cell029"]').text().trim();
-    link = $(this).find('li[class="cell029"]').find("a").attr("href");
+    date = $(this).find('li[className="cell031 fsn"]').text().trim();
+    title = $(this).find('li[className="cell029"]').text().trim();
+    link = $(this).find('li[className="cell029"]').find("a").attr("href");
 
     news.push({ date, title, link });
 
 
   });
 
-  console.log(news);
+  // console.log(news);
 };
 
 getNews();

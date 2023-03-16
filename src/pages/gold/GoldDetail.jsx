@@ -12,11 +12,13 @@ function GoldDetail() {
     let itemCode = item.name
     const {commentList}=useFetch();
 
+    console.log(item)
+
     return (
       <div className="container  g-4">
         <div className="row">
           <div className=" col-sm-12 col-md-8">
-            <div
+            {/* <div
               className="rounded"
               style={{
                 color: "#1e53e5",
@@ -28,8 +30,8 @@ function GoldDetail() {
             >
               <i className="fa-regular fa-star" style={{ marginRight: "1rem" }}></i>
               {item?.name}
-            </div>
-            <div className="row  p-4 mb-5">
+            </div> */}
+            {/* <div className="row  p-4 mb-5">
               <div className="col-1">
                 {item?.rate < 0 ? (
                   <i
@@ -74,9 +76,39 @@ function GoldDetail() {
                   <FaPencilAlt /> Yorum Yap
                 </Button>
               </div>
-              <CommentDiv itemCode={itemCode} commentList={commentList} />
 
-            </div>
+            </div> */}
+            <h1>{item.name}</h1>
+            <div className="col table-responsive w-75 rounded stock-detail-table">
+            <table className="table table-borderless stock-table">
+              <thead>
+                <tr className="text-center main-bg ">
+                  <th scope="col" colSpan="5" className="main-color ps-0">
+                    {item.text}
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" colSpan="2" rowSpan="2">
+                   Alış
+                  </th>
+                  <th scope="col">Satış</th>
+                  <th scope="col">Oran</th>
+                  <th scope="col">Saat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="2" rowSpan="2">
+                    {item.buying}
+                  </td>
+                  <td>{item.selling}</td>
+                  <td>{item.rate}</td>
+                  <td className="capacity">{item.time }</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+              <CommentDiv itemCode={itemCode} commentList={commentList} />
         
           </div>
   

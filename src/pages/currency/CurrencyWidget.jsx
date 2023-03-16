@@ -20,7 +20,7 @@ function TradingViewWidget({ itemCode }) {
             ]
           ],
           "chartOnly": false,
-          "width": 1000,
+          "width": 850,
           "height": 500,
           "locale": "tr",
           "colorTheme": "light",

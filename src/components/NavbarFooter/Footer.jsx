@@ -3,8 +3,10 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <div className="mt-4" style={{ fontSize: ".5rem" }}>
       <div
@@ -13,7 +15,9 @@ function Footer() {
       >
         <div className="row justify-content-center">
           <div className=" col-lg-2">
-            <h5>BORSA</h5>
+            <h5 type="button" onClick={() => navigate("/stock")}>
+              BORSA
+            </h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -54,7 +58,9 @@ function Footer() {
             </div>
           </div>
           <div className=" col-lg-2">
-            <h5>DÖVİZ</h5>
+            <h5 type="button" onClick={() => navigate("/currency")}>
+              DÖVİZ
+            </h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -98,7 +104,9 @@ function Footer() {
             </div>
           </div>
           <div className=" col-lg-2 ">
-            <h5>ALTIN</h5>
+            <h5 type="button" onClick={() => navigate("/gold")}>
+              ALTIN
+            </h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -142,7 +150,9 @@ function Footer() {
             </div>
           </div>
           <div className=" col-lg-2 ">
-            <h5>KRİPTO</h5>
+            <h5 type="button" onClick={() => navigate("/crypto")}>
+              KRİPTO
+            </h5>
             <div>
               <ul className="list-unstyled">
                 <li>

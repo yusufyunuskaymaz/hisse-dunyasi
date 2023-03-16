@@ -355,9 +355,6 @@ table thead tr th{
   color:  white;
 }
 
-#wrapper{
-  overflow: hidden;
-}
 
 
 #wrapper li{
@@ -386,3 +383,8 @@ li.different:hover{
   width: 100%;
   left: 0;
 }
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #F9FAFB;
+ }

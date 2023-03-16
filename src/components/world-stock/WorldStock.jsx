@@ -37,8 +37,10 @@ const WorldStock = () => {
               Dünya Borsaları
             </h1>
             <div>
-              <h3 className="mb-3">USA</h3>
+            <div className="d-none d-lg-block">
+            <h3 className="mb-3">USA</h3>
             <GeneralTable stockCode={"us"} width={"850"} height={"500"} />
+            </div>
             </div>
             <Table bordered hover>
               <thead>

@@ -16,7 +16,7 @@ const Navbar = () => {
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
         <nav
-          className="navbar navbar-expand-lg fixed-top shadow-sm"
+          className="navbar navbar-expand-lg fixed-top shadow-sm navbar-dark"
           id="wrapper"
           style={{ backgroundColor: "#242441" }}
         >

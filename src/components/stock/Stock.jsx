@@ -113,7 +113,7 @@ const Stock = () => {
             </div>
             <Card>
               <div className="table-responsive shadow ">
-                <table className="table table-hover  ">
+                <table className="table table-striped">
                   <thead >
                     <tr>
                       <th scope="col">Sıra</th>

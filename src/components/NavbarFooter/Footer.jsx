@@ -234,7 +234,7 @@ function Footer() {
 
       <Card.Footer bgColor="light" className="text-center text-lg-left">
         <div
-          className="text-center p-2"
+          className="text-center fs-6 p-3"
           style={{ backgroundColor: "rgba(43, 41, 41, 0.2)" }}
         >
           &copy; {new Date().getFullYear()} Copyright:{" "}

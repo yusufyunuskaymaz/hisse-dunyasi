@@ -5,26 +5,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import { style } from "@mui/system";
 import StickySidebar from "./StickySidebar";
 import { BIST_100 } from "./BIST_100";
-import { Form } from "react-bootstrap";
+import { Card, Form } from "react-bootstrap";
 
 const Stock = () => {
   const navigate = useNavigate();
- // Check if the `tvwidgetsymbol` query parameter exists in the URL
-//  const urlParams = new URLSearchParams(window.location.search);
-//  const tvwidgetsymbol = urlParams.get("tvwidgetsymbol");
+  // Check if the `tvwidgetsymbol` query parameter exists in the URL
+  //  const urlParams = new URLSearchParams(window.location.search);
+  //  const tvwidgetsymbol = urlParams.get("tvwidgetsymbol");
 
-//  useEffect(() => {
-//    // If `tvwidgetsymbol` exists, navigate to `StockDetail` component with its value as the `deneme` param
-//    if (tvwidgetsymbol) {
-//      navigate(`/stock/${tvwidgetsymbol}`);
-//    }
-//  }, [navigate, tvwidgetsymbol]);
+  //  useEffect(() => {
+  //    // If `tvwidgetsymbol` exists, navigate to `StockDetail` component with its value as the `deneme` param
+  //    if (tvwidgetsymbol) {
+  //      navigate(`/stock/${tvwidgetsymbol}`);
+  //    }
+  //  }, [navigate, tvwidgetsymbol]);
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [allStock, setAllStock] = useState([]);
-  const {deneme}=useParams()
-  console.log(deneme,"deneme...")
+  const { deneme } = useParams();
+  console.log(deneme, "deneme...");
 
   const getDataFromApi = () => {
     // console.log("girdi");
@@ -97,118 +97,125 @@ const Stock = () => {
             </h1>
             <div className="d-flex justify-content-between px-3 align-items-center mb-3">
               <p className="text-muted mb-0">{data.length} adet</p>
-              <div className="checkbox d-flex">
-              <input
-                type="checkbox"
-                id="switch"
-                onChange={() => changeStock()}
-                style={{ transform: "scale(0.5)" }}
-              />
-              <label htmlFor="switch">Toggle</label>
+              <div className="checkbox d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  id="switch"
+                  onChange={() => changeStock()}
+                  style={{ transform: "scale(0.5)" }}
+                />
+                <label htmlFor="switch">Toggle</label>
+                <span className="ms-3 text-muted">Tümünü Göster</span>
               </div>
             </div>
-            <div className="table-responsive">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Sıra</th>
-                    <th scope="col" id="name">
-                      Adı
-                    </th>
-                    <th scope="col"></th>
-                    <th scope="col" id="last">
-                      Son
-                    </th>
-                    <th scope="col" id="min">
-                      Min
-                    </th>
-                    <th scope="col" id="max">
-                      Max
-                    </th>
-                    <th scope="col" id="cap">
-                      Hacim(Tl)
-                    </th>
-                    <th scope="col" id="rate">
-                      %
-                    </th>
-                    <th scope="col" id="time">
-                      Son İş.
-                    </th>
-                  </tr>
-                </thead>
+            <div>
+              <p className="mb-2 text-muted" align="left">Detaylı görüntülemek için üzerine tıklayın.</p>
+            </div>
+            <Card>
+              <div className="table-responsive shadow ">
+                <table className="table table-hover  ">
+                  <thead >
+                    <tr>
+                      <th scope="col">Sıra</th>
+                      <th scope="col" id="name">
+                        Adı
+                      </th>
+                      <th scope="col"></th>
+                      <th scope="col" id="last">
+                        Son
+                      </th>
+                      <th scope="col" id="min">
+                        Min
+                      </th>
+                      <th scope="col" id="max">
+                        Max
+                      </th>
+                      <th scope="col" id="cap">
+                        Hacim(Tl)
+                      </th>
+                      <th scope="col" id="rate">
+                        %
+                      </th>
+                      <th scope="col" id="time">
+                        Son İş.
+                      </th>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  {/* // .sort((a, b) => (a.code < b.code ? -1 : 1)) */}
-                  {data.map((item, index) => {
-                    return (
-                      <tr
-                        key={index}
-                        onClick={() =>
-                          navigate(
-                            `${item.text.toLowerCase().replace(" ", "-")}`,
-                            {
-                              state: {
-                                item,
-                              },
-                            }
-                          )
-                        }
-                        role="button"
-                      >
-                        <th scope="row">{index + 1}</th>
-                        <th
-                          scope="row"
-                          style={{ color: "#2962ff", fontSize: "14px" }}
+                  <tbody>
+                    {/* // .sort((a, b) => (a.code < b.code ? -1 : 1)) */}
+                    {data.map((item, index) => {
+                      return (
+                        <tr
+                          key={index}
+                          onClick={() =>
+                            navigate(
+                              `${item.text.toLowerCase().replace(" ", "-")}`,
+                              {
+                                state: {
+                                  item,
+                                },
+                              }
+                            )
+                          }
+                          role="button"
                         >
-                          {item.code}
-                        </th>
-                        <th>
-                          {item.rate < 0 ? (
-                            <i
-                              className="fa-solid fa-caret-down"
-                              style={{ color: "#ff173e", fontSize: "1.5rem" }}
-                            ></i>
+                          <th scope="row">{index + 1}</th>
+                          <th
+                            scope="row"
+                            style={{  fontSize: "14px" }}
+                          >
+                            {item.code}
+                          </th>
+                          <th>
+                            {item.rate < 0 ? (
+                              <i
+                                className="fa-solid fa-caret-down"
+                                style={{ color: "#ff173e", fontSize: "1.5rem" }}
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa-solid fa-caret-up"
+                                style={{ color: "#00a97f", fontSize: "1.5rem" }}
+                              ></i>
+                            )}
+                          </th>
+                          <td>{item.lastprice}</td>
+                          <td>{item.min}</td>
+                          <td>{item.max}</td>
+                          <td>{item.hacimstr.slice(1)}</td>
+                          {item.rate > 0 ? (
+                            <td
+                              className="text-success"
+                              style={{ color: "#00a97f" }}
+                            >
+                              {item.rate}
+                            </td>
                           ) : (
-                            <i
-                              className="fa-solid fa-caret-up"
-                              style={{ color: "#00a97f", fontSize: "1.5rem" }}
-                            ></i>
+                            <td
+                              className="text-danger"
+                              style={{ color: "#ff173e" }}
+                            >
+                              {item.rate}
+                            </td>
                           )}
-                        </th>
-                        <td>{item.lastprice}</td>
-                        <td>{item.min}</td>
-                        <td>{item.max}</td>
-                        <td>{item.hacimstr.slice(1)}</td>
-                        {item.rate > 0 ? (
-                          <td
-                            className="text-success"
-                            style={{ color: "#00a97f" }}
-                          >
-                            {item.rate}
-                          </td>
-                        ) : (
-                          <td
-                            className="text-danger"
-                            style={{ color: "#ff173e" }}
-                          >
-                            {item.rate}
-                          </td>
-                        )}
-                        <td>{item.time}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              <div className="text-center">
-                <button
-                  className="btn btn-primary mb-5 "
-                  onClick={() => navigate("/all-stocks")}
-                >
-                  Tümünü Gör
-                </button>
+                          <td>{item.time}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </div>
-            </div>
+              
+            </Card>
+            <div className="text-center">
+                  <button
+                    className="btn btn-secondary  mt-5 "
+                    onClick={() => navigate("/all-stocks")}
+                  >
+                    Detaylı tablo için tıklayın
+                  </button>
+                </div>
           </div>
           <div className="col-lg-4">
             <StickySidebar />

@@ -11,7 +11,7 @@ const WorldStockDetail = () => {
     <div className='container'>
         <h1>{state}</h1>
 
-        <GeneralTable stockCode={stockCode} />
+        <GeneralTable stockCode={stockCode} width={"1300"} height={"2000"} />
 
     </div>
   )

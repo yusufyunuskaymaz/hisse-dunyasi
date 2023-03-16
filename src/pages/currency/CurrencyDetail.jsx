@@ -23,14 +23,14 @@ function CurrencyDetail() {
       <div className="row">
         <div className=" col-sm-12 col-md-8">
           <div
-            className=""
-            style={{
-              color: "orange",
-              fontSize: "2rem",
-              background: "#464c52",
-              textAlign: "start",
-              padding: "2rem",
-            }}
+             className="rounded"
+             style={{
+               color: "#1e53e5",
+               fontSize: "2rem",
+               background: "#e3effd",
+               textAlign: "start",
+               padding: "2rem",
+             }}
           >
             <i
               className="fa-regular fa-star"

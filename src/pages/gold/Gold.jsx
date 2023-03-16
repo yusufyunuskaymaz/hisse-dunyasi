@@ -38,7 +38,7 @@ function Gold() {
               <h1 className=" fs-1 bist100 title mt-1">Altın Piyasası</h1>
             </div>
             <Card>
-              <table className="table  table-hover">
+              <table className="table  table-hover shadow">
                 <thead>
                   <tr className="text-dark">
                     <th scope="col">Altın Cinsi </th>

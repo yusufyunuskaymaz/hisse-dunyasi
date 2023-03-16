@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const GeneralTable = ({stockCode}) => {
+const GeneralTable = ({stockCode, width, height}) => {
   const contariner = useRef();
   const navigate = useNavigate()
   console.log(stockCode,"ss")
@@ -19,8 +19,8 @@ const GeneralTable = ({stockCode}) => {
     script.async = true;
     script.innerHTML = `
     {
-        "width": 1300,
-        "height": 2000,
+        "width": ${width},
+        "height": ${height},
         "defaultColumn": "overview",
         "defaultScreen": "most_capitalized",
         "market": "${stockCode}",

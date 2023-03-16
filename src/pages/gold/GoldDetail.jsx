@@ -17,11 +17,11 @@ function GoldDetail() {
         <div className="row">
           <div className=" col-sm-12 col-md-8">
             <div
-              className=""
+              className="rounded"
               style={{
-                color: "orange",
+                color: "#1e53e5",
                 fontSize: "2rem",
-                background: "#464c52",
+                background: "#e3effd",
                 textAlign: "start",
                 padding: "2rem",
               }}

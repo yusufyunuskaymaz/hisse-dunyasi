@@ -52,8 +52,8 @@ function Crypto() {
                   Kripto Para Piyasası
                 </h1>
               </div>
-              <Card>
-                <table className="table   table-hover ">
+              <Card >
+                <table className="table   table-hover shadow ">
                   <thead>
                     <tr className="text-dark">
                       <th> </th>

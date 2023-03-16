@@ -285,7 +285,7 @@ h1 {
   top: 5px;
   left: 5px;
   width: 12px;
-  height: 12px;
+  height: 10px;
   background: #fff;
   border-radius: 15px;
   transition: 0.3s;
@@ -326,3 +326,15 @@ h1:after {
 .footermenu NavLink {
   color: green;
 }
+
+table thead{
+  background-color: #F9FAFB;
+}
+
+table thead tr th{
+  font-weight: bolder !important;
+}
+
+/* table tbody tr td{
+  
+} */

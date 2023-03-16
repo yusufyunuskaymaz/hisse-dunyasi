@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { style } from "@mui/system";
 import { WorldStocklist } from "./worldStockList";
 import { Form, Table } from "react-bootstrap";
+import GeneralTable from "./GeneralTable";
+import StickySidebar from "../stock/StickySidebar";
 
 const WorldStock = () => {
   const [data, setData] = useState([]);
@@ -34,11 +36,14 @@ const WorldStock = () => {
             <h1 className="text-center mb-5 fs-1 bist100 title mt-1">
               Dünya Borsaları
             </h1>
-
+            <div>
+              <h3 className="mb-3">USA</h3>
+            <GeneralTable stockCode={"us"} width={"850"} height={"500"} />
+            </div>
             <Table bordered hover>
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th style={{textAlign:"left"}}>Name</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,7 +60,7 @@ const WorldStock = () => {
               </tbody>
             </Table>
           </div>
-          <div className="col-lg-4">{/* <StickySidebar /> */}</div>
+          <div className="col-lg-4">{ <StickySidebar /> }</div>
         </div>
       </div>
     );

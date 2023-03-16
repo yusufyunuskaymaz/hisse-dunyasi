@@ -63,7 +63,7 @@ function Currency() {
               <h1 className=" fs-1 bist100 title mt-1">Döviz Piyasası</h1>
 
               <Card>
-                <table className="table   table-hover ">
+                <table className="table   table-hover shadow ">
                   <thead>
                     <tr className="text-dark">
                       <th>Döviz Cinsi</th>

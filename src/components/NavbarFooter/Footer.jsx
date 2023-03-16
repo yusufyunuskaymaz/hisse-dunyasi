@@ -9,7 +9,7 @@ function Footer() {
     <div className="mt-4" style={{ fontSize: ".5rem" }}>
       <div
         className="container-fluid p-3 ps-5 pt-5 footer "
-        style={{ backgroundColor: "#231b1b" }}
+        style={{ backgroundColor: "#242441" }}
       >
         <div className="row justify-content-center">
           <div class=" col-lg-2">

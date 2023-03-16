@@ -12,17 +12,14 @@ function Footer() {
         style={{ backgroundColor: "#231b1b" }}
       >
         <div className="row justify-content-center">
-          <div class=" col-lg-2">
+          <div className=" col-lg-2">
             <h5>BORSA</h5>
             <div>
               <ul className="list-unstyled">
                 <li>
-                  <Nav.Link
-                    href="stock/akbank"
-                    className="text-decoration-none"
-                  >
+                  <a href="stock/akbank" className="text-decoration-none">
                     Akbank
-                  </Nav.Link>
+                  </a>
                 </li>
                 <li>
                   <Link
@@ -40,7 +37,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/turk-hava%20yollari"
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     THY
                   </Link>
@@ -48,7 +45,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/yapi-ve%20kredi%20bank."
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     Yapı Kredi
                   </Link>
@@ -56,7 +53,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class=" col-lg-2">
+          <div className=" col-lg-2">
             <h5>BORSA</h5>
             <div>
               <ul className="list-unstyled">
@@ -84,7 +81,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/turk-hava%20yollari"
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     THY
                   </Link>
@@ -92,7 +89,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/yapi-ve%20kredi%20bank."
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     Yapı Kredi
                   </Link>
@@ -100,7 +97,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class=" col-lg-2 ">
+          <div className=" col-lg-2 ">
             <h5>BORSA</h5>
             <div>
               <ul className="list-unstyled">
@@ -128,7 +125,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/turk-hava%20yollari"
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     THY
                   </Link>
@@ -136,7 +133,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/yapi-ve%20kredi%20bank."
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     Yapı Kredi
                   </Link>
@@ -144,7 +141,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class=" col-lg-2 ">
+          <div className=" col-lg-2 ">
             <h5>BORSA</h5>
             <div>
               <ul className="list-unstyled">
@@ -172,7 +169,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/turk-hava%20yollari"
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     THY
                   </Link>
@@ -180,7 +177,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/yapi-ve%20kredi%20bank."
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     Yapı Kredi
                   </Link>
@@ -188,7 +185,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class=" col-lg-4 ">
+          <div className=" col-lg-4 ">
             <h5>BORSA</h5>
             <div>
               <ul className="list-unstyled">
@@ -216,7 +213,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/turk-hava%20yollari"
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     THY
                   </Link>
@@ -224,7 +221,7 @@ function Footer() {
                 <li>
                   <Link
                     to="stock/yapi-ve%20kredi%20bank."
-                    class="text-decoration-none"
+                    className="text-decoration-none"
                   >
                     Yapı Kredi
                   </Link>
@@ -238,7 +235,7 @@ function Footer() {
       <Card.Footer bgColor="light" className="text-center text-lg-left">
         <div
           className="text-center p-2"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+          style={{ backgroundColor: "rgba(43, 41, 41, 0.2)" }}
         >
           &copy; {new Date().getFullYear()} Copyright:{" "}
           <a className="text-dark" href="https://hissedunyasi.com/">

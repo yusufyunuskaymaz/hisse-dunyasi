@@ -338,3 +338,16 @@ table thead tr th{
 /* table tbody tr td{
   
 } */
+
+.footer ul li a {
+  font-size: 15px !important;
+  color: white !important;
+}
+
+.footer ul li{
+  padding-bottom: .4rem;
+}
+
+.footer h5{
+  color:  white;
+}

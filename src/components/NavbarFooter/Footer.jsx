@@ -2,10 +2,11 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
 function Footer() {
   return (
-    <CardGroup mt-2>
+    <CardGroup text="light" mt-2>
       <Card>
         <Card.Body>
           <Card.Title>
@@ -15,28 +16,40 @@ function Footer() {
             <div>
               <ul className="list-unstyled">
                 <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
+                  <Nav.Link
+                    href="stock/akbank"
+                    className="text-decoration-none"
+                  >
+                    Akbank
+                  </Nav.Link>
+                </li>
+                <li>
+                  <Link
+                    to="stock/kardemir-(d)"
+                    className="text-decoration-none"
+                  >
+                    Kardemir
                   </Link>
                 </li>
                 <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
+                  <Link to="stock/sise-cam" className="text-decoration-none">
+                    Şişecam
                   </Link>
                 </li>
                 <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
+                  <Link
+                    to="stock/turk-hava%20yollari"
+                    class="text-decoration-none"
+                  >
+                    THY
                   </Link>
                 </li>
                 <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
-                  </Link>
-                </li>
-                <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
+                  <Link
+                    to="stock/yapi-ve%20kredi%20bank."
+                    class="text-decoration-none"
+                  >
+                    Yapı Kredi
                   </Link>
                 </li>
               </ul>
@@ -47,34 +60,34 @@ function Footer() {
       <Card>
         <Card.Body>
           <Card.Title>
-            <strong>BORSA</strong>
+            <strong>DÖVİZ</strong>
           </Card.Title>
           <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-6">
             <div>
               <ul className="list-unstyled">
                 <li>
-                  <Link to="stock" class="text-decoration-none">
-                    Borsa
+                  <Link to="currency" class="text-decoration-none">
+                    Dolar
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Euro
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Sterlin
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Yen
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Ruble
                   </Link>
                 </li>
               </ul>
@@ -85,34 +98,34 @@ function Footer() {
       <Card>
         <Card.Body>
           <Card.Title>
-            <strong>BORSA</strong>
+            <strong>ALTIN</strong>
           </Card.Title>
           <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-6">
             <div>
               <ul className="list-unstyled">
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Gram Altın
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Çeyrek Altın
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Yarım Altın
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Tam Altın
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Ata Altın
                   </Link>
                 </li>
               </ul>
@@ -123,34 +136,34 @@ function Footer() {
       <Card>
         <Card.Body>
           <Card.Title>
-            <strong>BORSA</strong>
+            <strong>KRİPTO</strong>
           </Card.Title>
           <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-6">
             <div>
               <ul className="list-unstyled">
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Bitcoin
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Ethereum
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    Tether
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    BNB
                   </Link>
                 </li>
                 <li>
                   <Link to="stock" class="text-decoration-none">
-                    Borsa
+                    USD Coin
                   </Link>
                 </li>
               </ul>

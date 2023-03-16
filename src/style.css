@@ -388,11 +388,8 @@ li.different:hover {
   width: 100%;
   left: 0;
 }
-<<<<<<< HEAD
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
    background-color: #F9FAFB;
  }
-=======
->>>>>>> 0d2af9b2c5fce8de4633661469390095dd334b84

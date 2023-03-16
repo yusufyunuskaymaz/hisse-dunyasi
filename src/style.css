@@ -84,7 +84,7 @@ nav ul li:hover {
   cursor: pointer;
 }
 
-.navbar-brand{
+.navbar-brand {
   color: white !important;
 }
 
@@ -92,7 +92,7 @@ nav ul li:hover {
   border: none !important;
   font-size: 1.5rem;
 }
-#basic-nav-dropdown{
+#basic-nav-dropdown {
   color: #1e53e5 !important;
 }
 a {
@@ -330,11 +330,11 @@ h1:after {
   color: green;
 }
 
-table thead{
-  background-color: #F9FAFB;
+table thead {
+  background-color: #f9fafb;
 }
 
-table thead tr th{
+table thead tr th {
   font-weight: bolder !important;
 }
 
@@ -347,42 +347,41 @@ table thead tr th{
   color: white !important;
 }
 
-.footer ul li{
-  padding-bottom: .4rem;
+.footer ul li {
+  padding-bottom: 0.4rem;
 }
 
-.footer h5{
-  color:  white;
+.footer h5 {
+  color: white;
 }
 
-#wrapper{
+#wrapper {
   overflow: hidden;
 }
 
-
-#wrapper li{
-  transition: all ease-in-out .3s;
+#wrapper li {
+  transition: all ease-in-out 0.3s;
 }
 
-li.different{
-  border:none;
+li.different {
+  border: none;
   position: relative;
 }
-li.different:hover{
+li.different:hover {
   border: none;
 }
 
-.different::after{
-  content: '';
+.different::after {
+  content: "";
   position: absolute;
   width: 0px;
   height: 5px;
   left: 50%;
-  bottom:0;
+  bottom: 0;
   background-color: white;
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
-.different:hover::after{
+.different:hover::after {
   width: 100%;
   left: 0;
 }

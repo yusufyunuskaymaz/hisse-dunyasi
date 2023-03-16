@@ -54,7 +54,7 @@ function Footer() {
             </div>
           </div>
           <div className=" col-lg-2">
-            <h5>BORSA</h5>
+            <h5>DÖVİZ</h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -62,7 +62,7 @@ function Footer() {
                     href="stock/akbank"
                     className="text-decoration-none"
                   >
-                    Akbank
+                    Dolar
                   </Nav.Link>
                 </li>
                 <li>
@@ -70,12 +70,12 @@ function Footer() {
                     to="stock/kardemir-(d)"
                     className="text-decoration-none"
                   >
-                    Kardemir
+                    Euro
                   </Link>
                 </li>
                 <li>
                   <Link to="stock/sise-cam" className="text-decoration-none">
-                    Şişecam
+                    Sterlin
                   </Link>
                 </li>
                 <li>
@@ -83,7 +83,7 @@ function Footer() {
                     to="stock/turk-hava%20yollari"
                     className="text-decoration-none"
                   >
-                    THY
+                    Kanada Doları
                   </Link>
                 </li>
                 <li>
@@ -91,14 +91,14 @@ function Footer() {
                     to="stock/yapi-ve%20kredi%20bank."
                     className="text-decoration-none"
                   >
-                    Yapı Kredi
+                    Ruble
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className=" col-lg-2 ">
-            <h5>BORSA</h5>
+            <h5>ALTIN</h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -106,7 +106,7 @@ function Footer() {
                     href="stock/akbank"
                     className="text-decoration-none"
                   >
-                    Akbank
+                    Gram Altın
                   </Nav.Link>
                 </li>
                 <li>
@@ -114,12 +114,12 @@ function Footer() {
                     to="stock/kardemir-(d)"
                     className="text-decoration-none"
                   >
-                    Kardemir
+                    Çeyrek Altın
                   </Link>
                 </li>
                 <li>
                   <Link to="stock/sise-cam" className="text-decoration-none">
-                    Şişecam
+                    Tam Altın
                   </Link>
                 </li>
                 <li>
@@ -127,7 +127,7 @@ function Footer() {
                     to="stock/turk-hava%20yollari"
                     className="text-decoration-none"
                   >
-                    THY
+                    Ata Altın
                   </Link>
                 </li>
                 <li>
@@ -135,14 +135,14 @@ function Footer() {
                     to="stock/yapi-ve%20kredi%20bank."
                     className="text-decoration-none"
                   >
-                    Yapı Kredi
+                    ONS Altın
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className=" col-lg-2 ">
-            <h5>BORSA</h5>
+            <h5>KRİPTO</h5>
             <div>
               <ul className="list-unstyled">
                 <li>
@@ -150,7 +150,7 @@ function Footer() {
                     href="stock/akbank"
                     className="text-decoration-none"
                   >
-                    Akbank
+                    Bitcoin
                   </Nav.Link>
                 </li>
                 <li>
@@ -158,12 +158,12 @@ function Footer() {
                     to="stock/kardemir-(d)"
                     className="text-decoration-none"
                   >
-                    Kardemir
+                    Ethereum
                   </Link>
                 </li>
                 <li>
                   <Link to="stock/sise-cam" className="text-decoration-none">
-                    Şişecam
+                    Tether
                   </Link>
                 </li>
                 <li>
@@ -171,7 +171,7 @@ function Footer() {
                     to="stock/turk-hava%20yollari"
                     className="text-decoration-none"
                   >
-                    THY
+                    BNB
                   </Link>
                 </li>
                 <li>
@@ -179,54 +179,23 @@ function Footer() {
                     to="stock/yapi-ve%20kredi%20bank."
                     className="text-decoration-none"
                   >
-                    Yapı Kredi
+                    USD Coin
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className=" col-lg-4 ">
-            <h5>BORSA</h5>
+            <h5>YASAL UYARI</h5>
             <div>
-              <ul className="list-unstyled">
-                <li>
-                  <Nav.Link
-                    href="stock/akbank"
-                    className="text-decoration-none"
-                  >
-                    Akbank
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Link
-                    to="stock/kardemir-(d)"
-                    className="text-decoration-none"
-                  >
-                    Kardemir
-                  </Link>
-                </li>
-                <li>
-                  <Link to="stock/sise-cam" className="text-decoration-none">
-                    Şişecam
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="stock/turk-hava%20yollari"
-                    className="text-decoration-none"
-                  >
-                    THY
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="stock/yapi-ve%20kredi%20bank."
-                    className="text-decoration-none"
-                  >
-                    Yapı Kredi
-                  </Link>
-                </li>
-              </ul>
+              <p style={{ fontSize: ".9rem", color: "white" }}>
+                hissedunyasi.com'da yer alan bilgi, yorum ve tavsiyeler Yatırım
+                Danışmanlığı kapsamında değildir. Yorumlar kullanıcıların
+                kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere
+                dayanılarak alınacak yatırım kararları beklentilerinize uygun
+                sonuçlar doğurmayabilir. Dolayısıyla kullanıcıların yorumlarına
+                göre yatırım kararı almamanız konusunda kesinlikle uyarıyoruz.
+              </p>
             </div>
           </div>
         </div>

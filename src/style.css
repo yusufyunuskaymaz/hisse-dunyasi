@@ -67,17 +67,17 @@ ul {
 }
 
 nav ul li a {
-  color: #131722 !important;
+  color: white !important;
   font-family: -apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu,
     sans-serif !important;
   /* font-weight: bolder !important; */
   letter-spacing: 0.4px;
-  color: black !important;
 }
 
 nav ul li {
   padding: 0 0.1rem;
   border-radius: 1.3rem;
+  color: white !important;
 }
 
 nav ul li:hover {
@@ -87,11 +87,17 @@ nav ul li:hover {
   transition: 0.7s;
 }
 
+.navbar-brand{
+  color: white !important;
+}
+
 .news .list-group-item {
   border: none !important;
   font-size: 1.5rem;
 }
-
+#basic-nav-dropdown{
+  color: #1e53e5 !important;
+}
 a {
   /* font-weight: 500 !important; */
   color: #131722 !important;

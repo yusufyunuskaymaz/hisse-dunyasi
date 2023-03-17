@@ -16,7 +16,7 @@ function TradingViewWidget({ itemCode }) {
           "symbols": [
             [
               "Dolar",
-              "${itemCode}USD|1D"
+              "${itemCode}TRY|1D"
             ]
           ],
           "chartOnly": false,

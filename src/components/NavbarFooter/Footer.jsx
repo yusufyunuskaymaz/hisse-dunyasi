@@ -16,7 +16,7 @@ function Footer() {
         <div className="row justify-content-center">
           <div className=" col-lg-2">
             <h5 type="button" onClick={() => navigate("/stock")}>
-              BORSA
+             <a>BORSA</a> 
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -59,7 +59,7 @@ function Footer() {
           </div>
           <div className=" col-lg-2">
             <h5 type="button" onClick={() => navigate("/currency")}>
-              DÖVİZ
+             <a href="">DÖVİZ</a> 
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -105,7 +105,7 @@ function Footer() {
           </div>
           <div className=" col-lg-2 ">
             <h5 type="button" onClick={() => navigate("/gold")}>
-              ALTIN
+             <a href="">ALTIN</a> 
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -151,7 +151,7 @@ function Footer() {
           </div>
           <div className=" col-lg-2 ">
             <h5 type="button" onClick={() => navigate("/crypto")}>
-              KRİPTO
+            <a href="">KRİPTO</a>  
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -198,7 +198,7 @@ function Footer() {
           <div className=" col-lg-4 ">
             <h5>YASAL UYARI</h5>
             <div>
-              <p style={{ fontSize: ".9rem", color: "white" }}>
+              <p   style={{ fontSize: ".8rem", color: "white" }}>
                 hissedunyasi.com'da yer alan bilgi, yorum ve tavsiyeler Yatırım
                 Danışmanlığı kapsamında değildir. Yorumlar kullanıcıların
                 kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere

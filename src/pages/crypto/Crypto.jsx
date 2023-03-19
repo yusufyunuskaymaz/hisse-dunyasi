@@ -46,14 +46,13 @@ function Crypto() {
       <div>
         <div className="container my-3">
           <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive">
+            <div className="col-sm-12 col-md-12 col-lg-8 g-3 table-responsive ">
               <div className="title-crypto text-center">
                 <h1 className=" fs-1 bist100 title mt-1">
                   Kripto Para Piyasası
                 </h1>
               </div>
-              <Card >
-                <table className="table   table-hover shadow ">
+                <table className="table   table-hover shadow table-bordered  ">
                   <thead>
                     <tr className="text-dark">
                       <th> </th>
@@ -109,7 +108,6 @@ function Crypto() {
                     })}
                   </tbody>
                 </table>
-              </Card>
             </div>
 
             <div className="col-lg-4">

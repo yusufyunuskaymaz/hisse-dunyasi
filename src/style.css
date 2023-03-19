@@ -391,3 +391,12 @@ li.different:hover {
   text-decoration: underline !important;
   color: white !important;
 }
+
+
+.table td, .table th, .table tr {
+  border: none;
+}
+
+table.table.table-bordered {
+  border: 1px solid rgb(45, 42, 42, .5);
+}

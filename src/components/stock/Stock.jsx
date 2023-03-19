@@ -111,8 +111,7 @@ const Stock = () => {
             <div>
               <p className="mb-2 text-muted" align="left">Detaylı görüntülemek için üzerine tıklayın.</p>
             </div>
-            <Card>
-              <div className="table-responsive shadow ">
+              <div className="table-responsive shadow table-bordered ">
                 <table className="table table-striped">
                   <thead >
                     <tr>
@@ -207,7 +206,6 @@ const Stock = () => {
                 </table>
               </div>
               
-            </Card>
             <div className="text-center">
                   <button
                     className="btn btn-secondary  mt-5 "

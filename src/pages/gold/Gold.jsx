@@ -37,8 +37,7 @@ function Gold() {
             <div className="title-crypto text-center">
               <h1 className=" fs-1 bist100 title mt-1">Altın Piyasası</h1>
             </div>
-            <Card>
-              <table className="table  table-hover shadow">
+              <table className="table  table-hover shadow table-bordered">
                 <thead>
                   <tr className="text-dark">
                     <th scope="col">Altın Cinsi </th>
@@ -82,7 +81,6 @@ function Gold() {
                   })}
                 </tbody>
               </table>
-            </Card>
           </div>
 
           <div className="col-lg-4">

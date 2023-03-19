@@ -37,32 +37,32 @@ const WorldStock = () => {
               Dünya Borsaları
             </h1>
             <div>
-            <div className="d-none d-lg-block">
-            <h3 className="mb-3">USA</h3>
-            <GeneralTable stockCode={"us"} width={"850"} height={"500"} />
-            </div>
+              <div className="d-none d-lg-block">
+                <h3 className="mb-3">USA</h3>
+                <GeneralTable stockCode={"us"} width={"850"} height={"500"} />
+              </div>
             </div>
             <Table bordered hover>
               <thead>
                 <tr>
-                  <th style={{textAlign:"left"}}>Name</th>
+                  <th style={{ textAlign: "left" }}>Name</th>
                 </tr>
               </thead>
               <tbody>
                 {WorldStocklist.map((item) => {
                   // console.log(item, "dd");
                   return (
-                    <tr
-                    onClick={()=>navigate(`item`,{state:item})}
-                    >
-                      <td style={{textAlign:"left"}}>{item}</td>
+                    <tr onClick={() => navigate(`item`, { state: item })}>
+                      <td style={{ textAlign: "left" }}>
+                        {item}
+                      </td>
                     </tr>
                   );
                 })}
               </tbody>
             </Table>
           </div>
-          <div className="col-lg-4">{ <StickySidebar /> }</div>
+          <div className="col-lg-4">{<StickySidebar />}</div>
         </div>
       </div>
     );

@@ -64,7 +64,7 @@ const Navbar = () => {
 
                 <li className="nav-item different">
                   <NavLink to="/crypto" className="nav-link ">
-                    Kripto
+                    Kripto Paralar
                   </NavLink>
                 </li>
               </ul>

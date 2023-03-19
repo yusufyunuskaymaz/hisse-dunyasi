@@ -116,7 +116,7 @@ function CurrencyDetail() {
               </tbody>
             </table>
           </div>
-          <div className="col">
+          <div className="col d-none d-lg-block">
             <CurrencyWidget itemCode={itemCode} />
           </div>
           <CommentDiv itemCode={itemCode} commentList={commentList} />

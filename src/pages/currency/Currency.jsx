@@ -62,8 +62,7 @@ function Currency() {
               </div>
               <h1 className=" fs-1 bist100 title mt-1">Döviz Piyasası</h1>
 
-              <Card>
-                <table className="table   table-hover shadow ">
+                <table className="table   table-hover shadow table-bordered ">
                   <thead>
                     <tr className="text-dark">
                       <th>Döviz Cinsi</th>
@@ -108,7 +107,6 @@ function Currency() {
                     })}
                   </tbody>
                 </table>
-              </Card>
             </div>
 
             <div className="col-lg-4">

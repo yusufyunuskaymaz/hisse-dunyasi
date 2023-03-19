@@ -79,8 +79,12 @@ const Register = () => {
             <p>Sign in with:</p>
 
             <div
-              className="d-flex justify-content-between mx-auto"
-              style={{ width: "40%" }}
+              className="d-flex justify-content-center mx-auto"
+              style={{
+                width: "40%",
+                backgroundColor: "#dde1e6ae",
+                borderRadius: "5%",
+              }}
             >
               <MDBBtn
                 tag="a"
@@ -89,7 +93,7 @@ const Register = () => {
                 style={{ color: "#1266f1" }}
                 onClick={handleGoogleProvider}
               >
-                <MDBIcon fab icon="google" size="sm" />
+                <MDBIcon fab icon="google" size="lg" />
               </MDBBtn>
             </div>
 
@@ -125,17 +129,21 @@ const Register = () => {
             Sign in
           </MDBBtn>
           <p className="text-center">
-            Not a member? <a href="#!">Register</a>
+            Not a member? <a href="tab2">Register</a>
           </p>
         </MDBTabsPane>
 
         <MDBTabsPane show={justifyActive === "tab2"}>
           <div className="text-center mb-3">
-            <p>Sign un with:</p>
+            <p>Sign up with:</p>
 
             <div
-              className="d-flex justify-content-between mx-auto"
-              style={{ width: "40%" }}
+              className="d-flex justify-content-center mx-auto"
+              style={{
+                width: "40%",
+                backgroundColor: "#dde1e6ae",
+                borderRadius: "5%",
+              }}
             >
               <MDBBtn
                 tag="a"
@@ -144,7 +152,7 @@ const Register = () => {
                 style={{ color: "#1266f1" }}
                 onClick={handleGoogleProvider}
               >
-                <MDBIcon fab icon="google" size="sm" />
+                <MDBIcon fab icon="google" size="lg" />
               </MDBBtn>
             </div>
 

@@ -11,7 +11,6 @@ import CurrencyDetail from "../pages/currency/CurrencyDetail";
 import GoldDetail from "../pages/gold/GoldDetail";
 import Crypto from "../pages/crypto/Crypto";
 import CryptoDetail from "../pages/crypto/CryptoDetail";
-import Login from "../components/login/Login";
 import Register from "../components/login/Register";
 import StockDetail from "../components/stock/StockDetail";
 import HareketliNavbar from "../components/NavbarFooter/HareketliNavbar";
@@ -42,10 +41,8 @@ const AppRouter = () => {
         <Route path="currency/:item" element={<CurrencyDetail />} />
         <Route path="crypto" element={<Crypto />} />
         <Route path="crypto/:item" element={<CryptoDetail />} />
-        <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
-
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -87,11 +87,8 @@ const Navbar = () => {
                     </NavDropdown.Item>
                   ) : (
                     <>
-                      <NavDropdown.Item href="/login">
-                        Giriş Yap
-                      </NavDropdown.Item>
                       <NavDropdown.Item href="/register">
-                        Kayıt Ol
+                        Giriş Yap
                       </NavDropdown.Item>
                     </>
                   )}

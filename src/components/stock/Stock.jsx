@@ -41,6 +41,7 @@ const Stock = () => {
         // Filter Bist 100 between 500 stocks
         filterAndSortInitialData(data);
         setAllStock(data);
+        localStorage.setItem("stockData",JSON.stringify(data))
       });
   };
 
@@ -61,6 +62,14 @@ const Stock = () => {
 
   useEffect(() => {
     getDataFromApi();
+
+    // After second render on page
+    const res = JSON.parse(localStorage.getItem("stockData"))
+    if(res){
+      console.log("bura çalışıyor")
+      filterAndSortInitialData(res);
+        setAllStock(res);
+    }
   }, []);
 
   const [showOrHide, setShowOrHide] = useState(false);
@@ -74,20 +83,21 @@ const Stock = () => {
     }
   };
 
-  console.log(data, "dsa");
-  if (loading) {
-    return (
-      <div className="container text-center">
-        <div className="loading">
-          <i
-            className="fa fa-spinner fa-spin "
-            style={{ fontSize: "1.5rem" }}
-          ></i>
-          <h3>Loading...</h3>{" "}
-        </div>{" "}
-      </div>
-    );
-  } else {
+
+  // console.log(res, "dsa");
+  // if (loading) {
+  //   return (
+  //     <div className="container text-center">
+  //       <div className="loading">
+  //         <i
+  //           className="fa fa-spinner fa-spin "
+  //           style={{ fontSize: "1.5rem" }}
+  //         ></i>
+  //         <h3>Loading...</h3>{" "}
+  //       </div>{" "}
+  //     </div>
+  //   );
+  // } else {
     return (
       <div className="container">
         <div className="row">
@@ -142,7 +152,14 @@ const Stock = () => {
                   </thead>
 
                   <tbody>
-                    {/* // .sort((a, b) => (a.code < b.code ? -1 : 1)) */}
+                  {loading && (
+                    <div className="loading text-center">
+                      <i
+                        className="fa fa-spinner fa-spin "
+                        style={{ fontSize: "1.5rem" }}
+                      ></i>
+                  </div>
+                )}
                     {data.map((item, index) => {
                       return (
                         <tr
@@ -221,7 +238,7 @@ const Stock = () => {
         </div>
       </div>
     );
-  }
+  // }
 };
 
 export default Stock;

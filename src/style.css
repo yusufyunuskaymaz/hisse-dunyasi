@@ -395,8 +395,9 @@ li.different:hover {
 
 .table td, .table th, .table tr {
   border: none;
+  cursor: pointer !important;
 }
 
 table.table.table-bordered {
-  border: 1px solid rgb(45, 42, 42, .5);
+  border: 1px solid #e0e3eb;
 }

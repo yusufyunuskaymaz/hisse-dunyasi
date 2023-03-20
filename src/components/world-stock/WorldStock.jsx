@@ -42,6 +42,9 @@ const WorldStock = () => {
                 <GeneralTable stockCode={"us"} width={"850"} height={"500"} />
               </div>
             </div>
+            <div>
+              <p className="mb-2 text-muted" align="left">Detaylı görüntülemek için üzerine tıklayın.</p>
+            </div>
             <Table bordered hover>
               <thead>
                 <tr>

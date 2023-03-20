@@ -17,31 +17,40 @@ function Crypto() {
     setIsLoading(true);
     axios
       .get(URL)
-      .then((res) => setNewCryptoData(res.data))
+      .then((res) => {
+        setNewCryptoData(res.data)
+        localStorage.setItem("cryptoData",JSON.stringify(res.data))
+
+      })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
     getNewCrypto();
+    const res = JSON.parse(localStorage.getItem("stockData"))
+    if(res){
+      console.log("bura çalışıyor")
+      setNewCryptoData(res)
+    }
   }, []);
   // console.log(currencyData);
 
   // console.log(newCryptoData, "ccc");
 
-  if (loading) {
-    return (
-      <div className="container text-center">
-        <div className="loading">
-          <i
-            className="fa fa-spinner fa-spin "
-            style={{ fontSize: "1.5rem" }}
-          ></i>
-          <h3>Loading...</h3>{" "}
-        </div>{" "}
-      </div>
-    );
-  } else {
+  // if (loading) {
+  //   return (
+  //     <div className="container text-center">
+  //       <div className="loading">
+  //         <i
+  //           className="fa fa-spinner fa-spin "
+  //           style={{ fontSize: "1.5rem" }}
+  //         ></i>
+  //         <h3>Loading...</h3>{" "}
+  //       </div>{" "}
+  //     </div>
+  //   );
+  // } else {
     return (
       <div>
         <div className="container my-3">
@@ -52,7 +61,10 @@ function Crypto() {
                   Kripto Para Piyasası
                 </h1>
               </div>
-                <table className="table   table-hover shadow table-bordered  ">
+              <div>
+              <p className="mb-2 text-muted" align="left">Detaylı görüntülemek için üzerine tıklayın.</p>
+            </div>
+                <table className="table   table-hover shadow table-bordered  table-striped ">
                   <thead>
                     <tr className="text-dark">
                       <th> </th>
@@ -65,6 +77,16 @@ function Crypto() {
                     </tr>
                   </thead>
                   <tbody>
+                  {loading && (
+                    <div>
+                      <div className="loading text-center">
+                      <i
+                        className="fa fa-spinner fa-spin "
+                        style={{ fontSize: "1.5rem" }}
+                      ></i>
+                  </div>
+                    </div>
+                )}
                     {newCryptoData.map((item, index) => {
                       return (
                         <tr key={index+1}>
@@ -88,18 +110,18 @@ function Crypto() {
                             {item?.market_cap_change_percentage_24h < 0 ? (
                               <i
                                 className="fa-solid fa-caret-down"
-                                style={{ color: "red", fontSize: "1.5rem" }}
+                                style={{ color: "#ff173e", fontSize: "1.5rem" }}
                               ></i>
                             ) : (
                               <i
                                 className="fa-solid fa-caret-up"
-                                style={{ color: "green", fontSize: "1.5rem" }}
+                                style={{ color: "#00a97f", fontSize: "1.5rem" }}
                               ></i>
                             )}
                           </th>
-                          <td>{item.current_price.toFixed(4)} </td>
+                          {/* <td>{item.current_price.toFixed(4)} </td>
                           <td>{item.high_24h.toFixed(4)} </td>
-                          <td>{item.low_24h.toFixed(2)}</td>
+                          <td>{item.low_24h.toFixed(2)}</td> */}
                           <td>
                             {item.market_cap_change_percentage_24h.toFixed(2)}
                           </td>
@@ -117,7 +139,7 @@ function Crypto() {
         </div>
       </div>
     );
-  }
+  // }
 }
 
 export default Crypto;

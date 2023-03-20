@@ -37,7 +37,10 @@ function Gold() {
             <div className="title-crypto text-center">
               <h1 className=" fs-1 bist100 title mt-1">Altın Piyasası</h1>
             </div>
-              <table className="table  table-hover shadow table-bordered">
+            <div>
+              <p className="mb-2 text-muted" align="left">Detaylı görüntülemek için üzerine tıklayın.</p>
+            </div>
+              <table className="table  table-hover shadow table-bordered  table-striped">
                 <thead>
                   <tr className="text-dark">
                     <th scope="col">Altın Cinsi </th>
@@ -49,6 +52,14 @@ function Gold() {
                   </tr>
                 </thead>
                 <tbody>
+                {loading && (
+                    <div className="loading text-center">
+                      <i
+                        className="fa fa-spinner fa-spin "
+                        style={{ fontSize: "1.5rem" }}
+                      ></i>
+                  </div>
+                )}
                   {gold.map((item, index) => {
                     // console.log(item)
                     return (
@@ -63,12 +74,12 @@ function Gold() {
                           {item.rate < 0 ? (
                             <i
                               className="fa-solid fa-caret-down"
-                              style={{ color: "red", fontSize: "1.5rem" }}
+                              style={{ color: "#ff173e", fontSize: "1.5rem" }}
                             ></i>
                           ) : (
                             <i
                               className="fa-solid fa-caret-up"
-                              style={{ color: "green", fontSize: "1.5rem" }}
+                              style={{ color: "#00a97f", fontSize: "1.5rem" }}
                             ></i>
                           )}
                         </th>

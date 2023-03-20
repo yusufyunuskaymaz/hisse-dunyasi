@@ -14,9 +14,9 @@ function Footer() {
         style={{ backgroundColor: "#242441" }}
       >
         <div className="row justify-content-center">
-          <div className=" col-lg-2">
+          <div className=" col-lg-2 col-sm-6">
             <h5 type="button" onClick={() => navigate("/stock")}>
-             <a>BORSA</a> 
+              <a>BORSA</a>
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -57,9 +57,9 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className=" col-lg-2">
+          <div className=" col-lg-2 col-sm-6">
             <h5 type="button" onClick={() => navigate("/currency")}>
-             <a href="">DÖVİZ</a> 
+              <a href="">DÖVİZ</a>
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -103,9 +103,9 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className=" col-lg-2 ">
+          <div className=" col-lg-2 col-sm-6 ">
             <h5 type="button" onClick={() => navigate("/gold")}>
-             <a href="">ALTIN</a> 
+              <a href="">ALTIN</a>
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -149,9 +149,9 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className=" col-lg-2 ">
+          <div className=" col-lg-2 col-sm-6 ">
             <h5 type="button" onClick={() => navigate("/crypto")}>
-            <a href="">KRİPTO</a>  
+              <a href="">KRİPTO</a>
             </h5>
             <div>
               <ul className="list-unstyled">
@@ -198,7 +198,7 @@ function Footer() {
           <div className=" col-lg-4 ">
             <h5>YASAL UYARI</h5>
             <div>
-              <p   style={{ fontSize: ".8rem", color: "white" }}>
+              <p style={{ fontSize: ".8rem", color: "white" }}>
                 hissedunyasi.com'da yer alan bilgi, yorum ve tavsiyeler Yatırım
                 Danışmanlığı kapsamında değildir. Yorumlar kullanıcıların
                 kişisel görüşlerinden ibarettir. Bu görüş ve bilgilere

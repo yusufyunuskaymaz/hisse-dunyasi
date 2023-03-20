@@ -128,8 +128,8 @@ const Register = () => {
           <MDBBtn className="mb-4 w-100" onSubmit={handleSubmitLogin}>
             Sign in
           </MDBBtn>
-          <p className="text-center">
-            Not a member? <a href="tab2">Register</a>
+          <p className="text-center" onClick={() => setJustifyActive("tab2")}>
+            Not a member? <a style={{ cursor: "pointer" }}>Register</a>
           </p>
         </MDBTabsPane>
 

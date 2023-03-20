@@ -93,19 +93,19 @@ nav ul li:hover {
   font-size: 1.5rem;
 }
 #basic-nav-dropdown {
-  color: #1e53e5 !important;
+  color: white !important;
 }
 a {
   /* font-weight: 500 !important; */
   /* color: #131722 !important; */
 }
 
-.login-dropdown {
+/* .login-dropdown {
   color: #1e53e5 !important;
   background-color: #e3effd !important;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-}
+} */
 
 .main-bg {
   background-color: #e3effd !important;
@@ -383,20 +383,21 @@ li.different:hover {
   left: 0;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #F9FAFB;
- }
-.footer h5 a{
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9fafb;
+}
+.footer h5 a {
   text-decoration: underline !important;
   color: white !important;
 }
 
-
-.table td, .table th, .table tr {
+.table td,
+.table th,
+.table tr {
   border: none;
 }
 
 table.table.table-bordered {
-  border: 1px solid rgb(45, 42, 42, .5);
+  border: 1px solid rgb(45, 42, 42, 0.5);
 }

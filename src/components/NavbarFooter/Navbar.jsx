@@ -80,6 +80,7 @@ const Navbar = () => {
                   title={currentUser ? currentUser.displayName : "Giriş Yap"}
                   id="basic-nav-dropdown"
                   show={showDropdown}
+                  className="nav-item different"
                 >
                   {currentUser ? (
                     <NavDropdown.Item href="/login" onClick={() => logOut()}>

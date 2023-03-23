@@ -27,11 +27,13 @@ function Crypto() {
   };
 
   useEffect(() => {
-    getNewCrypto();
-    const res = JSON.parse(localStorage.getItem("stockData"))
+    const res = JSON.parse(localStorage.getItem("cryptoData"))
     if(res){
       console.log("bura çalışıyor")
       setNewCryptoData(res)
+    }else{
+      getNewCrypto();
+
     }
   }, []);
   // console.log(currencyData);
@@ -119,11 +121,11 @@ function Crypto() {
                               ></i>
                             )}
                           </th>
-                          {/* <td>{item.current_price.toFixed(4)} </td>
-                          <td>{item.high_24h.toFixed(4)} </td>
-                          <td>{item.low_24h.toFixed(2)}</td> */}
+                          <td>{item.current_price} </td>
+                          <td>{item.high_24h} </td>
+                          <td>{item.low_24h}</td>
                           <td>
-                            {item.market_cap_change_percentage_24h.toFixed(2)}
+                            {item.market_cap_change_percentage_24h}
                           </td>
                         </tr>
                       );

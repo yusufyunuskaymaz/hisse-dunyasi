@@ -14,7 +14,7 @@ function Footer() {
         style={{ backgroundColor: "#242441" }}
       >
         <div className="row justify-content-center">
-          <div className=" col-lg-2 col-sm-6">
+          {/* <div className=" col-lg-2 col-sm-6">
             <h5 type="button" onClick={() => navigate("/stock")}>
               <a>BORSA</a>
             </h5>
@@ -194,9 +194,9 @@ function Footer() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className=" col-lg-4 ">
-            <h5>YASAL UYARI</h5>
+          </div> */}
+          <div className=" col-lg-12 ">
+            <h5 className="text-center">YASAL UYARI</h5>
             <div>
               <p style={{ fontSize: ".8rem", color: "white" }}>
                 hissedunyasi.com'da yer alan bilgi, yorum ve tavsiyeler Yatırım
@@ -213,7 +213,7 @@ function Footer() {
 
       <Card.Footer className="text-center text-lg-left">
         <div
-          className="text-center fs-6 p-3"
+          className="text-center fs-5 p-3"
           style={{ backgroundColor: "rgba(43, 41, 41, 0.2)" }}
         >
           &copy; {new Date().getFullYear()} Copyright:{" "}

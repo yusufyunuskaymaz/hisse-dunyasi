@@ -25,13 +25,27 @@ function Currency() {
           Authorization: process.env.REACT_APP_TOKEN,
         },
       })
-      .then((res) => setNewCurrencyData(res.data.result))
+      .then((res) => {
+        setNewCurrencyData(res.data.result)
+        localStorage.setItem("currencyData",JSON.stringify({
+          data:res.data.result,
+          time:Date.now()
+        }))
+      })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
-    getNewCurrency();
+    const res = JSON.parse(localStorage.getItem("currencyData"))
+    // 900000 = 15 Munites in milliseconds
+    if(res && (res.time + 900000 > Date.now())){
+      console.log("bura çalışıyor")
+      setNewCurrencyData(res.data)
+    }else{
+      getNewCurrency();
+
+    }
   }, []);
   // console.log(currencyData);
 
@@ -97,9 +111,9 @@ function Currency() {
                           ></i>
                         )}
                       </th>
-                      <td>{item.buying.toFixed(4)} </td>
-                      <td>{item.selling.toFixed(4)} </td>
-                      <td>{item.rate.toFixed(2)}</td>
+                      <td>{item.buying} </td>
+                      <td>{item.selling} </td>
+                      <td>{item.rate}</td>
                       <td>{item.time}</td>
                     </tr>
                   );

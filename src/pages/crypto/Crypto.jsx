@@ -19,7 +19,10 @@ function Crypto() {
       .get(URL)
       .then((res) => {
         setNewCryptoData(res.data)
-        localStorage.setItem("cryptoData",JSON.stringify(res.data))
+        localStorage.setItem("cryptoData",JSON.stringify({
+          data:res.data,
+          time:Date.now()
+        }))
 
       })
       .catch((error) => console.log(error))
@@ -28,9 +31,10 @@ function Crypto() {
 
   useEffect(() => {
     const res = JSON.parse(localStorage.getItem("cryptoData"))
-    if(res){
+    // 900000 = 15 Munites in milliseconds
+    if(res && (res.time + 900000 > Date.now())){
       console.log("bura çalışıyor")
-      setNewCryptoData(res)
+      setNewCryptoData(res.data)
     }else{
       getNewCrypto();
 

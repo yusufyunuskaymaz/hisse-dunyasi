@@ -41,7 +41,10 @@ const Stock = () => {
         // Filter Bist 100 between 500 stocks
         filterAndSortInitialData(data);
         setAllStock(data);
-        localStorage.setItem("stockData", JSON.stringify(data));
+        localStorage.setItem("stockData", JSON.stringify({
+          data:data,
+          time:Date.now()
+        }));
       });
   };
 
@@ -63,10 +66,10 @@ const Stock = () => {
   useEffect(() => {
     // After second render on page
     const res = JSON.parse(localStorage.getItem("stockData"));
-    if (res) {
-      console.log("bura çalışıyor");
-      filterAndSortInitialData(res);
-      setAllStock(res);
+    // 900000 = 15 Munites in milliseconds
+    if(res && (res.time + 900000 > Date.now())){
+      filterAndSortInitialData(res.data);
+      setAllStock(res.data);
     } else {
       getDataFromApi();
     }
@@ -161,7 +164,7 @@ const Stock = () => {
                     ></i>
                   </div>
                 )}
-                {data.map((item, index) => {
+                {data?.map((item, index) => {
                   return (
                     <tr
                       key={index}

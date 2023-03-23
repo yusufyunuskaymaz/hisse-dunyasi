@@ -22,7 +22,10 @@ function Gold() {
       })
       .then((res) => {
         setGold(res.data.result);
-        localStorage.setItem("goldData", JSON.stringify(res.data.result));
+        localStorage.setItem("goldData", JSON.stringify({
+          data:res.data.result,
+          time:Date.now()
+        }));
       })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
@@ -30,10 +33,10 @@ function Gold() {
 
   useEffect(() => {
     const res = JSON.parse(localStorage.getItem("goldData"));
-
-    if (res) {
+    // 900000 = 15 Munites in milliseconds
+    if(res && (res.time + 900000 > Date.now())){
       console.log("bura çalışıyor");
-      setGold(res);
+      setGold(res.data);
     } else {
       getGold();
 

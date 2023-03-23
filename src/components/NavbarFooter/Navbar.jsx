@@ -8,10 +8,16 @@ import { BsPerson } from "react-icons/bs";
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [navbarCollapsed, setNavbarCollapsed] = useState(true);
+
   const handleDropdownToggle = () => {
     setShowDropdown(!showDropdown);
   };
-  // console.log(currentUser)
+
+  const handleLinkClick = () => {
+    setNavbarCollapsed(true);
+  };
+
   return (
     <>
       <div className="container-fluid px-0" style={{ marginBottom: "8rem" }}>
@@ -32,38 +38,61 @@ const Navbar = () => {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
+              onClick={() => setNavbarCollapsed(!navbarCollapsed)}
             >
               <span className="navbar-toggler-icon" />
             </button>
             <div
-              className="collapse navbar-collapse"
+              className={`collapse navbar-collapse ${
+                navbarCollapsed ? "" : "show"
+              }`}
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item different">
-                  <Link to="/stock" className="nav-link">
+                  <Link
+                    to="/stock"
+                    className="nav-link"
+                    onClick={handleLinkClick}
+                  >
                     Borsa İstanbul
                   </Link>
                 </li>
                 <li className="nav-item different">
-                  <Link to="/world-stock" className="nav-link">
+                  <Link
+                    to="/world-stock"
+                    className="nav-link"
+                    onClick={handleLinkClick}
+                  >
                     Dünya Borsaları
                   </Link>
                 </li>
 
                 <li className="nav-item different">
-                  <NavLink to="/currency" className="nav-link ">
+                  <NavLink
+                    to="/currency"
+                    className="nav-link"
+                    onClick={handleLinkClick}
+                  >
                     Döviz
                   </NavLink>
                 </li>
                 <li className="nav-item different">
-                  <NavLink to="/gold" className="nav-link ">
+                  <NavLink
+                    to="/gold"
+                    className="nav-link"
+                    onClick={handleLinkClick}
+                  >
                     Altın
                   </NavLink>
                 </li>
 
                 <li className="nav-item different">
-                  <NavLink to="/crypto" className="nav-link ">
+                  <NavLink
+                    to="/crypto"
+                    className="nav-link"
+                    onClick={handleLinkClick}
+                  >
                     Kripto Paralar
                   </NavLink>
                 </li>
